@@ -1,82 +1,87 @@
-/* Styl ogólny */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* Stopka */
+.content {
+    padding: 20px;
+    min-height: 200vh; /* Symulacja długiej strony */
+}
+
 .sticky-footer {
     position: fixed;
-    bottom: 0;
-    left: 0;
+    top: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #a9a9a9; /* szary kolor */
     color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 60px 0; /* Zwiększona wielkość stopki */
+}
+
+.footer-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    justify-content: space-between; /* Wyrównanie na lewej i prawej stronie */
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Obrazek */
 .footer-content img {
-    width: 100px;
-    height: 100px;
+    width: 250px; /* Powiększenie zdjęcia */
+    height: 250px; /* Powiększenie zdjęcia */
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 40px; /* Większa przestrzeń między zdjęciem a tekstem */
+    margin-left: 10px; /* Przesunięcie zdjęcia o 10px od lewej */
 }
 
-/* Tekst w stopce */
-.footer-content h2 {
-    font-size: 12em;
-    font-weight: bold;
-    margin: 0;
-}
-
-/* Prawa strona z danymi */
-.contact-info {
+.footer-content div {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
+    text-align: left; /* Tekst w stopce po lewej */
 }
 
-/* Symbole i informacje */
-.contact-info div {
+.footer-content h2 {
+    margin: 0;
+    font-size: 12em; /* Zwiększenie czcionki na 12em */
+    font-weight: bold; /* Pogrubienie tekstu */
+}
+
+.right-column {
+    display: flex;
+    flex-direction: row; /* Ułożenie elementów obok siebie */
+    justify-content: space-between;
+    width: 100%; /* Cała dostępna przestrzeń */
+    font-size: 1.1em; /* Zmniejszenie czcionki */
+}
+
+.phone-symbol, .email-symbol, .birthday-symbol, .home-symbol, .location-symbol {
     display: flex;
     align-items: center;
-    margin: 5px 0;
-    font-size: 10px;
-    opacity: 0; /* Ukrywamy dane początkowo */
-    transition: opacity 0.3s ease-in-out;
+    font-size: 1.5em;
+    margin-right: 20px; /* Odstęp między symbolami */
+    opacity: 0; /* Ukrycie symboli początkowo */
+    transform: scale(1); /* Normalny rozmiar początkowy */
+    transition: transform 0.2s, opacity 0.3s; /* Animacja powiększenia i przezroczystości */
 }
 
-/* Powiększenie symbolu po najechaniu */
-.contact-info div:hover {
-    opacity: 1;
-    transform: scale(1.2); /* Powiększenie */
-    transition: transform 0.3s ease-in-out;
-}
-
-.contact-info i {
+.phone-symbol i, .email-symbol i, .birthday-symbol i, .home-symbol i, .location-symbol i {
     margin-right: 10px;
 }
 
-/* Style dla ikon (telefon, koperta, prezent) */
-.contact-info i.phone {
-    color: #00bcd4;
+.phone-symbol p, .email-symbol p, .birthday-symbol p, .home-symbol p, .location-symbol p {
+    margin: 0;
+    font-size: 1.2em; /* Zmniejszenie czcionki dla tekstów przy symbolach */
 }
 
-.contact-info i.mail {
-    color: #ff5722;
+/* Efekt po najechaniu na symbole */
+.phone-symbol:hover, .email-symbol:hover, .birthday-symbol:hover, .home-symbol:hover, .location-symbol:hover {
+    opacity: 1; /* Pokazuje symbol po najechaniu */
+    transform: scale(1.3); /* Powiększa symbol jakby był na sprężynie */
 }
 
-.contact-info i.birthday {
-    color: #8bc34a;
-}
-
-.contact-info i.location {
-    color: #9e9e9e;
+.phone-symbol:hover p, .email-symbol:hover p, .birthday-symbol:hover p, .home-symbol:hover p, .location-symbol:hover p {
+    opacity: 1; /* Pokazuje tekst po najechaniu */
+    transition: opacity 0.3s ease-in-out;
 }
