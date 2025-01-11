@@ -1,3 +1,4 @@
+/* Styl ogólny */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -8,9 +9,11 @@ body {
     min-height: 200vh; /* Symulacja długiej strony */
 }
 
+/* Stopka */
 .sticky-footer {
     position: fixed;
-    top: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
     background-color: #a9a9a9; /* szary kolor */
     color: white;
@@ -19,6 +22,7 @@ body {
     padding: 60px 0; /* Zwiększona wielkość stopki */
 }
 
+/* Styl dla zawartości stopki */
 .footer-content {
     display: flex;
     align-items: center;
@@ -28,6 +32,7 @@ body {
     margin: 0 auto;
 }
 
+/* Styl zdjęcia */
 .footer-content img {
     width: 250px; /* Powiększenie zdjęcia */
     height: 250px; /* Powiększenie zdjęcia */
@@ -36,6 +41,7 @@ body {
     margin-left: 10px; /* Przesunięcie zdjęcia o 10px od lewej */
 }
 
+/* Styl tekstu w stopce */
 .footer-content div {
     display: flex;
     flex-direction: column;
@@ -48,6 +54,7 @@ body {
     font-weight: bold; /* Pogrubienie tekstu */
 }
 
+/* Styl dla prawej kolumny z danymi */
 .right-column {
     display: flex;
     flex-direction: row; /* Ułożenie elementów obok siebie */
@@ -56,23 +63,28 @@ body {
     font-size: 1.1em; /* Zmniejszenie czcionki */
 }
 
+/* Styl dla symboli */
 .phone-symbol, .email-symbol, .birthday-symbol, .home-symbol, .location-symbol {
     display: flex;
     align-items: center;
     font-size: 1.5em;
     margin-right: 20px; /* Odstęp między symbolami */
-    opacity: 0; /* Ukrycie symboli początkowo */
+    opacity: 1; /* Symbole zawsze widoczne */
     transform: scale(1); /* Normalny rozmiar początkowy */
     transition: transform 0.2s, opacity 0.3s; /* Animacja powiększenia i przezroczystości */
 }
 
+/* Styl dla ikon */
 .phone-symbol i, .email-symbol i, .birthday-symbol i, .home-symbol i, .location-symbol i {
     margin-right: 10px;
 }
 
+/* Styl dla tekstów przy symbolach */
 .phone-symbol p, .email-symbol p, .birthday-symbol p, .home-symbol p, .location-symbol p {
     margin: 0;
     font-size: 1.2em; /* Zmniejszenie czcionki dla tekstów przy symbolach */
+    opacity: 0; /* Tekst ukryty początkowo */
+    transition: opacity 0.3s ease-in-out; /* Płynna zmiana przezroczystości */
 }
 
 /* Efekt po najechaniu na symbole */
@@ -81,7 +93,7 @@ body {
     transform: scale(1.3); /* Powiększa symbol jakby był na sprężynie */
 }
 
+/* Pokazanie tekstu po najechaniu */
 .phone-symbol:hover p, .email-symbol:hover p, .birthday-symbol:hover p, .home-symbol:hover p, .location-symbol:hover p {
     opacity: 1; /* Pokazuje tekst po najechaniu */
-    transition: opacity 0.3s ease-in-out;
 }
