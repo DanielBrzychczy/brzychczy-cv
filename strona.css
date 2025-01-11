@@ -41,23 +41,30 @@ body {
     text-align: left; /* Tekst w stopce po lewej */
 }
 
-.footer-content h2, .footer-content p {
+.footer-content h2 {
     margin: 0;
-    font-size: 2em; /* Powiększony tekst */
+    font-size: 6em; /* Bardzo duża czcionka */
     font-weight: bold; /* Pogrubienie tekstu */
 }
 
-.phone-symbol {
+.phone-symbol, .email-symbol, .birthday-symbol, .home-symbol, .location-symbol {
     display: flex;
     align-items: center;
     font-size: 1.5em;
+    margin-top: 10px;
 }
 
-.phone-symbol i {
+.phone-symbol i, .email-symbol i, .birthday-symbol i, .home-symbol i, .location-symbol i {
     margin-right: 10px;
 }
 
-.phone-symbol p {
+.phone-symbol p, .email-symbol p, .birthday-symbol p, .home-symbol p, .location-symbol p {
     margin: 0;
-    font-size: 1.8em; /* Powiększenie numeru telefonu */
+    font-size: 1.2em; /* Zmniejszona czcionka dla symboli */
+}
+
+.footer-content .right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
