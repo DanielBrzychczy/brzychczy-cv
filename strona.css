@@ -29,10 +29,11 @@ body {
 }
 
 .footer-content img {
-    width: 200px; /* Powiększone zdjęcie */
-    height: 200px; /* Powiększone zdjęcie */
+    width: 250px; /* Powiększenie zdjęcia */
+    height: 250px; /* Powiększenie zdjęcia */
     border-radius: 50%;
-    margin-right: 30px; /* Większa przestrzeń między zdjęciem a tekstem */
+    margin-right: 40px; /* Większa przestrzeń między zdjęciem a tekstem */
+    margin-left: 10px; /* Przesunięcie zdjęcia o 10px od lewej */
 }
 
 .footer-content div {
@@ -43,15 +44,23 @@ body {
 
 .footer-content h2 {
     margin: 0;
-    font-size: 6em; /* Bardzo duża czcionka */
+    font-size: 12em; /* Zwiększenie czcionki na 12em */
     font-weight: bold; /* Pogrubienie tekstu */
+}
+
+.right-column {
+    display: flex;
+    flex-direction: row; /* Ułożenie elementów obok siebie */
+    justify-content: space-between;
+    width: 100%; /* Cała dostępna przestrzeń */
+    font-size: 1.1em; /* Zmniejszenie czcionki */
 }
 
 .phone-symbol, .email-symbol, .birthday-symbol, .home-symbol, .location-symbol {
     display: flex;
     align-items: center;
     font-size: 1.5em;
-    margin-top: 10px;
+    margin-right: 20px; /* Odstęp między symbolami */
 }
 
 .phone-symbol i, .email-symbol i, .birthday-symbol i, .home-symbol i, .location-symbol i {
@@ -60,11 +69,5 @@ body {
 
 .phone-symbol p, .email-symbol p, .birthday-symbol p, .home-symbol p, .location-symbol p {
     margin: 0;
-    font-size: 1.2em; /* Zmniejszona czcionka dla symboli */
-}
-
-.footer-content .right-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    font-size: 1.2em; /* Zmniejszenie czcionki dla tekstów przy symbolach */
 }
