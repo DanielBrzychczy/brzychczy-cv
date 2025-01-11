@@ -59,7 +59,7 @@ body {
 .phone-symbol, .email-symbol, .birthday-symbol, .home-symbol, .location-symbol {
     display: flex;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1em;
     margin-right: 20px; /* Odstęp między symbolami */
 }
 
@@ -69,5 +69,5 @@ body {
 
 .phone-symbol p, .email-symbol p, .birthday-symbol p, .home-symbol p, .location-symbol p {
     margin: 0;
-    font-size: 1.2em; /* Zmniejszenie czcionki dla tekstów przy symbolach */
+    font-size: 1em; /* Zmniejszenie czcionki dla tekstów przy symbolach */
 }
