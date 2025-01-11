@@ -16,35 +16,48 @@ body {
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    padding: 40px 0; /* Zwiększona wielkość stopki */
+    padding: 60px 0; /* Zwiększona wielkość stopki */
 }
 
 .footer-content {
     display: flex;
     align-items: center;
-    justify-content: center; /* Wyrównanie zawartości na środku */
+    justify-content: space-between; /* Wyrównanie na lewej i prawej stronie */
     padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .footer-content img {
-    width: 150px; /* Powiększone zdjęcie */
-    height: 150px; /* Powiększone zdjęcie */
+    width: 200px; /* Powiększone zdjęcie */
+    height: 200px; /* Powiększone zdjęcie */
     border-radius: 50%;
-    margin-right: 20px; /* Większa przestrzeń między zdjęciem a tekstem */
+    margin-right: 30px; /* Większa przestrzeń między zdjęciem a tekstem */
 }
 
 .footer-content div {
     display: flex;
     flex-direction: column;
-    text-align: center; /* Tekst w stopce na środku */
+    text-align: left; /* Tekst w stopce po lewej */
 }
 
-.footer-content h2 {
+.footer-content h2, .footer-content p {
     margin: 0;
     font-size: 2em; /* Powiększony tekst */
+    font-weight: bold; /* Pogrubienie tekstu */
 }
 
-.footer-content p {
+.phone-symbol {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.phone-symbol i {
+    margin-right: 10px;
+}
+
+.phone-symbol p {
     margin: 0;
-    font-size: 1.2em; /* Powiększony tekst */
+    font-size: 1.8em; /* Powiększenie numeru telefonu */
 }
