@@ -3,60 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stopka z Gifem</title>
-    <style>
-        /* Ogólne style */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #000000; /* Czarny kolor tła */
-            color: white; /* Kolor tekstu na stronie */
-        }
-
-        /* Stopka */
-        .footer {
-            background-color: #ff69b4; /* Różowy kolor */
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            width: 100%;
-        }
-
-        /* Kontener gifa */
-        .gif-container {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .gif-container img {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+    <title>Dla Goni</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header class="header">
+        <h1>Jesteś moim serduszkiem! ❤️</h1>
+    </header>
 
-    <div class="content">
-        <footer class="footer">
-            <p>Kocham cię Goni</p>
-        </footer>
+    <main class="main">
+        <p>Kocham Cię Goni! Ta strona powstała, by pokazać, jak bardzo jesteś wyjątkowa. 🌟</p>
         <div class="gif-container">
-            <!-- Lokalny plik GIF -->
-            <img src="twoj_gif.gif" alt="Gif">
+            <img src="twoj_gif.gif" alt="Uroczy gif">
         </div>
-    </div>
+        <div class="hearts">
+            <!-- Animujące serduszka -->
+            <span class="heart"></span>
+            <span class="heart"></span>
+            <span class="heart"></span>
+        </div>
+    </main>
 
+    <footer class="footer">
+        <p>Twoje imię na zawsze w moim sercu ❤️</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
