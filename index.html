@@ -233,7 +233,7 @@
             font-size: 0.9em;
             color: #555;
         }
-    .left-column .about-me {
+      .left-column .about-me {
             background: linear-gradient(to bottom right, #009688, #00695c);
             color: white;
             padding: 20px;
@@ -242,9 +242,9 @@
             margin-bottom: 20px;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
              border: 3px solid #008080;
-             position: relative;
+              position: relative;
         }
-      .left-column .about-me:hover {
+    .left-column .about-me:hover {
             transform: translateY(-4px);
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             }
@@ -277,11 +277,25 @@
              right: 10px;
               transform: rotateY(180deg);
           }
-
+        .left-column .qr-container {
+        text-align: center;
+         margin-bottom: 20px;
+       }
+       .left-column .qr-container img {
+          width: 120px;
+           border: 2px solid #00796b;
+          border-radius: 8px;
+           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .left-column .qr-container img:hover {
+            transform: translateY(-2px);
+                 box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body>
-    <header>
+   <header>
          <div class="header-left">
              <div class="image-container">
                 <img src="twoje-zdjecie.jpg" alt="Twoje zdjęcie">
@@ -333,7 +347,7 @@
                 <li>Obsługa elektronarzędzi</li>
                 <li>Znajomość zagadnień z elektrotechniki, automatyki oraz mechatroniki</li>
                  <li>Umiejętność programowania w języku Python</li>
-                <li>Umiejętność programowania mikrokontrolerów</li>
+                 <li>Umiejętność programowania mikrokontrolerów</li>
                  <li>Umiejętna i samodzielna organizacja pracy</li>
                 <li>Laureat Małopolskiego konkursu prac własnych technicznych</li>
                  <li>Prawo Jazdy kategoria B</li>
@@ -350,11 +364,12 @@
             <li>Książki fantasy</li>
              <li>Gry strategiczne</li>
              <li>Elektronika</li>
-              <li>Sylabus nauczania
-                <img src="qr1.jpg" alt="Kod QR" style="width: 100px; margin-left: 10px;">
-            </li>
            </ul>
-        </div>
+          <h2 style="border-bottom: 2px solid white;">Sylabus nauczania</h2>
+            <div class="qr-container">
+                <img src="qr1.jpg" alt="Kod QR">
+           </div>
+</div>
         <div class="right-column">
             <h2>Doświadczenie zawodowe</h2>
             <div class="experience">
