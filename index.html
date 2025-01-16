@@ -7,40 +7,83 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background: #e0f7fa;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1100px;
+            margin-top: 120px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background: #00796b;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
         .contact {
             display: flex;
             align-items: center;
+            justify-content: center;
         }
         .contact img {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             margin-right: 15px;
         }
         .contact span {
             display: inline-block;
             margin-right: 15px;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, color 0.3s;
         }
         .contact span:hover {
             transform: scale(1.2);
+            color: #f39c12;
+        }
+        .left-column {
+            padding: 20px;
+            background: #004d40;
+            color: white;
+        }
+        .right-column {
+            padding: 20px;
+        }
+        h2 {
+            color: #004d40;
+        }
+        .experience, .education {
+            background: #b2dfdb;
+            padding: 10px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Daniel Brzychczy</h1>
-            <div class="contact">
-                <img src="profile.jpg" alt="Zdjęcie Daniela Brzychczego">
-                <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
-                <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
-                <span><i class="fas fa-map-marker-alt"></i> os. Strusia 7/202, Kraków</span>
-            </div>
+        <h1>Daniel Brzychczy</h1>
+        <div class="contact">
+            <img src="profile.jpg" alt="Zdjęcie Daniela Brzychczego">
+            <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
+            <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
+            <span><i class="fas fa-map-marker-alt"></i> os. Strusia 7/202, Kraków</span>
         </div>
     </header>
-    <main>
-        <section>
+    <div class="container">
+        <div class="left-column">
             <h2>Dane personalne</h2>
             <ul>
                 <li>Telefon: (+48) 664 859 633</li>
@@ -48,47 +91,6 @@
                 <li>Adres: os. Strusia 7/202, 31-808 Kraków</li>
                 <li>Data urodzenia: 27.10.2002</li>
             </ul>
-        </section>
-        <section>
-            <h2>Kursy i szkolenia</h2>
-            <ul>
-                <li>Programowanie urządzeń przemysłowych</li>
-                <li>Mechanizmy drzwi i okien WIŚNIOWSKI</li>
-                <li>Uprawnienia na wózek widłowy</li>
-                <li>Projektowanie i symulacja stanowisk w K-Rose</li>
-                <li>Wonderware InTouch 2014 R2</li>
-                <li>Obsługa robotów EPSON w RC+</li>
-                <li>Diagnostyka serwonapędów ELAU - PacDrive M</li>
-                <li>Sterowniki PLC Astraada One</li>
-                <li>Przemysł 4.0 - Foundation</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Doświadczenie zawodowe</h2>
-            <ul>
-                <li>Revolmatic Kraków (07.2022 – 11.2022, 07.2023 – 01.2024) - Testowanie, uruchamianie i montaż systemów mechatronicznych, diagnostyka i konserwacja.</li>
-                <li>Zbita Szybka Kraków (05.2022 – 07.2022) - Naprawa elektroniki Apple, testowanie sprzętu, kontakt z klientem.</li>
-                <li>PILS Kraków (06.2021 – 09.2021) - Montaż i serwis zautomatyzowanych bram i szlabanów.</li>
-                <li>BWS Stagehands (07.2020 – 09.2020) - Montaż i demontaż konstrukcji scenicznych, obsługa sprzętu.</li>
-                <li>Home&You (07.2019 – 09.2019) - Aranżacja przestrzeni, obsługa klienta, obsługa kasy.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Wykształcenie</h2>
-            <ul>
-                <li>Technikum Komunikacyjne nr 25 w Krakowie (2018-2022) - Technik mechatronik.</li>
-                <li>Akademia Górniczo-Hutnicza w Krakowie (2022 – nadal) - Inżynier Technologii Przemysłu 4.0.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Języki</h2>
-            <ul>
-                <li>Angielski - B2</li>
-                <li>Niemiecki - A1</li>
-                <li>Włoski - A1</li>
-            </ul>
-        </section>
-        <section>
             <h2>Zainteresowania</h2>
             <ul>
                 <li>Sporty siłowe</li>
@@ -98,8 +100,32 @@
                 <li>Gry strategiczne</li>
                 <li>Elektronika</li>
             </ul>
-        </section>
-    </main>
+        </div>
+        <div class="right-column">
+            <h2>Doświadczenie zawodowe</h2>
+            <div class="experience">
+                <h3>Revolmatic Kraków</h3>
+                <p><strong>Lipiec 2022 – Listopad 2022, Lipiec 2023 – Styczeń 2024</strong></p>
+                <p>Testowanie, uruchamianie i montaż systemów mechatronicznych. Diagnostyka i konserwacja.</p>
+            </div>
+            <div class="experience">
+                <h3>Zbita Szybka Kraków</h3>
+                <p><strong>Maj 2022 – Lipiec 2022</strong></p>
+                <p>Naprawa elektroniki Apple, testowanie sprzętu, kontakt z klientem.</p>
+            </div>
+            <h2>Wykształcenie</h2>
+            <div class="education">
+                <h3>Technikum Komunikacyjne nr 25 w Krakowie</h3>
+                <p><strong>2018-2022</strong></p>
+                <p>Specjalizacja: Technik mechatronik.</p>
+            </div>
+            <div class="education">
+                <h3>Akademia Górniczo-Hutnicza w Krakowie</h3>
+                <p><strong>2022 – nadal</strong></p>
+                <p>Inżynier Technologii Przemysłu 4.0.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 
