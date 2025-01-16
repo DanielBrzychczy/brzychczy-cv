@@ -60,3 +60,28 @@ ul li {
     border-left: 5px solid #333;
 }
 
+.box {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid #333;
+    background: #fff;
+}
+
+.experience, .education {
+    background: #e0f7fa;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.experience p, .education p {
+    margin: 5px 0;
+}
+
+.date {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
