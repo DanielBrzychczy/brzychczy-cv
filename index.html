@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel Brzychczy - CV</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
     <style>
         body {
             display: flex;
@@ -182,34 +183,33 @@
             transform: translateY(-4px);
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
         }
-
-        .languages .language-item {
-            display: flex;
-            align-items: center;
-             padding: 8px;
-            border-radius: 5px;
-             background-color: rgba(255, 255, 255, 0.8);
-             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-             transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-        }
+         .languages .language-item {
+                display: flex;
+                align-items: center;
+                padding: 8px;
+                border-radius: 5px;
+                background-color: rgba(255, 255, 255, 0.8);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            }
+          .languages .language-item span.flag-icon {
+               margin-right: 10px;
+            }
 
        .languages .language-item:hover {
             transform: translateX(5px);
             background-color: rgba(255, 255, 255, 1);
         }
 
-         .languages .language-item i {
-              margin-right: 10px;
-               font-size: 1.2em;
-         }
+
         .experience, .education {
             background: #b2dfdb;
             padding: 15px;
             margin-bottom: 20px;
             position: relative;
             border: 2px solid #00796b;
-            border-radius: 8px;
-               transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+               border-radius: 8px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
           .experience:hover, .education:hover {
               transform: translateY(-4px);
@@ -279,16 +279,36 @@
             <div class="experience">
                 <h3>Revolmatic Kraków</h3>
                 <span class="date">Lipiec 2022 – Styczeń 2024</span>
-                <p>• Testowanie systemów mechatronicznych</p>
-                <p>• Uruchamianie i montaż systemów</p>
-                <p>• Diagnostyka i konserwacja</p>
+                   <p>• Testowanie systemów mechatronicznych</p>
+                    <p>• Uruchamianie systemów mechatronicznych</p>
+                    <p>• Montowanie systemów mechatronicznych</p>
+                    <p>• Wykonywanie prac serwisowych, obejmujących naprawy,
+                    wymiany komponentów i konserwację systemów
+                    mechatronicznych</p>
+                    <p>• Wykonywanie precyzyjnych pomiarów elektrycznych w celu
+                    oceny i monitorowania parametrów</p>
+                    <p>• Analiza wyników pomiarów w celu zapewnienia zgodności z
+                    wymaganiami technicznymi</p>
             </div>
             <div class="experience">
                 <h3>Zbita Szybka Kraków</h3>
                 <span class="date">Maj 2022 – Lipiec 2022</span>
-                <p>• Diagnozowanie i naprawa elektroniki Apple</p>
-                <p>• Wymiana podzespołów, ekranów i baterii</p>
-                <p>• Testowanie sprzętu</p>
+                    <p>• Diagnozowanie i naprawa usterek elektroniki użytkowej firmy
+                    Apple, w tym wymiana uszkodzonych podzespołów, ekranów i baterii</p>
+                    <p>• Przeprowadzanie testów wydajności i diagnostyki, aby
+                    zidentyfikować problemy z oprogramowaniem i sprzętem</p>
+                    <p>• Kontakt z klientem w celu uzyskania informacji na temat usterek,
+                    omówienia diagnozy i przedstawienia kosztów naprawy</p>
+            </div>
+              <div class="experience">
+                <h3>PILS Kraków</h3>
+                <span class="date">Czerwiec 2021 – Wrzesień 2021</span>
+                <p>• Profesjonalne montowanie zautomatyzowanych bram i szlabanów
+                zgodnie z wytycznymi technicznymi</p>
+                 <p>• Przeprowadzanie kompleksowych testów funkcjonalności, w tym
+                 ocena zdolności do otwierania, zamykania i detekcji ruchu</p>
+                <p>• Wykonywanie regularnych prac serwisowych, obejmujących
+                 diagnostykę, naprawy i konserwację</p>
             </div>
             <h2>Wykształcenie</h2>
             <div class="education">
@@ -302,18 +322,18 @@
                 <p>Inżynier Technologii Przemysłu 4.0.</p>
             </div>
             <h2>Języki</h2>
-            <div class="languages">
+              <div class="languages">
                 <div class="language-item">
-                    <i class="fas fa-flag pl"></i> Polski – Ojczysty
-                 </div>
-                 <div class="language-item">
-                    <i class="fas fa-flag us"></i> Angielski – B2
-                 </div>
-                 <div class="language-item">
-                    <i class="fas fa-flag de"></i> Niemiecki – A1
+                     <span class="flag-icon flag-icon-pl"></span> Polski – Ojczysty
                 </div>
+                <div class="language-item">
+                     <span class="flag-icon flag-icon-gb"></span> Angielski – B2
+                 </div>
                  <div class="language-item">
-                      <i class="fas fa-flag it"></i> Włoski – A1
+                    <span class="flag-icon flag-icon-de"></span> Niemiecki – A1
+                </div>
+                  <div class="language-item">
+                      <span class="flag-icon flag-icon-it"></span> Włoski – A1
                  </div>
             </div>
         </div>
