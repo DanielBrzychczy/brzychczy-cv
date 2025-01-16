@@ -22,11 +22,11 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-             max-width: 1200px;
+            max-width: 1200px;
             margin-top: 120px;
             background: white;
             padding: 30px;
-             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
               transition: box-shadow 0.3s ease-in-out;
         }
@@ -83,12 +83,12 @@
             object-fit: cover;
          }
         .contact {
-            display: flex;
+             display: flex;
             flex-direction: column;
             align-items: flex-end;
             margin-top: 10px;
             transition: transform 0.3s ease-in-out;
-            padding-right: 20px; /* Dodane padding-right */
+            padding-right: 20px;
          }
            .contact:hover {
                  transform: translateY(-2px);
@@ -106,10 +106,9 @@
             transform: scale(1.1);
              color: #fdd835;
              }
-        .contact span i {
-             margin-left: 10px;
-             margin-right: 5px; /* Added margin-right for spacing */
-        }
+         .contact span i {
+             margin-left: 5px; /* Removed margin-right */
+         }
         .left-column {
              padding: 25px;
              background: #00695c;
@@ -174,34 +173,6 @@
             font-size: 0.9em;
             color: #555;
         }
-        footer {
-            position: relative; /* Changed from fixed to relative */
-            width: 100%;
-            left: 0;
-           background: #008080;
-           padding: 10px 20px;
-           color: white;
-           box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-           z-index: 1000;
-           text-align: center;
-           display: flex;
-           justify-content: center;
-            align-items: center;
-           transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-            opacity: 0;
-           transform: translateY(20px);
-           transition: opacity 0.5s ease, transform 0.5s ease;
-         }
-
-         footer.visible {
-             opacity: 1;
-             transform: translateY(0);
-        }
-
-         footer:hover {
-                background-color: #00a693;
-               transform: translateY(-2px);
-            }
     </style>
 </head>
 <body>
@@ -287,22 +258,5 @@
             </div>
         </div>
     </div>
-    <footer>
-        <p>© 2024 Daniel Brzychczy. All rights reserved.</p>
-    </footer>
-      <script>
-        const footer = document.querySelector('footer');
-
-        function checkFooterVisibility() {
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                footer.classList.add('visible');
-            } else {
-                footer.classList.remove('visible');
-            }
-        }
-
-        window.addEventListener('scroll', checkFooterVisibility);
-        window.addEventListener('load', checkFooterVisibility);
-    </script>
 </body>
 </html>
