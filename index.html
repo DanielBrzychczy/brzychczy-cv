@@ -233,7 +233,7 @@
             font-size: 0.9em;
             color: #555;
         }
-     .left-column .about-me {
+    .left-column .about-me {
             background: linear-gradient(to bottom right, #009688, #00695c);
             color: white;
             padding: 20px;
@@ -242,8 +242,9 @@
             margin-bottom: 20px;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
              border: 3px solid #008080;
+             position: relative;
         }
-     .left-column .about-me:hover {
+      .left-column .about-me:hover {
             transform: translateY(-4px);
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             }
@@ -258,10 +259,29 @@
               line-height: 1.6;
             margin: 10px 0;
         }
+        .left-column .about-me::before,
+        .left-column .about-me::after {
+            content: '\f0c0';
+              font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+             position: absolute;
+             top: 10px;
+             font-size: 25px;
+              color: rgba(255, 255, 255, 0.5);
+        }
+
+        .left-column .about-me::before {
+            left: 10px;
+        }
+          .left-column .about-me::after {
+             right: 10px;
+              transform: rotateY(180deg);
+          }
+
     </style>
 </head>
 <body>
-   <header>
+    <header>
          <div class="header-left">
              <div class="image-container">
                 <img src="twoje-zdjecie.jpg" alt="Twoje zdjęcie">
@@ -313,7 +333,7 @@
                 <li>Obsługa elektronarzędzi</li>
                 <li>Znajomość zagadnień z elektrotechniki, automatyki oraz mechatroniki</li>
                  <li>Umiejętność programowania w języku Python</li>
-                 <li>Umiejętność programowania mikrokontrolerów</li>
+                <li>Umiejętność programowania mikrokontrolerów</li>
                  <li>Umiejętna i samodzielna organizacja pracy</li>
                 <li>Laureat Małopolskiego konkursu prac własnych technicznych</li>
                  <li>Prawo Jazdy kategoria B</li>
@@ -330,6 +350,9 @@
             <li>Książki fantasy</li>
              <li>Gry strategiczne</li>
              <li>Elektronika</li>
+              <li>Sylabus nauczania
+                <img src="qr1.jpg" alt="Kod QR" style="width: 100px; margin-left: 10px;">
+            </li>
            </ul>
         </div>
         <div class="right-column">
