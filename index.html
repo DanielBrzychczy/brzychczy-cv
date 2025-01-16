@@ -147,15 +147,17 @@
             border-bottom: 2px solid white;
             padding-bottom: 5px;
          }
-         .left-column ul{
+        .left-column ul li {
+            margin-bottom: 15px;
+             transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+            position: relative;
+             padding-left: 15px;
             list-style: none;
-         }
-         .left-column ul li {
-               margin-bottom: 15px;
-                transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-                position: relative;
-                padding-left: 15px;
-            }
+        }
+       .left-column ul li ul li {
+           margin-bottom: 10px;
+            padding-left: 30px;
+        }
              .left-column ul li:hover {
                 transform: translateX(5px);
                  color: #b2dfdb;
@@ -245,17 +247,32 @@
     <div class="container">
         <div class="left-column">
               <h2 style="border-bottom: 2px solid white;">Kursy i szkolenia</h2>
-            <ul>
-                <li>Programowanie urządzeń przemysłowych</li>
-                <li>Mechanizmy drzwi i okien WIŚNIOWSKI</li>
-                <li>Uprawnienia na wózek widłowy</li>
-                <li>Projektowanie i symulacja stanowisk w K-Rose</li>
-                <li>Wonderware InTouch 2014 R2</li>
-                <li>Obsługa robotów EPSON w RC+</li>
-                <li>Diagnostyka serwonapędów ELAU - PacDrive M</li>
-                <li>Sterowniki PLC Astraada One</li>
-                <li>Przemysł 4.0 - Foundation</li>
-            </ul>
+                <ul>
+                    <li><strong>Centrum Kształcenia Zawodowego:</strong>
+                        <ul>
+                            <li>Programowanie urządzeń przemysłowych</li>
+                        </ul>
+                    </li>
+                <li><strong>ASTOR:</strong>
+                    <ul>
+                        <li>Projektowanie i symulacja stanowisk w K-Rose</li>
+                        <li>Wonderware InTouch 2014 R2</li>
+                        <li>Obsługa robotów EPSON w RC+</li>
+                        <li>Diagnostyka serwonapędów ELAU - PacDrive M</li>
+                        <li>Sterowniki PLC Astraada One</li>
+                        <li>Przemysł 4.0 - Foundation</li>
+                    </ul>
+                </li>
+                <li><strong>Programowanie:</strong>
+                    <ul>
+                        <li>Data Manipulation with pandas</li>
+                        <li>Introduction to Data Visualization with Seaborn</li>
+                        <li>MATLAB Onramp</li>
+                    </ul>
+                </li>
+                   <li>Mechanizmy drzwi i okien WIŚNIOWSKI</li>
+                    <li>Uprawnienia na wózek widłowy</li>
+                </ul>
              <h2 style="border-bottom: 2px solid white;">Umiejętności i atuty</h2>
             <ul>
                 <li>Znajomość mechatroniki i automatyki</li>
@@ -321,9 +338,9 @@
         <p>Specjalizacja: <b>Technik mechatronik</b>.</p>
     </div>
     <div class="education">
-         <h3>Akademia Górniczo-Hutnicza w Krakowie</h3>
+        <h3>Akademia Górniczo-Hutnicza w Krakowie</h3>
         <span class="date">2022 – nadal</span>
-        <p>Specjalizacja: <u>Inżynier Technologii Przemysłu 4.0</u>.</p>
+        <p>Specjalizacja: <b>Inżynier Technologii Przemysłu 4.0</b>.</p>
     </div>
      <h2>Języki</h2>
     <div class="languages">
