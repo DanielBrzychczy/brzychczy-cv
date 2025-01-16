@@ -83,14 +83,16 @@
             object-fit: cover;
          }
         .contact {
-             display: flex;
+            display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Wyrównanie do lewej */
+            align-items: flex-start;
             margin-top: 10px;
             transition: transform 0.3s ease-in-out;
-             padding-right: 0px; /* Usunięcie paddingu */
-             margin-left: 400px; /* Margines z lewej */
+            padding-right: 0;
+            position: relative;
+            left: 40px; /* Przesunięcie o 4 cm w prawo */
         }
+
            .contact:hover {
                  transform: translateY(-2px);
             }
@@ -99,7 +101,7 @@
             align-items: center;
             margin: 5px 0;
             transition: transform 0.3s ease-in-out, color 0.3s;
-            text-align: left;  /* wyrównanie tekstu do lewej */
+            text-align: left;
            transition:  color 0.3s ease-in-out;
            }
          .contact span:hover {
@@ -107,12 +109,12 @@
              color: #fdd835;
              }
        .contact span i {
-            margin-right: 10px; /* Odstęp między ikoną a tekstem */
+            margin-right: 10px;
         }
         .contact span::before {
               content: '';
                 display: inline-block;
-               width: 20px; /* Szerokość "spacji" */
+               width: 20px;
         }
         .left-column {
              padding: 25px;
