@@ -150,13 +150,21 @@
             list-style: none;
          }
          .left-column ul li {
-               margin-bottom: 10px;
+               margin-bottom: 15px;
                 transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+                position: relative;
+                padding-left: 15px;
             }
              .left-column ul li:hover {
                 transform: translateX(5px);
                  color: #b2dfdb;
              }
+        .left-column ul li::before {
+                content: '\2022';
+                color: white;
+                position: absolute;
+                left: 0;
+            }
         .experience, .education, .languages {
             background: #b2dfdb;
             padding: 15px;
@@ -221,7 +229,7 @@
             </ul>
              <h2 style="border-bottom: 2px solid white;">Zainteresowania</h2>
             <ul>
-                <li>Sporty siłowe</li>
+                 <li>Sporty siłowe</li>
                 <li>Podróże rowerowe</li>
                 <li>Historia</li>
                 <li>Książki fantasy</li>
