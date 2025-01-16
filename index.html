@@ -48,6 +48,7 @@
              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+           flex-direction: column;
         }
         header:hover {
                 background-color: #00a693;
@@ -56,6 +57,7 @@
         header h1 {
               font-size: 2.5em;
                 transition: color 0.3s ease-in-out;
+           margin-bottom: 0; /* Dodane, aby zlikwidować margines dolny */
         }
         header:hover h1 {
                 color: #f0f0f0;
@@ -233,69 +235,76 @@
             font-size: 0.9em;
             color: #555;
         }
-         footer {
+    header .header-description {
         width: 100%;
         display: flex;
         justify-content: center;
-        margin-top: 20px;
+        padding: 0px 20px;
     }
-    footer table {
-        width: 80%;
+    header .header-description table {
+        width: 70%;
         border-collapse: collapse;
-        border: 2px solid #00796b;
-        padding: 20px;
+        border: 2px solid #b2dfdb;
+        padding: 10px;
         text-align: center;
-        background: #b2dfdb;
-         position: relative;
+         background: rgba(255, 255, 255, 0.2);
+        position: relative;
          border-radius: 8px;
-         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
-      footer table:hover {
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-           transform: translateY(-4px);
-        }
-   footer table::before,
-    footer table::after {
+       header .header-description table:hover {
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+       transform: translateY(-2px);
+}
+   header .header-description table::before,
+    header .header-description table::after {
         content: '';
         position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 20px;
+       top: 0;
+      bottom: 0;
+       width: 20px;
         background-image: url('winorosl.png'); /* ścieżka do Twojej winorośli */
         background-size: contain;
         background-repeat: repeat-y;
     }
 
-    footer table::before {
+    header .header-description table::before {
         left: -15px;
     }
 
-     footer table::after {
+    header .header-description table::after {
         right: -15px;
-           transform: scaleX(-1);
+        transform: scaleX(-1);
     }
-     footer table td {
-          padding: 15px;
-            font-size: 1.1em;
-            line-height: 1.6;
-     }
+  header .header-description table td {
+          padding: 10px;
+           font-size: 1em;
+           line-height: 1.4;
+      }
     </style>
 </head>
 <body>
-    <header>
-         <div class="header-left">
-             <div class="image-container">
-                <img src="twoje-zdjecie.jpg" alt="Twoje zdjęcie">
-            </div>
-             <h1>Daniel Brzychczy</h1>
-         </div>
-
-        <div class="contact">
-            <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
-            <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
-            <span><i class="fas fa-map-marker-alt"></i> os. Strusia 7/202, Kraków</span>
-        </div>
-    </header>
+ <header>
+    <div class="header-left">
+      <div class="image-container">
+        <img src="twoje-zdjecie.jpg" alt="Twoje zdjęcie">
+      </div>
+         <h1>Daniel Brzychczy</h1>
+    </div>
+     <div class="header-description">
+            <table>
+                <tr>
+                    <td>
+                        Jestem studentem Technologii Przemysłu 4.0, z pasją do nowoczesnych i innowacyjnych rozwiązań. Interesuję się mechatroniką oraz elektroniką, co stale rozwijam zarówno w ramach studiów, jak i projektów własnych. Jestem otwarty na zdobywanie nowych umiejętności i szybko się uczę, co sprawia, że z łatwością adaptuję się do nowych zadań i wymagań. Nawet jeśli nie mam doświadczenia w konkretnej dziedzinie, szybko nadrabiam braki, aby w pełni zrozumieć i realizować powierzone mi obowiązki. W wolnym czasie podróżuję, zgłębiając historię bo uważam, że pomaga ona zrozumieć otaczający nas świat. Dużą radość sprawiają mi również wyjazdy rowerowe, oraz siłownia
+                    </td>
+                </tr>
+            </table>
+       </div>
+    <div class="contact">
+      <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
+      <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
+      <span><i class="fas fa-map-marker-alt"></i> os. Strusia 7/202, Kraków</span>
+    </div>
+</header>
     <div class="container">
         <div class="left-column">
              <h2 style="border-bottom: 2px solid white;">Kursy i szkolenia</h2>
@@ -415,14 +424,5 @@
     </div>
 </div>
 </div>
-    <footer>
-        <table>
-            <tr>
-                <td>
-                    Jestem studentem Technologii Przemysłu 4.0, z pasją do nowoczesnych i innowacyjnych rozwiązań. Interesuję się mechatroniką oraz elektroniką, co stale rozwijam zarówno w ramach studiów, jak i projektów własnych. Jestem otwarty na zdobywanie nowych umiejętności i szybko się uczę, co sprawia, że z łatwością adaptuję się do nowych zadań i wymagań. Nawet jeśli nie mam doświadczenia w konkretnej dziedzinie, szybko nadrabiam braki, aby w pełni zrozumieć i realizować powierzone mi obowiązki. W wolnym czasie podróżuję, zgłębiając historię bo uważam, że pomaga ona zrozumieć otaczający nas świat. Dużą radość sprawiają mi również wyjazdy rowerowe, oraz siłownia
-                </td>
-            </tr>
-        </table>
-    </footer>
 </body>
 </html>
