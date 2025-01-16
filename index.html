@@ -165,7 +165,44 @@
                 position: absolute;
                 left: 0;
             }
-        .experience, .education, .languages {
+         .languages {
+            background: #b2dfdb;
+            padding: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            border: 2px solid #00796b;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+             display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .languages:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .languages .language-item {
+            display: flex;
+            align-items: center;
+             padding: 8px;
+            border-radius: 5px;
+             background-color: rgba(255, 255, 255, 0.8);
+             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+             transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+       .languages .language-item:hover {
+            transform: translateX(5px);
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+         .languages .language-item i {
+              margin-right: 10px;
+               font-size: 1.2em;
+         }
+        .experience, .education {
             background: #b2dfdb;
             padding: 15px;
             margin-bottom: 20px;
@@ -174,11 +211,11 @@
             border-radius: 8px;
                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
-          .experience:hover, .education:hover, .languages:hover {
+          .experience:hover, .education:hover {
               transform: translateY(-4px);
                 box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
             }
-        .experience p, .education p, .languages p {
+        .experience p, .education p{
             margin: 5px 0;
         }
         .date {
@@ -266,10 +303,18 @@
             </div>
             <h2>Języki</h2>
             <div class="languages">
-                 <p>Polski – Ojczysty</p>
-                 <p>Angielski – B2</p>
-                 <p>Niemiecki – A1</p>
-                 <p>Włoski – A1</p>
+                <div class="language-item">
+                    <i class="fas fa-flag pl"></i> Polski – Ojczysty
+                 </div>
+                 <div class="language-item">
+                    <i class="fas fa-flag us"></i> Angielski – B2
+                 </div>
+                 <div class="language-item">
+                    <i class="fas fa-flag de"></i> Niemiecki – A1
+                </div>
+                 <div class="language-item">
+                      <i class="fas fa-flag it"></i> Włoski – A1
+                 </div>
             </div>
         </div>
     </div>
