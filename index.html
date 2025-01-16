@@ -233,6 +233,52 @@
             font-size: 0.9em;
             color: #555;
         }
+         footer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    footer table {
+        width: 80%;
+        border-collapse: collapse;
+        border: 2px solid #00796b;
+        padding: 20px;
+        text-align: center;
+        background: #b2dfdb;
+         position: relative;
+         border-radius: 8px;
+         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+      footer table:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+           transform: translateY(-4px);
+        }
+   footer table::before,
+    footer table::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 20px;
+        background-image: url('winorosl.png'); /* ścieżka do Twojej winorośli */
+        background-size: contain;
+        background-repeat: repeat-y;
+    }
+
+    footer table::before {
+        left: -15px;
+    }
+
+     footer table::after {
+        right: -15px;
+           transform: scaleX(-1);
+    }
+     footer table td {
+          padding: 15px;
+            font-size: 1.1em;
+            line-height: 1.6;
+     }
     </style>
 </head>
 <body>
@@ -278,17 +324,18 @@
                 </li>
               </ul>
             <h2 style="border-bottom: 2px solid white;">Zdolności manualne</h2>
-            <ul>
-                <li>Obsługa elektronarzędzi</li>
+             <ul>
+                 <li>Obsługa elektronarzędzi</li>
                 <li>Znajomość zagadnień z elektrotechniki, automatyki oraz mechatroniki</li>
-                <li>Umiejętność programowania w języku Python</li>
-                 <li>Umiejętna i samodzielna organizacja pracy</li>
+                 <li>Umiejętność programowania w języku Python</li>
+                <li>Umiejętność programowania mikrokontrolerów</li>
+                <li>Umiejętna i samodzielna organizacja pracy</li>
                 <li>Laureat Małopolskiego konkursu prac własnych technicznych</li>
                  <li>Prawo Jazdy kategoria B</li>
                  <li>Uczciwość i sumienność</li>
-                <li>Brak nałogów</li>
-                <li>Badania sanitarno-epidemiologiczne</li>
-                <li>Uprawnienia na wózek widłowy</li>
+               <li>Brak nałogów</li>
+                 <li>Badania sanitarno-epidemiologiczne</li>
+                 <li>Uprawnienia na wózek widłowy</li>
              </ul>
             <h2 style="border-bottom: 2px solid white;">Zainteresowania</h2>
            <ul>
@@ -368,5 +415,14 @@
     </div>
 </div>
 </div>
+    <footer>
+        <table>
+            <tr>
+                <td>
+                    Jestem studentem Technologii Przemysłu 4.0, z pasją do nowoczesnych i innowacyjnych rozwiązań. Interesuję się mechatroniką oraz elektroniką, co stale rozwijam zarówno w ramach studiów, jak i projektów własnych. Jestem otwarty na zdobywanie nowych umiejętności i szybko się uczę, co sprawia, że z łatwością adaptuję się do nowych zadań i wymagań. Nawet jeśli nie mam doświadczenia w konkretnej dziedzinie, szybko nadrabiam braki, aby w pełni zrozumieć i realizować powierzone mi obowiązki. W wolnym czasie podróżuję, zgłębiając historię bo uważam, że pomaga ona zrozumieć otaczający nas świat. Dużą radość sprawiają mi również wyjazdy rowerowe, oraz siłownia
+                </td>
+            </tr>
+        </table>
+    </footer>
 </body>
 </html>
