@@ -11,8 +11,8 @@
             justify-content: center;
             background: #e0f7fa;
             margin: 0;
-            font-family: 'Arial', sans-serif; /* Nowa czcionka */
-            overflow-x: hidden; /* Zapobiega poziomemu scrollowaniu */
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
             transition: background-color 0.3s ease-in-out;
         }
           body:hover {
@@ -22,19 +22,19 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-             max-width: 1200px; /* Zwiększona szerokość */
+             max-width: 1200px;
             margin-top: 120px;
             background: white;
-            padding: 30px; /* Większy padding */
+            padding: 30px;
              box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            border-radius: 10px; /* Zaokrąglone rogi */
+            border-radius: 10px;
               transition: box-shadow 0.3s ease-in-out;
         }
           .container:hover {
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
          header {
-                background: #008080; /* Morska zieleń */
+                background: #008080;
             color: white;
             padding: 20px;
             position: fixed;
@@ -42,22 +42,22 @@
             top: 0;
             left: 0;
             display: flex;
-            justify-content: space-between; /* Rozłożenie elementów */
-            align-items: center; /* Wyśrodkowanie w pionie */
-             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Zwiększony cień */
+            justify-content: space-between;
+            align-items: center;
+             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
         header:hover {
-                background-color: #00a693; /* Jaśniejszy morski */
+                background-color: #00a693;
             transform: translateY(-2px);
         }
         header h1 {
               font-size: 2.5em;
-                transition: color 0.3s ease-in-out; /* Animacja koloru */
+                transition: color 0.3s ease-in-out;
         }
         header:hover h1 {
-                color: #f0f0f0; /* Jaśniejszy kolor tekstu */
+                color: #f0f0f0;
             }
 
          .header-left {
@@ -71,11 +71,11 @@
                 overflow: hidden;
                 margin-right: 20px;
                 border: 3px solid #b2dfdb;
-                 transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animacja zdjęcia */
+                 transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
                 }
             .header-left .image-container:hover {
                     transform: scale(1.1);
-                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Cień przy najechaniu */
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
                  }
         .header-left .image-container img {
             width: 100%;
@@ -88,27 +88,31 @@
             align-items: flex-end;
             margin-top: 10px;
             transition: transform 0.3s ease-in-out;
+            padding-right: 20px; /* Dodane padding-right */
          }
-            .contact:hover {
+           .contact:hover {
                  transform: translateY(-2px);
             }
         .contact span {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Align text and icons to the right */
             margin: 5px 0;
             transition: transform 0.3s ease-in-out, color 0.3s;
             text-align: right;
-                transition:  color 0.3s ease-in-out; /* Dodanie animacji koloru */
-        }
+           transition:  color 0.3s ease-in-out;
+           }
          .contact span:hover {
-                transform: scale(1.1);
+            transform: scale(1.1);
              color: #fdd835;
              }
         .contact span i {
-            margin-left: 5px;
-         }
+             margin-left: 10px;
+             margin-right: 5px; /* Added margin-right for spacing */
+        }
         .left-column {
              padding: 25px;
-             background: #00695c; /* Ciemniejszy morski */
+             background: #00695c;
              color: white;
               border: 3px solid #008080;
                border-radius: 10px;
@@ -140,7 +144,7 @@
             list-style: none;
          }
          .left-column ul li {
-               margin-bottom: 10px; /* Dodanie marginesu między elementami listy */
+               margin-bottom: 10px;
                 transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
             }
              .left-column ul li:hover {
@@ -149,11 +153,11 @@
              }
         .experience, .education, .languages {
             background: #b2dfdb;
-            padding: 15px; /* Większy padding */
-            margin-bottom: 20px; /* Większy margin */
+            padding: 15px;
+            margin-bottom: 20px;
             position: relative;
             border: 2px solid #00796b;
-            border-radius: 8px; /* Zaokrąglone rogi */
+            border-radius: 8px;
                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
           .experience:hover, .education:hover, .languages:hover {
@@ -171,21 +175,29 @@
             color: #555;
         }
         footer {
-            position: fixed;
+            position: relative; /* Changed from fixed to relative */
             width: 100%;
             left: 0;
-            bottom: 0;
-            background: #008080;
-            padding: 10px 20px;
-            color: white;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            text-align: center;
-            display: flex;
-            justify-content: center;
+           background: #008080;
+           padding: 10px 20px;
+           color: white;
+           box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+           z-index: 1000;
+           text-align: center;
+           display: flex;
+           justify-content: center;
             align-items: center;
            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            opacity: 0;
+           transform: translateY(20px);
+           transition: opacity 0.5s ease, transform 0.5s ease;
+         }
+
+         footer.visible {
+             opacity: 1;
+             transform: translateY(0);
         }
+
          footer:hover {
                 background-color: #00a693;
                transform: translateY(-2px);
@@ -268,17 +280,29 @@
             </div>
             <h2>Języki</h2>
             <div class="languages">
-                <p>Angielski – B2</p>
-                <p>Niemiecki – A1</p>
-                <p>Włoski – A1</p>
-                <p>Polski – Ojczysty</p>
+                 <p>Polski – Ojczysty</p>
+                 <p>Angielski – B2</p>
+                 <p>Niemiecki – A1</p>
+                 <p>Włoski – A1</p>
             </div>
         </div>
     </div>
     <footer>
         <p>© 2024 Daniel Brzychczy. All rights reserved.</p>
     </footer>
+      <script>
+        const footer = document.querySelector('footer');
+
+        function checkFooterVisibility() {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', checkFooterVisibility);
+        window.addEventListener('load', checkFooterVisibility);
+    </script>
 </body>
 </html>
-
-
