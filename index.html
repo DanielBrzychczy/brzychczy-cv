@@ -45,15 +45,6 @@
             border-radius: 50%;
             margin-right: 15px;
         }
-        .contact span {
-            display: inline-block;
-            margin-right: 15px;
-            transition: transform 0.3s ease-in-out, color 0.3s;
-        }
-        .contact span:hover {
-            transform: scale(1.2);
-            color: #f39c12;
-        }
         .left-column {
             padding: 20px;
             background: #004d40;
@@ -69,6 +60,17 @@
             background: #b2dfdb;
             padding: 10px;
             margin-bottom: 10px;
+            position: relative;
+        }
+        .experience p, .education p {
+            margin: 5px 0;
+        }
+        .date {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 0.9em;
+            color: #555;
         }
     </style>
 </head>
@@ -84,12 +86,25 @@
     </header>
     <div class="container">
         <div class="left-column">
-            <h2>Dane personalne</h2>
+            <h2>Kursy i szkolenia</h2>
             <ul>
-                <li>Telefon: (+48) 664 859 633</li>
-                <li>Email: danielb2710@wp.pl</li>
-                <li>Adres: os. Strusia 7/202, 31-808 Kraków</li>
-                <li>Data urodzenia: 27.10.2002</li>
+                <li>Programowanie urządzeń przemysłowych</li>
+                <li>Mechanizmy drzwi i okien WIŚNIOWSKI</li>
+                <li>Uprawnienia na wózek widłowy</li>
+                <li>Projektowanie i symulacja stanowisk w K-Rose</li>
+                <li>Wonderware InTouch 2014 R2</li>
+                <li>Obsługa robotów EPSON w RC+</li>
+                <li>Diagnostyka serwonapędów ELAU - PacDrive M</li>
+                <li>Sterowniki PLC Astraada One</li>
+                <li>Przemysł 4.0 - Foundation</li>
+            </ul>
+            <h2>Umiejętności i atuty</h2>
+            <ul>
+                <li>Znajomość mechatroniki i automatyki</li>
+                <li>Umiejętność programowania w Python</li>
+                <li>Prawo jazdy kat. B</li>
+                <li>Obsługa elektronarzędzi</li>
+                <li>Badania sanitarno-epidemiologiczne</li>
             </ul>
             <h2>Zainteresowania</h2>
             <ul>
@@ -105,27 +120,32 @@
             <h2>Doświadczenie zawodowe</h2>
             <div class="experience">
                 <h3>Revolmatic Kraków</h3>
-                <p><strong>Lipiec 2022 – Listopad 2022, Lipiec 2023 – Styczeń 2024</strong></p>
-                <p>Testowanie, uruchamianie i montaż systemów mechatronicznych. Diagnostyka i konserwacja.</p>
+                <span class="date">Lipiec 2022 – Styczeń 2024</span>
+                <p>• Testowanie systemów mechatronicznych</p>
+                <p>• Uruchamianie i montaż systemów</p>
+                <p>• Diagnostyka i konserwacja</p>
             </div>
             <div class="experience">
                 <h3>Zbita Szybka Kraków</h3>
-                <p><strong>Maj 2022 – Lipiec 2022</strong></p>
-                <p>Naprawa elektroniki Apple, testowanie sprzętu, kontakt z klientem.</p>
+                <span class="date">Maj 2022 – Lipiec 2022</span>
+                <p>• Diagnozowanie i naprawa elektroniki Apple</p>
+                <p>• Wymiana podzespołów, ekranów i baterii</p>
+                <p>• Testowanie sprzętu</p>
             </div>
             <h2>Wykształcenie</h2>
             <div class="education">
                 <h3>Technikum Komunikacyjne nr 25 w Krakowie</h3>
-                <p><strong>2018-2022</strong></p>
+                <span class="date">2018-2022</span>
                 <p>Specjalizacja: Technik mechatronik.</p>
             </div>
             <div class="education">
                 <h3>Akademia Górniczo-Hutnicza w Krakowie</h3>
-                <p><strong>2022 – nadal</strong></p>
+                <span class="date">2022 – nadal</span>
                 <p>Inżynier Technologii Przemysłu 4.0.</p>
             </div>
         </div>
     </div>
 </body>
 </html>
+
 
