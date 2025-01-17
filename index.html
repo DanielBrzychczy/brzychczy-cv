@@ -66,22 +66,26 @@
             align-items: center;
         }
          .header-left .image-container {
-                width: 120px;
-                height: 120px;
+                width: 150px; /* Zwiększona szerokość okręgu */
+                height: 150px; /* Zwiększona wysokość okręgu */
                 border-radius: 50%;
                 overflow: hidden;
                 margin-right: 20px;
                 border: 3px solid #b2dfdb;
-                 transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                display: flex; /* Dodano flexbox */
+                justify-content: center; /* Wycentrowanie poziome */
+                align-items: center; /* Wycentrowanie pionowe */
                 }
             .header-left .image-container:hover {
                     transform: scale(1.1);
                     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
                  }
         .header-left .image-container img {
-            width: 100%;
+             width: 100%;
             height: auto;
             object-fit: cover;
+            object-position: center top;
          }
          .contact {
             display: flex;
