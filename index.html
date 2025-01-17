@@ -16,9 +16,9 @@
             overflow-x: hidden;
             transition: background-color 0.3s ease-in-out;
         }
-          body:hover {
-                background-color: #b2ebf2;
-            }
+        body:hover {
+            background-color: #b2ebf2;
+        }
         .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -31,7 +31,7 @@
             border-radius: 10px;
               transition: box-shadow 0.3s ease-in-out;
         }
-          .container:hover {
+        .container:hover {
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
          header {
@@ -378,21 +378,23 @@
                .contact span::before {
                    display: none;
                   }
-            .left-column, .right-column {
-                padding: 15px;
-            }
-            /* Zmniejszenie nagłówka na telefonie */
-            header {
-                padding: 10px;
-                font-size: 0.9em;
-            }
-            header h1 {
-                font-size: 1.8em;
-            }
+             header {
+                    padding: 10px;
+                    font-size: 0.9em;
+                }
+             header h1 {
+                font-size: 1.5em;
+                    margin-bottom: 5px;
+             }
               .header-left .image-container {
                     width: 80px;
                     height: 80px;
                 }
+           }
+         @media (max-width: 480px) {
+          header h1 {
+                font-size: 1.2em;
+             }
         }
     </style>
 </head>
@@ -478,13 +480,20 @@
             <h2><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
             <div class="experience">
                 <h3>Revolmatic Kraków</h3>
-                <span class="date">Lipiec 2022 – Styczeń 2024</span>
+                <span class="date">Lipiec 2022 – Listopad 2024</span>
                 <p>• Testowanie systemów mechatronicznych</p>
                 <p>• Uruchamianie systemów mechatronicznych</p>
                 <p>• Montowanie systemów mechatronicznych</p>
                 <p>• Wykonywanie prac serwisowych, obejmujących naprawy, wymiany komponentów i konserwację systemów mechatronicznych</p>
                 <p>• Wykonywanie precyzyjnych pomiarów elektrycznych w celu oceny i monitorowania parametrów</p>
                 <p>• Analiza wyników pomiarów w celu zapewnienia zgodności z wymaganiami technicznymi</p>
+            </div>
+              <div class="experience">
+                <h3>FrothStop Poland</h3>
+                <span class="date">Listopad 2024 – nadal</span>
+                 <p>• Projektowanie i testowanie systemów sterowania</p>
+                <p>• Konfiguracja komponentów elektronicznych i mechatronicznych</p>
+                <p>• Tworzenie dokumentacji technicznej</p>
             </div>
             <div class="experience">
                 <h3>Zbita Szybka Kraków</h3>
