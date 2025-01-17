@@ -292,6 +292,75 @@
             transform: translateY(-2px);
                  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
+          /* Dodane style dla ikon */
+        .left-column ul li i {
+            margin-right: 8px;
+            color: #b2dfdb; /* Kolor ikony */
+        }
+         .right-column h2 i {
+            margin-right: 8px;
+            color: #00796b; /* Kolor ikony */
+        }
+        .experience h3, .education h3 {
+               position: relative;
+               padding-left: 25px;
+            }
+          .experience h3::before, .education h3::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 5px;
+                font-size: 1.2em;
+            }
+        .experience h3::before{
+            font-family: "Font Awesome 6 Free";
+            content: '\f0b1';
+           font-weight: 900;
+            }
+          .education h3::before{
+            font-family: "Font Awesome 6 Free";
+            content: '\f19d';
+              font-weight: 900;
+            }
+        /* Responsywność */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            header{
+              flex-direction: column;
+              align-items: center;
+            }
+             header h1 {
+               margin-bottom: 10px;
+              }
+             .header-left {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                 margin-bottom: 20px;
+            }
+              .header-left .image-container {
+                 margin-right: 0;
+                margin-bottom: 10px;
+             }
+            .contact {
+               align-items: center;
+                  position: static;
+                  right: auto;
+               padding: 0;
+           }
+            .contact span {
+             text-align: center;
+              justify-content: center;
+                }
+               .contact span::before {
+                   display: none;
+                  }
+            .left-column, .right-column {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -317,61 +386,61 @@
                       Jestem studentem Technologii Przemysłu 4.0, z pasją do nowoczesnych i innowacyjnych rozwiązań. Interesuję się mechatroniką oraz elektroniką, co stale rozwijam zarówno w ramach studiów, jak i projektów własnych. Jestem otwarty na zdobywanie nowych umiejętności i szybko się uczę, co sprawia, że z łatwością adaptuję się do nowych zadań i wymagań. Nawet jeśli nie mam doświadczenia w konkretnej dziedzinie, szybko nadrabiam braki, aby w pełni zrozumieć i realizować powierzone mi obowiązki. W wolnym czasie podróżuję, zgłębiając historię bo uważam, że pomaga ona zrozumieć otaczający nas świat. Dużą radość sprawiają mi również wyjazdy rowerowe, oraz siłownia
                   </p>
             </div>
-             <h2 style="border-bottom: 2px solid white;">Kursy i szkolenia</h2>
+             <h2 style="border-bottom: 2px solid white;"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
                 <ul>
                     <li><strong>Centrum Kształcenia Zawodowego:</strong>
                         <ul>
-                            <li>Programowanie urządzeń przemysłowych</li>
+                            <li> <i class="fas fa-code"></i> Programowanie urządzeń przemysłowych</li>
                         </ul>
                     </li>
                      <li><strong>ASTOR:</strong>
                          <ul>
-                             <li>Projektowanie i symulacja stanowisk w K-Rose</li>
-                             <li>Wonderware InTouch 2014 R2</li>
-                             <li>Obsługa robotów EPSON w RC+</li>
-                            <li>Diagnostyka serwonapędów ELAU - PacDrive M</li>
-                            <li>Sterowniki PLC Astraada One</li>
-                            <li>Przemysł 4.0 - Foundation</li>
+                             <li> <i class="fas fa-project-diagram"></i> Projektowanie i symulacja stanowisk w K-Rose</li>
+                             <li> <i class="fas fa-desktop"></i> Wonderware InTouch 2014 R2</li>
+                             <li> <i class="fas fa-robot"></i> Obsługa robotów EPSON w RC+</li>
+                            <li> <i class="fas fa-cogs"></i> Diagnostyka serwonapędów ELAU - PacDrive M</li>
+                            <li> <i class="fas fa-microchip"></i> Sterowniki PLC Astraada One</li>
+                            <li> <i class="fas fa-industry"></i> Przemysł 4.0 - Foundation</li>
                         </ul>
                     </li>
                 <li><strong>Programowanie:</strong>
                     <ul>
-                        <li>Data Manipulation with pandas</li>
-                        <li>Introduction to Data Visualization with Seaborn</li>
-                        <li>MATLAB Onramp</li>
+                        <li><i class="fas fa-database"></i> Data Manipulation with pandas</li>
+                        <li><i class="fas fa-chart-line"></i> Introduction to Data Visualization with Seaborn</li>
+                        <li><i class="fas fa-laptop-code"></i> MATLAB Onramp</li>
                     </ul>
                 </li>
               </ul>
-            <h2 style="border-bottom: 2px solid white;">Zdolności manualne</h2>
+            <h2 style="border-bottom: 2px solid white;"><i class="fas fa-wrench"></i> Zdolności manualne</h2>
             <ul>
-                <li>Obsługa elektronarzędzi</li>
-                <li>Znajomość zagadnień z elektrotechniki, automatyki oraz mechatroniki</li>
-                 <li>Umiejętność programowania w języku Python</li>
-                 <li>Umiejętność programowania mikrokontrolerów</li>
-                 <li>Umiejętna i samodzielna organizacja pracy</li>
-                <li>Laureat Małopolskiego konkursu prac własnych technicznych</li>
-                 <li>Prawo Jazdy kategoria B</li>
-                 <li>Uczciwość i sumienność</li>
-                <li>Brak nałogów</li>
-                 <li>Badania sanitarno-epidemiologiczne</li>
-                 <li>Uprawnienia na wózek widłowy</li>
+                <li><i class="fas fa-tools"></i> Obsługa elektronarzędzi</li>
+                <li><i class="fas fa-bolt"></i> Znajomość zagadnień z elektrotechniki, automatyki oraz mechatroniki</li>
+                 <li><i class="fab fa-python"></i> Umiejętność programowania w języku Python</li>
+                 <li><i class="fas fa-microchip"></i> Umiejętność programowania mikrokontrolerów</li>
+                 <li><i class="fas fa-tasks"></i> Umiejętna i samodzielna organizacja pracy</li>
+                <li><i class="fas fa-trophy"></i> Laureat Małopolskiego konkursu prac własnych technicznych</li>
+                 <li><i class="fas fa-car"></i> Prawo Jazdy kategoria B</li>
+                 <li><i class="fas fa-check"></i> Uczciwość i sumienność</li>
+                <li><i class="fas fa-heart-broken"></i> Brak nałogów</li>
+                 <li><i class="fas fa-user-check"></i> Badania sanitarno-epidemiologiczne</li>
+                 <li><i class="fas fa-truck-loading"></i> Uprawnienia na wózek widłowy</li>
              </ul>
-            <h2 style="border-bottom: 2px solid white;">Zainteresowania</h2>
+            <h2 style="border-bottom: 2px solid white;"><i class="fas fa-heart"></i> Zainteresowania</h2>
            <ul>
-              <li>Sporty siłowe</li>
-             <li>Podróże rowerowe</li>
-              <li>Historia</li>
-            <li>Książki fantasy</li>
-             <li>Gry strategiczne</li>
-             <li>Elektronika</li>
+              <li><i class="fas fa-dumbbell"></i> Sporty siłowe</li>
+             <li><i class="fas fa-bicycle"></i> Podróże rowerowe</li>
+              <li><i class="fas fa-landmark"></i> Historia</li>
+            <li><i class="fas fa-book"></i> Książki fantasy</li>
+             <li><i class="fas fa-chess"></i> Gry strategiczne</li>
+             <li><i class="fas fa-plug"></i> Elektronika</li>
            </ul>
-            <h2 style="border-bottom: 2px solid white;">Sylabus nauczania</h2>
+            <h2 style="border-bottom: 2px solid white;"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
            <div class="qr-container">
                  <img src="qr1.jpg" alt="Kod QR">
             </div>
 </div>
         <div class="right-column">
-            <h2>Doświadczenie zawodowe</h2>
+            <h2><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
             <div class="experience">
                 <h3>Revolmatic Kraków</h3>
                 <span class="date">Lipiec 2022 – Styczeń 2024</span>
@@ -385,7 +454,7 @@
             <div class="experience">
                 <h3>Zbita Szybka Kraków</h3>
                 <span class="date">Maj 2022 – Lipiec 2022</span>
-                <p>• Diagnozowanie i naprawa usterek elektroniki użytkowej firmy Apple, w tym wymiana uszkodzonych podzespołów, ekranów i baterii</p>
+                 <p>• Diagnozowanie i naprawa usterek elektroniki użytkowej firmy Apple, w tym wymiana uszkodzonych podzespołów, ekranów i baterii</p>
                 <p>• Przeprowadzanie testów wydajności i diagnostyki, aby zidentyfikować problemy z oprogramowaniem i sprzętem</p>
                 <p>• Kontakt z klientem w celu uzyskania informacji na temat usterek, omówienia diagnozy i przedstawienia kosztów naprawy</p>
             </div>
@@ -406,11 +475,11 @@
         <div class="experience">
             <h3>Home&You</h3>
             <span class="date">Lipiec 2019 – Wrzesień 2019</span>
-            <p>• Umiejętne projektowanie i przygotowywanie aranżacji przestrzeni</p>
+             <p>• Umiejętne projektowanie i przygotowywanie aranżacji przestrzeni</p>
             <p>• Skuteczna i uprzejma komunikacja z klientami, dostarczanie wysokiej jakości obsługi w celu zaspokojenia ich potrzeb</p>
             <p>• Precyzyjna i zgodna z przepisami obsługa kasy fiskalnej.</p>
         </div>
-    <h2>Wykształcenie</h2>
+    <h2><i class="fas fa-university"></i> Wykształcenie</h2>
     <div class="education">
         <h3>Technikum Komunikacyjne nr 25 w Krakowie</h3>
         <span class="date">2018-2022</span>
@@ -421,7 +490,7 @@
         <span class="date">2022 – nadal</span>
         <p>Specjalizacja: <b>Inżynier Technologii Przemysłu 4.0</b>.</p>
     </div>
-     <h2>Języki</h2>
+     <h2><i class="fas fa-language"></i> Języki</h2>
     <div class="languages">
         <div class="language-item">
             <span class="flag-icon flag-icon-pl"></span> Polski – Ojczysty
