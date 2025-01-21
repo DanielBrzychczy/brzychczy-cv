@@ -405,15 +405,15 @@
             border: 1px solid #ccc;
             padding: 10px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1001;
-            display: none; /* Początkowo ukryte */
-              border-radius: 8px;
-              transform: translateX(10px); /* Przesunięcie w prawo o 10px */
+            z-index: 1002; /* Zwiększony z-index aby wyskakiwało na wierzch*/
+            display: none;
+            border-radius: 8px;
+             transform: translateX(10px);
 
         }
-       .certificate-popup embed{
-            width: 300px; /* Dostosuj szerokość */
-            height: 200px; /* Dostosuj wysokość */
+        .certificate-popup embed{
+            width: 300px;
+            height: 200px;
             display: block;
         }
 
