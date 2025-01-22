@@ -402,32 +402,44 @@
         }
 
          .certificate-popup {
-            position: absolute;
-            background: white;
-            border: 1px solid #ccc;
-            padding: 10px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 9999; /* Bardzo wysoki z-index */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
             display: none;
-            border-radius: 8px;
-            transform: translateX(10px); /* przesunięcie */
-        }
-        .certificate-popup embed{
-            width: 300px;
-            height: 200px;
+            justify-content: center;
+            align-items: center;
+         }
+         .certificate-popup embed{
+            width: 50%;
+            height: auto;
+            max-height: 80vh;
             display: block;
         }
 
         .left-column ul li .certificate-trigger {
             cursor: pointer;
-            position: relative;
-            z-index: 2;
+             position: relative; /* Usunięto z-index */
+            display: inline-block; /* Zapewnia umieszczenie obok tekstu */
+            margin-left: 10px;
         }
-       .left-column ul li .certificate-trigger:hover .certificate-popup {
-            display: block;
-                top: 100%; /* Ustawia górną krawędź popupu na dolnej krawędzi triggera */
-                left: 0;
+          .certificate-thumb{
+            width: 30px;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            vertical-align: middle; /* wyrównanie w pionie z tekstem */
+             cursor: pointer;
         }
+         .left-column ul li .certificate-trigger:hover .certificate-popup {
+            display: none;
+         }
+         .certificate-popup.active {
+              display: flex;
+         }
     </style>
 </head>
 <body>
@@ -471,11 +483,13 @@
             </li>
             <li><strong>Programowanie:</strong>
                 <ul>
-                    <li><span class="certificate-trigger">
-                         <i class="fas fa-database"></i> Data Manipulation with pandas
-                        <div class="certificate-popup">
-                            <embed src="certificate.pdf" type="application/pdf" />
-                        </div>
+                    <li>
+                        <i class="fas fa-database"></i> Data Manipulation with pandas
+                        <span class="certificate-trigger">
+                            <img src="certificate-thumb.jpg" alt="Miniatura certyfikatu" class="certificate-thumb">
+                            <div class="certificate-popup">
+                                <embed src="certificate.pdf" type="application/pdf" />
+                            </div>
                         </span>
                    </li>
                     <li><i class="fas fa-chart-line"></i> Introduction to Data Visualization with Seaborn</li>
@@ -623,6 +637,8 @@
         </table>
     </div>
 </div>
-
-</body>
-</html>
+ <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const certificateTriggers = document.querySelectorAll('.certificate-trigger');
+            certificateTriggers.forEach(trigger => {
+                
