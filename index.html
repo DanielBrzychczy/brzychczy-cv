@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
     <style>
-       body {
+        body {
             display: flex;
             justify-content: center;
             background: #e0f7fa;
@@ -16,7 +16,7 @@
             overflow-x: hidden;
             transition: background-color 0.3s ease-in-out;
             padding-top: 140px;
-            position: relative; /* Dodano position: relative do body */
+              position: relative; /* Dodano position: relative do body */
         }
         body:hover {
             background-color: #b2ebf2;
@@ -159,7 +159,7 @@
             list-style: none;
             z-index: 1;
         }
-        .left-column ul li ul li {
+         .left-column ul li ul li {
             margin-bottom: 15px;
             padding-left: 30px;
         }
@@ -207,7 +207,7 @@
         .languages .language-item span.flag-icon {
             margin-right: 10px;
         }
-         .languages .language-item:hover {
+        .languages .language-item:hover {
             transform: translateX(5px);
             background-color: rgba(255, 255, 255, 1);
         }
@@ -234,7 +234,7 @@
             font-size: 0.9em;
             color: #555;
         }
-         .left-column .about-me {
+        .left-column .about-me {
             background: linear-gradient(to bottom right, #009688, #00695c);
             color: white;
             padding: 20px;
@@ -242,8 +242,8 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-             border: 3px solid #008080;
-             position: relative;
+            border: 3px solid #008080;
+            position: relative;
         }
         .left-column .about-me:hover {
             transform: translateY(-4px);
@@ -253,7 +253,7 @@
             color: white;
             border-bottom: 2px solid white;
             padding-bottom: 5px;
-             margin-top: 0;
+            margin-top: 0;
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -284,7 +284,7 @@
         }
         .left-column .about-me::after {
             right: 10px;
-             transform: rotateY(180deg);
+            transform: rotateY(180deg);
         }
         .left-column .qr-container {
             text-align: center;
@@ -296,13 +296,13 @@
         .left-column .qr-container img {
             width: 150px;
             border: 2px solid #00796b;
-             border-radius: 8px;
+            border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
         .left-column .qr-container img:hover {
             transform: translateY(-2px);
-             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
         .left-column ul li i {
             margin-right: 8px;
@@ -312,32 +312,32 @@
             margin-right: 8px;
             color: #00796b;
         }
-        .experience h3, .education h3 {
+         .experience h3, .education h3 {
             position: relative;
             padding-left: 25px;
-             margin-bottom: 15px;
+            margin-bottom: 15px;
         }
         .experience h3::before, .education h3::before {
             content: '';
             position: absolute;
             left: 0;
-             top: 50%;
+            top: 50%;
             transform: translateY(-50%);
             font-size: 1.2em;
         }
-         .experience h3::before {
-             font-family: "Font Awesome 6 Free";
+        .experience h3::before {
+            font-family: "Font Awesome 6 Free";
             content: '\f0b1';
             font-weight: 900;
             margin-right: 10px;
         }
-        .education h3::before {
+         .education h3::before {
             font-family: "Font Awesome 6 Free";
-             content: '\f19d';
+            content: '\f19d';
             font-weight: 900;
             margin-right: 10px;
         }
-       @media (max-width: 768px) {
+        @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
             }
@@ -352,10 +352,10 @@
             .header-left {
                 flex-direction: column;
                 align-items: center;
-                 text-align: center;
+                text-align: center;
                 margin-bottom: 20px;
             }
-           .header-left .image-container {
+            .header-left .image-container {
                 margin-right: 0;
                 margin-bottom: 10px;
             }
@@ -366,21 +366,21 @@
                 padding: 0;
             }
             .contact span {
-                 text-align: center;
-                 justify-content: center;
+                text-align: center;
+                justify-content: center;
             }
            .contact span::before {
                 display: none;
             }
-            header {
+           header {
                 padding: 10px;
                 font-size: 0.9em;
             }
             header h1 {
                 font-size: 1.5em;
-                 margin-bottom: 5px;
+                margin-bottom: 5px;
             }
-           .header-left .image-container {
+            .header-left .image-container {
                 width: 80px;
                 height: 80px;
             }
@@ -390,7 +390,7 @@
                 font-size: 1.2em;
             }
         }
-         .data-agreement-table {
+        .data-agreement-table {
             width: 100%;
             margin-top: 10px;
             border-collapse: collapse;
@@ -400,70 +400,31 @@
             text-align: justify;
             padding: 5px;
         }
-         .certificate-popup {
+        .certificate-popup {
             position: absolute;
             background: white;
             border: 1px solid #ccc;
             padding: 10px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
             z-index: 9999;
-             display: none;
+            display: none;
             border-radius: 8px;
-             transform: translateX(10px);
-        }
-        .certificate-popup embed{
-            width: 300px;
-             height: 200px;
-             display: block;
-        }
-        .certificates-container {
-            display: flex;
-            flex-wrap: wrap;
-             gap: 10px;
-             margin-top: 10px;
-            justify-content: flex-start;
-        }
-        .certificate-item {
-            position: relative;
-            cursor: pointer;
-            border: 2px solid #00796b;
-             border-radius: 8px;
-             overflow: hidden;
-             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-             transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
-             height: 100px;
-             width: 130px;
-             display: flex;
-             justify-content: center;
-             align-items: center;
-             background-color: white;
-        }
-        .certificate-item:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-             transform: translateY(-2px);
-        }
-        .certificate-item .certificate-popup {
-             top: 100%;
-             left: 0;
-        }
-        .certificate-item:hover .certificate-popup {
-             display: block;
-        }
-         .certificate-item img {
-            max-width: 100%;
-            height: auto;
-             display: block;
-        }
-        .certificate-item .certificate-popup {
-            position: absolute;
-            background: white;
-             border: 1px solid #ccc;
-            padding: 10px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-             z-index: 9999;
-             display: none;
-             border-radius: 8px;
             transform: translateX(10px);
+        }
+         .certificate-popup embed{
+            width: 300px;
+            height: 200px;
+            display: block;
+        }
+        .left-column ul li .certificate-trigger {
+            cursor: pointer;
+             position: relative;
+            z-index: 2;
+        }
+        .left-column ul li .certificate-trigger:hover .certificate-popup {
+            display: block;
+             top: 100%;
+            left: 0;
         }
     </style>
 </head>
@@ -489,7 +450,7 @@
                 Jestem studentem Technologii Przemysłu 4.0, z pasją do nowoczesnych i innowacyjnych rozwiązań. Interesuję się mechatroniką oraz elektroniką, co stale rozwijam zarówno w ramach studiów, jak i projektów własnych. Jestem otwarty na zdobywanie nowych umiejętności i szybko się uczę, co sprawia, że z łatwością adaptuję się do nowych zadań i wymagań. Nawet jeśli nie mam doświadczenia w konkretnej dziedzinie, szybko nadrabiam braki, aby w pełni zrozumieć i realizować powierzone mi obowiązki. W wolnym czasie podróżuję, zgłębiając historię bo uważam, że pomaga ona zrozumieć otaczający nas świat. Dużą radość sprawiają mi również wyjazdy rowerowe, oraz siłownia
             </p>
         </div>
-       <h2 style="border-bottom: 2px solid white;"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
+        <h2 style="border-bottom: 2px solid white;"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
         <ul>
             <li><strong>Centrum Kształcenia Zawodowego:</strong>
                 <ul>
@@ -508,6 +469,14 @@
             </li>
             <li><strong>Programowanie:</strong>
                 <ul>
+                  <li>
+                        <i class="fas fa-database"></i> Data Manipulation with pandas
+                     <span class="certificate-trigger">
+                            <div class="certificate-popup">
+                                <embed src="certificate.pdf" type="application/pdf" />
+                            </div>
+                         </span>
+                   </li>
                     <li><i class="fas fa-chart-line"></i> Introduction to Data Visualization with Seaborn</li>
                     <li><i class="fas fa-laptop-code"></i> MATLAB Onramp</li>
                 </ul>
@@ -520,15 +489,15 @@
                 <ul>
                     <li><i class="fas fa-tools"></i> Obsługa elektronarzędzi</li>
                     <li><i class="fas fa-bolt"></i> Znajomość zagadnień z elektrotechniki, automatyki oraz mechatroniki</li>
-                     <li><i class="fas fa-microchip"></i> Umiejętność programowania mikrokontrolerów</li>
+                    <li><i class="fas fa-microchip"></i> Umiejętność programowania mikrokontrolerów</li>
                 </ul>
             </li>
-             <li>
+            <li>
                 <strong>Programistyczne:</strong>
                 <ul>
                     <li><i class="fab fa-python"></i> Umiejętność programowania w języku Python</li>
-                     <li><i class="fab fa-html5"></i> Podstawy programowania w języku HTML</li>
-                     <li><i class="fab fa-cuttlefish"></i> Podstawy programowania w języku C++</li>
+                    <li><i class="fab fa-html5"></i> Podstawy programowania w języku HTML</li>
+                    <li><i class="fab fa-cuttlefish"></i> Podstawy programowania w języku C++</li>
                 </ul>
             </li>
         </ul>
@@ -538,12 +507,12 @@
                 <strong>Języki:</strong>
                 <ul>
                     <li><i class="fas fa-code"></i> FBD</li>
-                     <li><i class="fas fa-code"></i> CFC</li>
+                    <li><i class="fas fa-code"></i> CFC</li>
                     <li><i class="fas fa-code"></i> LD</li>
-                     <li><i class="fas fa-code"></i> Podstawy ST</li>
+                    <li><i class="fas fa-code"></i> Podstawy ST</li>
                 </ul>
             </li>
-             <li>
+            <li>
                 <strong>Programy:</strong>
                 <ul>
                     <li><i class="fas fa-laptop-code"></i> Codessys</li>
@@ -556,19 +525,19 @@
         <ul>
             <li><i class="fas fa-trophy"></i> Laureat Małopolskiego konkursu prac własnych technicznych</li>
             <li><i class="fas fa-car"></i> Prawo Jazdy kategoria B</li>
-             <li><i class="fas fa-user-check"></i> Badania sanitarno-epidemiologiczne</li>
-             <li><i class="fas fa-truck-loading"></i> Uprawnienia na wózek widłowy</li>
+            <li><i class="fas fa-user-check"></i> Badania sanitarno-epidemiologiczne</li>
+            <li><i class="fas fa-truck-loading"></i> Uprawnienia na wózek widłowy</li>
         </ul>
-         <h2 style="border-bottom: 2px solid white;"><i class="fas fa-heart"></i> Zainteresowania</h2>
+        <h2 style="border-bottom: 2px solid white;"><i class="fas fa-heart"></i> Zainteresowania</h2>
         <ul>
             <li><i class="fas fa-dumbbell"></i> Sporty siłowe</li>
             <li><i class="fas fa-bicycle"></i> Podróże rowerowe</li>
             <li><i class="fas fa-landmark"></i> Historia</li>
-             <li><i class="fas fa-book"></i> Książki fantasy</li>
-             <li><i class="fas fa-chess"></i> Gry strategiczne</li>
+            <li><i class="fas fa-book"></i> Książki fantasy</li>
+            <li><i class="fas fa-chess"></i> Gry strategiczne</li>
             <li><i class="fas fa-plug"></i> Elektronika</li>
         </ul>
-        <h2 style="border-bottom: 2px solid white;"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
+         <h2 style="border-bottom: 2px solid white;"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
         <div class="qr-container">
             <a href="https://sylabusy.agh.edu.pl/pl/1/2/18/1/4/16/227" target="_blank">
                 <img src="qr1.jpg" alt="Kod QR">
@@ -580,8 +549,8 @@
         <div class="experience">
             <h3>Revolmatic Kraków</h3>
             <span class="date">Lipiec 2022 – Listopad 2024</span>
-             <p>• Testowanie systemów mechatronicznych</p>
-             <p>• Uruchamianie systemów mechatronicznych</p>
+            <p>• Testowanie systemów mechatronicznych</p>
+            <p>• Uruchamianie systemów mechatronicznych</p>
             <p>• Montowanie systemów mechatronicznych</p>
             <p>• Wykonywanie prac serwisowych, obejmujących naprawy, wymiany komponentów i konserwację systemów mechatronicznych</p>
             <p>• Wykonywanie precyzyjnych pomiarów elektrycznych w celu oceny i monitorowania parametrów</p>
@@ -589,7 +558,7 @@
         </div>
         <div class="experience">
             <h3>Zbita Szybka Kraków</h3>
-             <span class="date">Maj 2022 – Lipiec 2022</span>
+            <span class="date">Maj 2022 – Lipiec 2022</span>
             <p>• Diagnozowanie i naprawa usterek elektroniki użytkowej firmy Apple, w tym wymiana uszkodzonych podzespołów, ekranów i baterii</p>
             <p>• Przeprowadzanie testów wydajności i diagnostyki, aby zidentyfikować problemy z oprogramowaniem i sprzętem</p>
             <p>• Kontakt z klientem w celu uzyskania informacji na temat usterek, omówienia diagnozy i przedstawienia kosztów naprawy</p>
@@ -597,20 +566,20 @@
         <div class="experience">
             <h3>PILS Kraków</h3>
             <span class="date">Czerwiec 2021 – Wrzesień 2021</span>
-             <p>• Profesjonalne montowanie zautomatyzowanych bram i szlabanów zgodnie z wytycznymi technicznymi</p>
+            <p>• Profesjonalne montowanie zautomatyzowanych bram i szlabanów zgodnie z wytycznymi technicznymi</p>
             <p>• Przeprowadzanie kompleksowych testów funkcjonalności, w tym ocena zdolności do otwierania, zamykania i detekcji ruchu</p>
             <p>• Wykonywanie regularnych prac serwisowych, obejmujących diagnostykę, naprawy i konserwację</p>
         </div>
-         <div class="experience">
+        <div class="experience">
             <h3>BWS Stagehands</h3>
             <span class="date">Lipiec 2020 – Wrzesień 2020</span>
-             <p>• Doświadczenie w precyzyjnym montażu i demontażu konstrukcji scenicznych zgodnie z planami projektowymi</p>
-             <p>• Wykonywanie prac porządkowych w celu utrzymania czystości i porządku na scenie przed, w trakcie i po wydarzeniach</p>
+            <p>• Doświadczenie w precyzyjnym montażu i demontażu konstrukcji scenicznych zgodnie z planami projektowymi</p>
+            <p>• Wykonywanie prac porządkowych w celu utrzymania czystości i porządku na scenie przed, w trakcie i po wydarzeniach</p>
             <p>• Aktywna pomoc w załadunku, rozładunku i przenoszeniu sprzętu scenicznego</p>
         </div>
        <div class="experience">
             <h3>Home&You</h3>
-             <span class="date">Lipiec 2019 – Wrzesień 2019</span>
+            <span class="date">Lipiec 2019 – Wrzesień 2019</span>
             <p>• Umiejętne projektowanie i przygotowywanie aranżacji przestrzeni</p>
             <p>• Skuteczna i uprzejma komunikacja z klientami, dostarczanie wysokiej jakości obsługi w celu zaspokojenia ich potrzeb</p>
             <p>• Precyzyjna i zgodna z przepisami obsługa kasy fiskalnej.</p>
@@ -618,48 +587,39 @@
         <h2><i class="fas fa-university"></i> Wykształcenie</h2>
         <div class="education">
             <h3>Technikum Komunikacyjne nr 25 w Krakowie</h3>
-             <span class="date">2018-2022</span>
+            <span class="date">2018-2022</span>
             <p>Specjalizacja: <b>Technik mechatronik</b>.</p>
         </div>
-         <div class="education">
+        <div class="education">
             <h3>Akademia Górniczo-Hutnicza w Krakowie</h3>
-             <span class="date">2022 – nadal</span>
+            <span class="date">2022 – nadal</span>
             <p>Specjalizacja: <b>Inżynier Technologii Przemysłu 4.0</b>.</p>
-         </div>
+        </div>
         <h2><i class="fas fa-language"></i> Języki</h2>
         <div class="languages">
-             <div class="language-item">
+            <div class="language-item">
                 <span class="flag-icon flag-icon-pl"></span> Polski – Ojczysty
             </div>
-             <div class="language-item">
+            <div class="language-item">
                 <span class="flag-icon flag-icon-gb"></span> Angielski – B2
             </div>
-             <div class="language-item">
+            <div class="language-item">
                 <span class="flag-icon flag-icon-de"></span> Niemiecki – A1
             </div>
              <div class="language-item">
                 <span class="flag-icon flag-icon-it"></span> Włoski – A1
             </div>
         </div>
-        <h2 style="color:#004d40; border-bottom: 2px solid #004d40;"><i class="fas fa-certificate"></i> Certyfikaty</h2>
-       <div class="certificates-container">
-           <div class="certificate-item">
-                <img src="files/certificate-preview.png" alt="Certyfikat" />
-                <div class="certificate-popup">
-                     <embed src="files/certificate.pdf" type="application/pdf" />
-               </div>
-            </div>
-        </div>
-       <table class="data-agreement-table">
+        <table class="data-agreement-table">
             <tr>
                 <td>
                     Wyrażam zgodę na przetwarzanie danych osobowych niezbędnych do realizacji procesu rekrutacji zgodnie z:
                     Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony
-                     osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich
+                    osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich
                     danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych).
                 </td>
-           </tr>
-       </table>
+            </tr>
+        </table>
     </div>
 </div>
 </body>
