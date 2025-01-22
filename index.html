@@ -158,7 +158,7 @@
             padding-left: 15px;
             list-style: none;
         }
-        .left-column ul li ul li {
+         .left-column ul li ul li {
             margin-bottom: 15px;
             padding-left: 30px;
         }
@@ -311,7 +311,7 @@
             margin-right: 8px;
             color: #00796b;
         }
-        .experience h3, .education h3 {
+         .experience h3, .education h3 {
             position: relative;
             padding-left: 25px;
             margin-bottom: 15px;
@@ -330,7 +330,7 @@
             font-weight: 900;
             margin-right: 10px;
         }
-        .education h3::before {
+         .education h3::before {
             font-family: "Font Awesome 6 Free";
             content: '\f19d';
             font-weight: 900;
@@ -368,10 +368,10 @@
                 text-align: center;
                 justify-content: center;
             }
-            .contact span::before {
+           .contact span::before {
                 display: none;
             }
-            header {
+           header {
                 padding: 10px;
                 font-size: 0.9em;
             }
@@ -400,7 +400,7 @@
             padding: 5px;
         }
 
-        .certificate-popup {
+         .certificate-popup {
             position: absolute;
             background: white;
             border: 1px solid #ccc;
@@ -421,8 +421,10 @@
             cursor: pointer;
             position: relative; /* Dodano position: relative */
         }
-        .left-column ul li .certificate-trigger:hover .certificate-popup {
+       .left-column ul li .certificate-trigger:hover .certificate-popup {
             display: block;
+                top: 100%; /* Ustawia górną krawędź popupu na dolnej krawędzi triggera */
+                left: 0;
         }
     </style>
 </head>
@@ -534,7 +536,7 @@
             <li><i class="fas fa-chess"></i> Gry strategiczne</li>
             <li><i class="fas fa-plug"></i> Elektronika</li>
         </ul>
-        <h2 style="border-bottom: 2px solid white;"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
+         <h2 style="border-bottom: 2px solid white;"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
         <div class="qr-container">
             <a href="https://sylabusy.agh.edu.pl/pl/1/2/18/1/4/16/227" target="_blank">
                 <img src="qr1.jpg" alt="Kod QR">
@@ -574,7 +576,7 @@
             <p>• Wykonywanie prac porządkowych w celu utrzymania czystości i porządku na scenie przed, w trakcie i po wydarzeniach</p>
             <p>• Aktywna pomoc w załadunku, rozładunku i przenoszeniu sprzętu scenicznego</p>
         </div>
-        <div class="experience">
+       <div class="experience">
             <h3>Home&You</h3>
             <span class="date">Lipiec 2019 – Wrzesień 2019</span>
             <p>• Umiejętne projektowanie i przygotowywanie aranżacji przestrzeni</p>
@@ -603,7 +605,7 @@
             <div class="language-item">
                 <span class="flag-icon flag-icon-de"></span> Niemiecki – A1
             </div>
-            <div class="language-item">
+             <div class="language-item">
                 <span class="flag-icon flag-icon-it"></span> Włoski – A1
             </div>
         </div>
