@@ -16,7 +16,7 @@
             overflow-x: hidden;
             transition: background-color 0.3s ease-in-out;
             padding-top: 140px;
-              position: relative; /* Dodano position: relative do body */
+            position: relative; /* Dodano position: relative do body */
         }
         body:hover {
             background-color: #b2ebf2;
@@ -158,6 +158,8 @@
             padding-left: 15px;
             list-style: none;
             z-index: 1;
+             display:flex;
+             align-items:center;
         }
          .left-column ul li ul li {
             margin-bottom: 15px;
@@ -419,23 +421,23 @@
             max-height: 80vh;
             display: block;
         }
-
-        .left-column ul li .certificate-trigger {
+    .left-column ul li .certificate-trigger {
             cursor: pointer;
              position: relative; /* Usunięto z-index */
             display: inline-block; /* Zapewnia umieszczenie obok tekstu */
             margin-left: 10px;
+             display: flex;
         }
           .certificate-thumb{
             width: 30px;
-            height: auto;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            vertical-align: middle; /* wyrównanie w pionie z tekstem */
-             cursor: pointer;
+            height: 30px;
+             border: 1px solid #ccc;
+             border-radius: 5px;
+             vertical-align: middle; /* wyrównanie w pionie z tekstem */
+            cursor: pointer;
         }
-         .left-column ul li .certificate-trigger:hover .certificate-popup {
-            display: none;
+        .left-column ul li .certificate-trigger:hover .certificate-popup {
+              display: none;
          }
          .certificate-popup.active {
               display: flex;
@@ -485,8 +487,8 @@
                 <ul>
                     <li>
                         <i class="fas fa-database"></i> Data Manipulation with pandas
-                        <span class="certificate-trigger">
-                            <img src="certificate-thumb.jpg" alt="Miniatura certyfikatu" class="certificate-thumb">
+                       <span class="certificate-trigger">
+                            <canvas class="certificate-thumb" data-pdf-url="certificate.pdf"></canvas>
                             <div class="certificate-popup">
                                 <embed src="certificate.pdf" type="application/pdf" />
                             </div>
@@ -637,8 +639,46 @@
         </table>
     </div>
 </div>
- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const certificateTriggers = document.querySelectorAll('.certificate-trigger');
-            certificateTriggers.forEach(trigger => {
-                
+        <script src="pdfjs/pdf.js"></script>
+        <script>
+             pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs/pdf.worker.js';
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const certificateTriggers = document.querySelectorAll('.certificate-trigger');
+              // Załaduj bibliotekę PDF.js
+                const loadingTask = pdfjsLib.getDocument('certificate.pdf');
+                loadingTask.promise.then(function(pdf) {
+                    pdf.getPage(1).then(function(page) {
+                            certificateTriggers.forEach(trigger => {
+                                const canvas = trigger.querySelector('.certificate-thumb');
+                                const popup = trigger.querySelector('.certificate-popup');
+                                // Konfiguracja widoku canvas
+                                const viewport = page.getViewport({ scale: 1 });
+                                    canvas.height = viewport.height;
+                                    canvas.width = viewport.width;
+
+                                const renderContext = {
+                                        canvasContext: canvas.getContext('2d'),
+                                        viewport: viewport
+                                    };
+
+                                page.render(renderContext);
+
+                                    canvas.addEventListener('click', function(event) {
+                                        event.preventDefault();
+                                        popup.classList.add('active');
+                                    });
+                                    popup.addEventListener('click', function(event) {
+                                    if (event.target === popup) {
+                                                popup.classList.remove('active');
+                                        }
+                                    });
+                                });
+                        });
+                    });
+
+            });
+    </script>
+</body>
+</html>
