@@ -410,6 +410,7 @@
             display: none;
             border-radius: 8px;
             transform: translateX(10px);
+             pointer-events: none;
         }
          .certificate-popup embed{
             width: 300px;
@@ -420,12 +421,16 @@
             cursor: pointer;
              position: relative;
             z-index: 2;
+            display: inline-block;
+
         }
         .left-column ul li .certificate-trigger:hover .certificate-popup {
             display: block;
              top: 100%;
-            left: 0;
+             left: 0;
+              pointer-events: auto;
         }
+
     </style>
 </head>
 <body>
