@@ -16,7 +16,7 @@
             overflow-x: hidden;
             transition: background-color 0.3s ease-in-out;
             padding-top: 140px;
-            position: relative; /* Dodano position: relative do body */
+              position: relative; /* Dodano position: relative do body */
         }
         body:hover {
             background-color: #b2ebf2;
@@ -158,8 +158,6 @@
             padding-left: 15px;
             list-style: none;
             z-index: 1;
-             display:flex;
-             align-items:center;
         }
          .left-column ul li ul li {
             margin-bottom: 15px;
@@ -402,46 +400,32 @@
             text-align: justify;
             padding: 5px;
         }
-
-         .certificate-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 10000;
+        .certificate-popup {
+            position: absolute;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
             display: none;
-            justify-content: center;
-            align-items: center;
-         }
+            border-radius: 8px;
+            transform: translateX(10px);
+        }
          .certificate-popup embed{
-            width: 50%;
-            height: auto;
-            max-height: 80vh;
+            width: 300px;
+            height: 200px;
             display: block;
         }
-    .left-column ul li .certificate-trigger {
+        .left-column ul li .certificate-trigger {
             cursor: pointer;
-             position: relative; /* Usunięto z-index */
-            display: inline-block; /* Zapewnia umieszczenie obok tekstu */
-            margin-left: 10px;
-             display: flex;
-        }
-          .certificate-thumb{
-            width: 30px;
-            height: 30px;
-             border: 1px solid #ccc;
-             border-radius: 5px;
-             vertical-align: middle; /* wyrównanie w pionie z tekstem */
-            cursor: pointer;
+             position: relative;
+            z-index: 2;
         }
         .left-column ul li .certificate-trigger:hover .certificate-popup {
-              display: none;
-         }
-         .certificate-popup.active {
-              display: flex;
-         }
+            display: block;
+             top: 100%;
+            left: 0;
+        }
     </style>
 </head>
 <body>
@@ -485,14 +469,13 @@
             </li>
             <li><strong>Programowanie:</strong>
                 <ul>
-                    <li>
+                  <li>
                         <i class="fas fa-database"></i> Data Manipulation with pandas
-                       <span class="certificate-trigger">
-                            <canvas class="certificate-thumb" data-pdf-url="certificate.pdf"></canvas>
+                     <span class="certificate-trigger">
                             <div class="certificate-popup">
                                 <embed src="certificate.pdf" type="application/pdf" />
                             </div>
-                        </span>
+                         </span>
                    </li>
                     <li><i class="fas fa-chart-line"></i> Introduction to Data Visualization with Seaborn</li>
                     <li><i class="fas fa-laptop-code"></i> MATLAB Onramp</li>
@@ -639,46 +622,5 @@
         </table>
     </div>
 </div>
-        <script src="pdfjs/pdf.js"></script>
-        <script>
-             pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs/pdf.worker.js';
-        </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const certificateTriggers = document.querySelectorAll('.certificate-trigger');
-              // Załaduj bibliotekę PDF.js
-                const loadingTask = pdfjsLib.getDocument('certificate.pdf');
-                loadingTask.promise.then(function(pdf) {
-                    pdf.getPage(1).then(function(page) {
-                            certificateTriggers.forEach(trigger => {
-                                const canvas = trigger.querySelector('.certificate-thumb');
-                                const popup = trigger.querySelector('.certificate-popup');
-                                // Konfiguracja widoku canvas
-                                const viewport = page.getViewport({ scale: 1 });
-                                    canvas.height = viewport.height;
-                                    canvas.width = viewport.width;
-
-                                const renderContext = {
-                                        canvasContext: canvas.getContext('2d'),
-                                        viewport: viewport
-                                    };
-
-                                page.render(renderContext);
-
-                                    canvas.addEventListener('click', function(event) {
-                                        event.preventDefault();
-                                        popup.classList.add('active');
-                                    });
-                                    popup.addEventListener('click', function(event) {
-                                    if (event.target === popup) {
-                                                popup.classList.remove('active');
-                                        }
-                                    });
-                                });
-                        });
-                    });
-
-            });
-    </script>
 </body>
 </html>
