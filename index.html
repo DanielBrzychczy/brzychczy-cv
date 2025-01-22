@@ -16,7 +16,7 @@
             overflow-x: hidden;
             transition: background-color 0.3s ease-in-out;
             padding-top: 140px;
-            position: relative;
+              position: relative; /* Dodano position: relative do body */
         }
         body:hover {
             background-color: #b2ebf2;
@@ -401,35 +401,30 @@
             padding: 5px;
         }
         .certificate-popup {
-          position: absolute;
-          background: white;
-          border: 1px solid #ccc;
-          padding: 10px;
-          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-          z-index: 1001; /* Zwiększono z-index */
-          display: none;
-          border-radius: 8px;
-          transform: translateX(10px);
-          pointer-events: none;
+            position: absolute;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            display: none;
+            border-radius: 8px;
+            transform: translateX(10px);
         }
-
-         .certificate-popup embed {
-          width: 300px;
-          height: 200px;
-          display: block;
+         .certificate-popup embed{
+            width: 300px;
+            height: 200px;
+            display: block;
         }
         .left-column ul li .certificate-trigger {
-          cursor: pointer;
-          position: relative;
-          z-index: 2;
-          display: inline-block;
+            cursor: pointer;
+             position: relative;
+            z-index: 2;
         }
-
         .left-column ul li .certificate-trigger:hover .certificate-popup {
-          display: block;
-          top: 100%;
-          left: 0;
-          pointer-events: auto;
+            display: block;
+             top: 100%;
+            left: 0;
         }
     </style>
 </head>
@@ -474,14 +469,14 @@
             </li>
             <li><strong>Programowanie:</strong>
                 <ul>
-                    <li>
+                  <li>
                         <i class="fas fa-database"></i> Data Manipulation with pandas
-                        <span class="certificate-trigger">
+                     <span class="certificate-trigger">
                             <div class="certificate-popup">
                                 <embed src="certificate.pdf" type="application/pdf" />
                             </div>
-                        </span>
-                    </li>
+                         </span>
+                   </li>
                     <li><i class="fas fa-chart-line"></i> Introduction to Data Visualization with Seaborn</li>
                     <li><i class="fas fa-laptop-code"></i> MATLAB Onramp</li>
                 </ul>
@@ -542,7 +537,7 @@
             <li><i class="fas fa-chess"></i> Gry strategiczne</li>
             <li><i class="fas fa-plug"></i> Elektronika</li>
         </ul>
-        <h2 style="border-bottom: 2px solid white;"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
+         <h2 style="border-bottom: 2px solid white;"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
         <div class="qr-container">
             <a href="https://sylabusy.agh.edu.pl/pl/1/2/18/1/4/16/227" target="_blank">
                 <img src="qr1.jpg" alt="Kod QR">
@@ -582,7 +577,7 @@
             <p>• Wykonywanie prac porządkowych w celu utrzymania czystości i porządku na scenie przed, w trakcie i po wydarzeniach</p>
             <p>• Aktywna pomoc w załadunku, rozładunku i przenoszeniu sprzętu scenicznego</p>
         </div>
-        <div class="experience">
+       <div class="experience">
             <h3>Home&You</h3>
             <span class="date">Lipiec 2019 – Wrzesień 2019</span>
             <p>• Umiejętne projektowanie i przygotowywanie aranżacji przestrzeni</p>
@@ -611,7 +606,7 @@
             <div class="language-item">
                 <span class="flag-icon flag-icon-de"></span> Niemiecki – A1
             </div>
-            <div class="language-item">
+             <div class="language-item">
                 <span class="flag-icon flag-icon-it"></span> Włoski – A1
             </div>
         </div>
