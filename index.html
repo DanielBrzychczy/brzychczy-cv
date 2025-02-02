@@ -286,7 +286,7 @@
             right: 10px;
             transform: rotateY(180deg);
         }
-        .left-column .qr-container {
+         .left-column .qr-container {
             text-align: center;
             margin-bottom: 20px;
         }
@@ -336,6 +336,24 @@
             content: '\f19d';
             font-weight: 900;
             margin-right: 10px;
+        }
+         .education .qr-container {
+            text-align: center;
+            margin-top: 20px;
+         }
+         .education .qr-container a {
+            display: inline-block;
+         }
+          .education .qr-container img {
+            width: 150px;
+            border: 2px solid #00796b;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .education .qr-container img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
         @media (max-width: 768px) {
             .container {
@@ -400,7 +418,7 @@
             text-align: justify;
             padding: 5px;
         }
-        .certificate-popup {
+         .certificate-popup {
             position: absolute;
             background: white;
             border: 1px solid #ccc;
@@ -543,12 +561,6 @@
             <li><i class="fas fa-chess"></i> Gry strategiczne</li>
             <li><i class="fas fa-plug"></i> Elektronika</li>
         </ul>
-         <h2 style="border-bottom: 2px solid white;"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
-        <div class="qr-container">
-            <a href="https://sylabusy.agh.edu.pl/pl/1/2/18/1/4/16/227" target="_blank">
-                <img src="qr1.jpg" alt="Kod QR">
-            </a>
-        </div>
     </div>
     <div class="right-column">
         <h2><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
@@ -596,10 +608,15 @@
             <span class="date">2018-2022</span>
             <p>Specjalizacja: <b>Technik mechatronik</b>.</p>
         </div>
-        <div class="education">
+         <div class="education">
             <h3>Akademia Górniczo-Hutnicza w Krakowie</h3>
             <span class="date">2022 – nadal</span>
             <p>Specjalizacja: <b>Inżynier Technologii Przemysłu 4.0</b>.</p>
+             <div class="qr-container">
+                  <a href="https://sylabusy.agh.edu.pl/pl/1/2/18/1/4/16/227" target="_blank">
+                        <img src="qr1.jpg" alt="Kod QR">
+                  </a>
+              </div>
         </div>
         <h2><i class="fas fa-language"></i> Języki</h2>
         <div class="languages">
