@@ -151,10 +151,10 @@
             border-bottom: 2px solid white;
             padding-bottom: 5px;
         }
-        .left-column ul li {
+          .left-column ul li {
             margin-bottom: 15px;
             transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-            position: relative;
+            position: relative; /* Dodano position: relative do li */
             padding-left: 15px;
             list-style: none;
             z-index: 1;
@@ -410,17 +410,18 @@
             display: none;
             border-radius: 8px;
             transform: translateX(10px);
+             left:0; /* Poprawka */
+            right: 0; /* Poprawka */
         }
          .certificate-popup img{
             width: 300px;
             display: block;
         }
-        .left-column ul li .certificate-trigger {
-            cursor: pointer;
-             position: relative;
+         .left-column ul li .certificate-trigger {
+             cursor: pointer;
+            position: relative;
             z-index: 2;
-           display: inline-block; /* aby certificate-popup widniał w kontenerze */
-            white-space: nowrap;
+           display: block; /* Aby trigger zajmował całą szerokość li */
         }
         .left-column ul li .certificate-trigger:hover .certificate-popup {
             display: block;
