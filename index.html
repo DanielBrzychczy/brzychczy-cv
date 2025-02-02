@@ -16,13 +16,11 @@
             overflow-x: hidden;
             transition: background-color 0.3s ease-in-out;
             padding-top: 140px;
-            position: relative; /* Dodano position: relative do body */
+              position: relative; /* Dodano position: relative do body */
         }
-
         body:hover {
             background-color: #b2ebf2;
         }
-
         .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -35,11 +33,9 @@
             border-radius: 10px;
             transition: box-shadow 0.3s ease-in-out;
         }
-
         .container:hover {
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
-
         header {
             background: #008080;
             color: white;
@@ -55,26 +51,21 @@
             z-index: 1000;
             transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
-
         header:hover {
             background-color: #00a693;
             transform: translateY(-2px);
         }
-
         header h1 {
             font-size: 2.5em;
             transition: color 0.3s ease-in-out;
         }
-
         header:hover h1 {
             color: #f0f0f0;
         }
-
         .header-left {
             display: flex;
             align-items: center;
         }
-
         .header-left .image-container {
             width: 150px;
             height: 150px;
@@ -87,19 +78,16 @@
             justify-content: center;
             align-items: center;
         }
-
         .header-left .image-container:hover {
             transform: scale(1.1);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
-
         .header-left .image-container img {
             width: 100%;
             height: auto;
             object-fit: cover;
             object-position: center top;
         }
-
         .contact {
             display: flex;
             flex-direction: column;
@@ -110,11 +98,9 @@
             position: relative;
             right: 40px;
         }
-
         .contact:hover {
             transform: translateY(-2px);
         }
-
         .contact span {
             display: flex;
             align-items: center;
@@ -123,22 +109,18 @@
             text-align: left;
             transition: color 0.3s ease-in-out;
         }
-
         .contact span:hover {
             transform: scale(1.1);
             color: #fdd835;
         }
-
         .contact span i {
             margin-right: 10px;
         }
-
         .contact span::before {
             content: '';
             display: inline-block;
             width: 20px;
         }
-
         .left-column {
             padding: 25px;
             background: #00695c;
@@ -147,35 +129,29 @@
             border-radius: 10px;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
-
         .left-column:hover {
             transform: translateY(-4px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-
         .right-column {
             padding: 20px;
         }
-
         h2 {
             color: #004d40;
             border-bottom: 2px solid #004d40;
             padding-bottom: 5px;
             transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
         }
-
         h2:hover {
             color: #00796b;
             border-color: #00796b;
         }
-
         .left-column h2 {
             color: white;
             border-bottom: 2px solid white;
             padding-bottom: 5px;
         }
-
-           .left-column ul li {
+        .left-column ul li {
             margin-bottom: 15px;
             transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
             position: relative;
@@ -193,19 +169,16 @@
             display: block;
             margin-top: 15px;
         }
-
         .left-column ul li:hover {
             transform: translateX(5px);
             color: #b2dfdb;
         }
-
         .left-column ul li::before {
             content: '\2022';
             color: white;
             position: absolute;
             left: 0;
         }
-
         .languages {
             background: #b2dfdb;
             padding: 15px;
@@ -218,12 +191,10 @@
             flex-direction: column;
             gap: 10px;
         }
-
         .languages:hover {
             transform: translateY(-4px);
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
         }
-
         .languages .language-item {
             display: flex;
             align-items: center;
@@ -233,16 +204,13 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
         }
-
         .languages .language-item span.flag-icon {
             margin-right: 10px;
         }
-
         .languages .language-item:hover {
             transform: translateX(5px);
             background-color: rgba(255, 255, 255, 1);
         }
-
         .experience, .education {
             background: #b2dfdb;
             padding: 15px;
@@ -252,16 +220,13 @@
             border-radius: 8px;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
-
         .experience:hover, .education:hover {
             transform: translateY(-4px);
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
         }
-
         .experience p, .education p {
             margin: 5px 0 10px;
         }
-
         .date {
             position: absolute;
             right: 10px;
@@ -269,7 +234,6 @@
             font-size: 0.9em;
             color: #555;
         }
-
         .left-column .about-me {
             background: linear-gradient(to bottom right, #009688, #00695c);
             color: white;
@@ -281,12 +245,10 @@
             border: 3px solid #008080;
             position: relative;
         }
-
         .left-column .about-me:hover {
             transform: translateY(-4px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-
         .left-column .about-me h2 {
             color: white;
             border-bottom: 2px solid white;
@@ -297,7 +259,6 @@
             justify-content: flex-start;
             gap: 10px;
         }
-
         .left-column .about-me h2::before,
         .left-column .about-me h2::after {
             content: '';
@@ -307,12 +268,10 @@
             margin: 0;
             display: none;
         }
-
         .left-column .about-me p {
             line-height: 1.6;
             margin: 10px 0;
         }
-
         .left-column .about-me::before,
         .left-column .about-me::after {
             content: '';
@@ -320,25 +279,20 @@
             top: 10px;
             font-size: 25px;
         }
-
         .left-column .about-me::before {
             left: 10px;
         }
-
         .left-column .about-me::after {
             right: 10px;
             transform: rotateY(180deg);
         }
-
         .left-column .qr-container {
             text-align: center;
             margin-bottom: 20px;
         }
-
         .left-column .qr-container a {
             display: inline-block;
         }
-
         .left-column .qr-container img {
             width: 150px;
             border: 2px solid #00796b;
@@ -346,31 +300,24 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
-
         .left-column .qr-container img:hover {
             transform: translateY(-2px);
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
-
         .left-column ul li i {
             margin-right: 8px;
             color: #b2dfdb;
         }
-
         .right-column h2 i {
             margin-right: 8px;
             color: #00796b;
         }
-
-        .experience h3,
-        .education h3 {
+         .experience h3, .education h3 {
             position: relative;
             padding-left: 25px;
             margin-bottom: 15px;
         }
-
-        .experience h3::before,
-        .education h3::before {
+        .experience h3::before, .education h3::before {
             content: '';
             position: absolute;
             left: 0;
@@ -378,130 +325,105 @@
             transform: translateY(-50%);
             font-size: 1.2em;
         }
-
         .experience h3::before {
             font-family: "Font Awesome 6 Free";
             content: '\f0b1';
             font-weight: 900;
             margin-right: 10px;
         }
-
-        .education h3::before {
+         .education h3::before {
             font-family: "Font Awesome 6 Free";
             content: '\f19d';
             font-weight: 900;
             margin-right: 10px;
         }
-
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
             }
-
             header {
                 flex-direction: column;
                 align-items: center;
                 padding: 10px;
             }
-
             header h1 {
                 margin-bottom: 10px;
             }
-
             .header-left {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
                 margin-bottom: 20px;
             }
-
             .header-left .image-container {
                 margin-right: 0;
                 margin-bottom: 10px;
             }
-
             .contact {
                 align-items: center;
                 position: static;
                 right: auto;
                 padding: 0;
             }
-
             .contact span {
                 text-align: center;
                 justify-content: center;
             }
-
-            .contact span::before {
+           .contact span::before {
                 display: none;
             }
-
-            header {
+           header {
                 padding: 10px;
                 font-size: 0.9em;
             }
-
             header h1 {
                 font-size: 1.5em;
                 margin-bottom: 5px;
             }
-
             .header-left .image-container {
                 width: 80px;
                 height: 80px;
             }
         }
-
         @media (max-width: 480px) {
             header h1 {
                 font-size: 1.2em;
             }
         }
-
         .data-agreement-table {
             width: 100%;
             margin-top: 10px;
             border-collapse: collapse;
         }
-
         .data-agreement-table td {
             font-size: 0.7em;
             text-align: justify;
             padding: 5px;
         }
-
         .certificate-popup {
             position: absolute;
             background: white;
             border: 1px solid #ccc;
             padding: 10px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 10000;
+            z-index: 9999;
             display: none;
             border-radius: 8px;
             transform: translateX(10px);
-            left: 0;
-            right: 0;
         }
-
-        .certificate-popup img {
-            width: 100%;
+         .certificate-popup embed{
+            width: 300px;
+            height: 200px;
             display: block;
-            object-fit: contain;
-              max-height: 200px; /* Limit wysokości certyfikatu */
-            width:auto; /* dopasuje wielkosc w zaleznosci od obrazu*/
         }
-
         .left-column ul li .certificate-trigger {
             cursor: pointer;
-            position: relative;
+             position: relative;
             z-index: 2;
-             display: block;
         }
-
         .left-column ul li .certificate-trigger:hover .certificate-popup {
             display: block;
-            top: 100%;
+             top: 100%;
             left: 0;
         }
     </style>
@@ -547,14 +469,14 @@
             </li>
             <li><strong>Programowanie:</strong>
                 <ul>
-                    <li>
-                        <i class="fas fa-database"></i>
-                         <span class="certificate-trigger">Data Manipulation with pandas
+                  <li>
+                        <i class="fas fa-database"></i> Data Manipulation with pandas
+                     <span class="certificate-trigger">
                             <div class="certificate-popup">
-                                 <img src="certificate_page-0001.jpg"  alt="certificate"/>
+                                <embed src="certificate.pdf" type="application/pdf" />
                             </div>
                          </span>
-                    </li>
+                   </li>
                     <li><i class="fas fa-chart-line"></i> Introduction to Data Visualization with Seaborn</li>
                     <li><i class="fas fa-laptop-code"></i> MATLAB Onramp</li>
                 </ul>
