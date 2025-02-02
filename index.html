@@ -476,7 +476,7 @@
             border: 1px solid #ccc;
             padding: 10px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 9999;
+            z-index: 10000;
             display: none;
             border-radius: 8px;
             transform: translateX(10px);
@@ -485,15 +485,18 @@
         }
 
         .certificate-popup img {
-            width: 300px;
+            width: 100%;
             display: block;
+            object-fit: contain;
+              max-height: 200px; /* Limit wysokości certyfikatu */
+            width:auto; /* dopasuje wielkosc w zaleznosci od obrazu*/
         }
 
         .left-column ul li .certificate-trigger {
             cursor: pointer;
             position: relative;
             z-index: 2;
-            display: block;
+             display: block;
         }
 
         .left-column ul li .certificate-trigger:hover .certificate-popup {
