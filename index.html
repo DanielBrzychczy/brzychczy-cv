@@ -564,32 +564,6 @@
             transform: scale(1.1);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
-
-        /* Styles for the language switcher */
-        .language-switcher {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 5px;
-        }
-
-        .language-switcher input[type="range"] {
-            width: 100px; /* Adjust as needed */
-            margin: 0 10px;
-        }
-
-        .language-switcher img {
-            width: 25px;
-            height: auto;
-            cursor: pointer;
-        }
-
-        .language-switcher .flag-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 150px; /* Adjust as needed */
-        }
     </style>
 </head>
 <body>
@@ -601,15 +575,6 @@
         <h1 data-translate="name">Daniel Brzychczy</h1>
     </div>
     <div class="contact">
-        <!-- Language Switcher -->
-        <div class="language-switcher">
-            <div class="flag-container">
-                <img src="img/flag-pl.png" alt="Polski" data-lang="pl">
-                <input type="range" min="0" max="100" value="0">
-                <img src="img/flag-gb.png" alt="Angielski" data-lang="en">
-            </div>
-        </div>
-
         <table class="language-table">
             <tr>
                 <td><img src="img/flag-pl.png" alt="Polski" data-lang="pl"></td>
@@ -747,4 +712,23 @@
                 </a>
             </div>
         </div>
-        <h2 data-translate="languages-title"><i class="fas fa
+        <h2 data-translate="languages-title"><i class="fas fa-language"></i> Języki</h2>
+        <div class="languages">
+            <div class="language-item">
+                <span class="flag-icon flag-icon-pl"></span> <span data-translate="polish">Polski</span> – <span data-translate="native">Ojczysty</span>
+            </div>
+            <div class="language-item">
+                <span class="flag-icon flag-icon-gb"></span> <span data-translate="english">Angielski</span> – B2
+            </div>
+            <div class="language-item">
+                <span class="flag-icon flag-icon-de"></span> <span data-translate="german">Niemiecki</span> – A1
+            </div>
+            <div class="language-item">
+                <span class="flag-icon flag-icon-it"></span> <span data-translate="italian">Włoski</span> – A1
+            </div>
+        </div>
+        <table class="data-agreement-table">
+            <tr>
+                <td data-translate="data-agreement">
+                    Wyrażam zgodę na przetwarzanie danych osobowych niezbędnych do realizacji procesu rekrutacji zgodnie z:
+                    Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia
