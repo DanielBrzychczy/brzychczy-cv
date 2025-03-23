@@ -16,7 +16,7 @@
             overflow-x: hidden;
             transition: background-color 0.3s ease-in-out;
             padding-top: 140px;
-              position: relative; /* Dodano position: relative do body */
+            position: relative; /* Dodano position: relative do body */
         }
 
         body:hover {
@@ -565,6 +565,11 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
 
+        .english-cv-button-container {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
         .english-cv-button {
             background-color: #008080;
             color: white;
@@ -573,15 +578,15 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-            margin-bottom: 10px;
-            display: inline-block;
             text-decoration: none; /* Usuwa domyślne podkreślenie linków */
+            display: inline-block;
         }
 
         .english-cv-button:hover {
             background-color: #00a693;
             transform: translateY(-2px);
         }
+
     </style>
 </head>
 <body>
@@ -600,8 +605,11 @@
 </header>
 <div class="container">
     <div class="left-column">
+    <div class="english-cv-button-container">
+         <a href="cv_en.html" class="english-cv-button">View in English</a>
+    </div>
         <div class="about-me">
-             <a href="cv_en.html" class="english-cv-button">View in English</a>
+
             <h2 data-translate="about-me"> <i class="fas fa-user"></i> O mnie </h2>
             <p data-translate="about-me-text">
                 Jestem studentem Technologii Przemysłu 4.0 i pasjonuję się nowoczesnymi rozwiązaniami. Szczególnie interesuje mnie mechatronika i elektronika, w których stale się rozwijam – zarówno na studiach, jak i realizując własne projekty. Jestem otwarty na nowe umiejętności i szybko się uczę, co pozwala mi sprawnie adaptować się do nowych zadań. Nawet jeśli czegoś jeszcze nie znam, szybko nadrabiam zaległości, żeby w pełni zrozumieć i efektywnie wykonywać powierzone mi obowiązki. Poza studiami, uwielbiam podróżować i poznawać historię – uważam, że to pomaga lepiej rozumieć świat. W wolnym czasie relaksuję się jeżdżąc na rowerze i chodząc na siłownię.
@@ -727,10 +735,4 @@
         <h2 data-translate="languages-title"><i class="fas fa-language"></i> Języki</h2>
         <div class="languages">
             <div class="language-item">
-                <span class="flag-icon flag-icon-pl"></span> <span data-translate="polish">Polski</span> – <span data-translate="native">Ojczysty</span>
-            </div>
-            <div class="language-item">
-                <span class="flag-icon flag-icon-gb"></span> <span data-translate="english">Angielski</span> – B2
-            </div>
-            <div class="language-item">
-                <span class="
+                <span class="flag-icon flag-icon-pl"></span> <span data-translate="polish">Polski</span> – <span data-translate
