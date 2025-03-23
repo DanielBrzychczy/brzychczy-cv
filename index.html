@@ -564,6 +564,24 @@
             transform: scale(1.1);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
+
+        .english-cv-button {
+            background-color: #008080;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            margin-bottom: 10px;
+            display: inline-block;
+            text-decoration: none; /* Usuwa domyślne podkreślenie linków */
+        }
+
+        .english-cv-button:hover {
+            background-color: #00a693;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -583,6 +601,7 @@
 <div class="container">
     <div class="left-column">
         <div class="about-me">
+             <a href="cv_en.html" class="english-cv-button">View in English</a>
             <h2 data-translate="about-me"> <i class="fas fa-user"></i> O mnie </h2>
             <p data-translate="about-me-text">
                 Jestem studentem Technologii Przemysłu 4.0 i pasjonuję się nowoczesnymi rozwiązaniami. Szczególnie interesuje mnie mechatronika i elektronika, w których stale się rozwijam – zarówno na studiach, jak i realizując własne projekty. Jestem otwarty na nowe umiejętności i szybko się uczę, co pozwala mi sprawnie adaptować się do nowych zadań. Nawet jeśli czegoś jeszcze nie znam, szybko nadrabiam zaległości, żeby w pełni zrozumieć i efektywnie wykonywać powierzone mi obowiązki. Poza studiami, uwielbiam podróżować i poznawać historię – uważam, że to pomaga lepiej rozumieć świat. W wolnym czasie relaksuję się jeżdżąc na rowerze i chodząc na siłownię.
@@ -714,14 +733,4 @@
                 <span class="flag-icon flag-icon-gb"></span> <span data-translate="english">Angielski</span> – B2
             </div>
             <div class="language-item">
-                <span class="flag-icon flag-icon-de"></span> <span data-translate="german">Niemiecki</span> – A1
-            </div>
-            <div class="language-item">
-                <span class="flag-icon flag-icon-it"></span> <span data-translate="italian">Włoski</span> – A1
-            </div>
-        </div>
-        <table class="data-agreement-table">
-            <tr>
-                <td data-translate="data-agreement">
-                    Wyrażam zgodę na przetwarzanie danych osobowych niezbędnych do realizacji procesu rekrutacji zgodnie z:
-                    Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia
+                <span class="
