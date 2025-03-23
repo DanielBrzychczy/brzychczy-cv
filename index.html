@@ -456,6 +456,59 @@
            transform: translateY(-2px);
            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
+
+         /* Style for language switch icon */
+        .language-switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 24px;
+        }
+        .language-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+        input:checked + .slider:before {
+            -webkit-transform: translateX(16px);
+            -ms-transform: translateX(16px);
+            transform: translateX(16px);
+        }
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 24px;
+        }
+        .slider.round:before {
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
@@ -467,6 +520,12 @@
         <h1>Daniel Brzychczy</h1>
     </div>
     <div class="contact">
+
+        <label class="language-switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+
         <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
         <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
         <span><i class="fas fa-map-marker-alt"></i> os. Strusia 7/202, Kraków</span>
@@ -497,25 +556,6 @@
                     <li> <i class="fas fa-industry"></i> Przemysł 4.0 - Foundation</li>
                 </ul>
             </li>
-          <li><strong>DataCamp:</strong>
-                <ul>
-                  <li>
-                        <i class="fas fa-database"></i> Data Manipulation with pandas
-                     <span class="certificate-trigger">
-                            <div class="certificate-popup">
-                                <embed src="certificate.pdf" type="application/pdf" />
-                            </div>
-                         </span>
-                   </li>
-                    <li><i class="fas fa-chart-line"></i> Introduction to Data Visualization with Seaborn</li>
-                </ul>
-            </li>
-             <li><strong>Matlab:</strong>
-                <ul>
-                    <li><i class="fas fa-laptop-code"></i> Machine Learning Onramp</li>
-                    <li><i class="fas fa-laptop-code"></i> MATLAB Onramp</li>
-                </ul>
-            </li>
         </ul>
         <h2 style="border-bottom: 2px solid white;"><i class="fas fa-wrench"></i> Umiejętności i atuty</h2>
         <ul>
@@ -534,34 +574,17 @@
                 </ul>
             </li>
             <li>
-                <strong>Programistyczne:</strong>
+                <strong>Komputerowe:</strong>
                 <ul>
-                    <li><i class="fab fa-python"></i> Umiejętność programowania w języku Python</li>
-                    <li><i class="fab fa-html5"></i> Podstawy programowania w języku HTML</li>
-                    <li><i class="fab fa-cuttlefish"></i> Podstawy programowania w języku C++</li>
+                    <li><i class="fas fa-code"></i> Programowanie w języku Python</li>
+                    <li><i class="fas fa-chart-bar"></i> Analiza danych</li>
+                    <li><i class="fas fa-microchip"></i> Programowanie sterowników PLC</li>
+                    <li><i class="fas fa-robot"></i> Podstawowa obsługa Roboguide</li>
+                    <li><i class="fas fa-wave-square"></i> Programowanie LABVIEW</li>
                 </ul>
             </li>
         </ul>
-        <h2 style="border-bottom: 2px solid white;"><i class="fas fa-cogs"></i> Sterowniki PLC</h2>
-        <ul>
-            <li>
-                <strong>Języki:</strong>
-                <ul>
-                    <li><i class="fas fa-code"></i> FBD</li>
-                    <li><i class="fas fa-code"></i> CFC</li>
-                    <li><i class="fas fa-code"></i> LD</li>
-                    <li><i class="fas fa-code"></i> Podstawy ST</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Programy:</strong>
-                <ul>
-                    <li><i class="fas fa-laptop-code"></i> Codessys</li>
-                    <li><i class="fas fa-laptop-code"></i> Logo Soft</li>
-                    <li><i class="fas fa-laptop-code"></i> TIA PORTAL</li>
-                </ul>
-            </li>
-        </ul>
+
         <h2 style="border-bottom: 2px solid white;"><i class="fas fa-trophy"></i> Atuty</h2>
         <ul>
             <li><i class="fas fa-trophy"></i> Laureat Małopolskiego konkursu prac własnych technicznych</li>
