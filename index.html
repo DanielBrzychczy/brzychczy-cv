@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Brzychczy - CV</title>
+    <title data-translate="title">Daniel Brzychczy - CV</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
+    <script src="script.js" defer></script>
     <style>
         body {
             display: flex;
@@ -16,11 +17,13 @@
             overflow-x: hidden;
             transition: background-color 0.3s ease-in-out;
             padding-top: 140px;
-              position: relative; /* Dodano position: relative do body */
+            position: relative; /* Dodano position: relative do body */
         }
+
         body:hover {
             background-color: #b2ebf2;
         }
+
         .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -33,9 +36,11 @@
             border-radius: 10px;
             transition: box-shadow 0.3s ease-in-out;
         }
+
         .container:hover {
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
+
         header {
             background: #008080;
             color: white;
@@ -51,21 +56,26 @@
             z-index: 1000;
             transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
+
         header:hover {
             background-color: #00a693;
             transform: translateY(-2px);
         }
+
         header h1 {
             font-size: 2.5em;
             transition: color 0.3s ease-in-out;
         }
+
         header:hover h1 {
             color: #f0f0f0;
         }
+
         .header-left {
             display: flex;
             align-items: center;
         }
+
         .header-left .image-container {
             width: 150px;
             height: 150px;
@@ -78,16 +88,19 @@
             justify-content: center;
             align-items: center;
         }
+
         .header-left .image-container:hover {
             transform: scale(1.1);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
+
         .header-left .image-container img {
             width: 100%;
             height: auto;
             object-fit: cover;
             object-position: center top;
         }
+
         .contact {
             display: flex;
             flex-direction: column;
@@ -98,9 +111,11 @@
             position: relative;
             right: 40px;
         }
+
         .contact:hover {
             transform: translateY(-2px);
         }
+
         .contact span {
             display: flex;
             align-items: center;
@@ -109,18 +124,22 @@
             text-align: left;
             transition: color 0.3s ease-in-out;
         }
+
         .contact span:hover {
             transform: scale(1.1);
             color: #fdd835;
         }
+
         .contact span i {
             margin-right: 10px;
         }
+
         .contact span::before {
             content: '';
             display: inline-block;
             width: 20px;
         }
+
         .left-column {
             padding: 25px;
             background: #00695c;
@@ -129,28 +148,34 @@
             border-radius: 10px;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
+
         .left-column:hover {
             transform: translateY(-4px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
+
         .right-column {
             padding: 20px;
         }
+
         h2 {
             color: #004d40;
             border-bottom: 2px solid #004d40;
             padding-bottom: 5px;
             transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
         }
+
         h2:hover {
             color: #00796b;
             border-color: #00796b;
         }
+
         .left-column h2 {
             color: white;
             border-bottom: 2px solid white;
             padding-bottom: 5px;
         }
+
         .left-column ul li {
             margin-bottom: 15px;
             transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -159,26 +184,31 @@
             list-style: none;
             z-index: 1;
         }
-         .left-column ul li ul li {
+
+        .left-column ul li ul li {
             margin-bottom: 15px;
             padding-left: 30px;
         }
+
         .left-column ul li strong {
             font-size: 1.1em;
             margin-bottom: 8px;
             display: block;
             margin-top: 15px;
         }
+
         .left-column ul li:hover {
             transform: translateX(5px);
             color: #b2dfdb;
         }
+
         .left-column ul li::before {
             content: '\2022';
             color: white;
             position: absolute;
             left: 0;
         }
+
         .languages {
             background: #b2dfdb;
             padding: 15px;
@@ -191,10 +221,12 @@
             flex-direction: column;
             gap: 10px;
         }
+
         .languages:hover {
             transform: translateY(-4px);
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
         }
+
         .languages .language-item {
             display: flex;
             align-items: center;
@@ -204,14 +236,18 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
         }
+
         .languages .language-item span.flag-icon {
             margin-right: 10px;
         }
+
         .languages .language-item:hover {
             transform: translateX(5px);
             background-color: rgba(255, 255, 255, 1);
         }
-         .experience, .education {
+
+        .experience,
+        .education {
             background: #b2dfdb;
             padding: 15px;
             margin-bottom: 20px;
@@ -220,14 +256,19 @@
             border-radius: 8px;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
-        .experience:hover, .education:hover {
+
+        .experience:hover,
+        .education:hover {
             transform: translateY(-4px);
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
         }
-        .experience p, .education p {
+
+        .experience p,
+        .education p {
             margin: 5px 0 10px;
         }
-          .sylabus {
+
+        .sylabus {
             background: #b2dfdb;
             padding: 15px;
             margin-bottom: 20px;
@@ -236,10 +277,12 @@
             border-radius: 8px;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
-         .sylabus:hover {
+
+        .sylabus:hover {
             transform: translateY(-4px);
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
         }
+
         .date {
             position: absolute;
             right: 10px;
@@ -247,6 +290,7 @@
             font-size: 0.9em;
             color: #555;
         }
+
         .left-column .about-me {
             background: linear-gradient(to bottom right, #009688, #00695c);
             color: white;
@@ -258,10 +302,12 @@
             border: 3px solid #008080;
             position: relative;
         }
+
         .left-column .about-me:hover {
             transform: translateY(-4px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
+
         .left-column .about-me h2 {
             color: white;
             border-bottom: 2px solid white;
@@ -272,6 +318,7 @@
             justify-content: flex-start;
             gap: 10px;
         }
+
         .left-column .about-me h2::before,
         .left-column .about-me h2::after {
             content: '';
@@ -281,10 +328,12 @@
             margin: 0;
             display: none;
         }
+
         .left-column .about-me p {
             line-height: 1.6;
             margin: 10px 0;
         }
+
         .left-column .about-me::before,
         .left-column .about-me::after {
             content: '';
@@ -292,45 +341,57 @@
             top: 10px;
             font-size: 25px;
         }
+
         .left-column .about-me::before {
             left: 10px;
         }
+
         .left-column .about-me::after {
             right: 10px;
             transform: rotateY(180deg);
         }
+
         .left-column .qr-container {
             text-align: center;
             margin-bottom: 20px;
         }
+
         .left-column .qr-container a {
             display: inline-block;
         }
-          .left-column .qr-container img {
+
+        .left-column .qr-container img {
             width: 150px;
             border: 2px solid #00796b;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
-         .left-column .qr-container img:hover {
+
+        .left-column .qr-container img:hover {
             transform: translateY(-2px);
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
+
         .left-column ul li i {
             margin-right: 8px;
             color: #b2dfdb;
         }
+
         .right-column h2 i {
             margin-right: 8px;
             color: #00796b;
         }
-         .experience h3, .education h3 {
+
+        .experience h3,
+        .education h3 {
             position: relative;
             padding-left: 25px;
             margin-bottom: 15px;
         }
-        .experience h3::before, .education h3::before {
+
+        .experience h3::before,
+        .education h3::before {
             content: '';
             position: absolute;
             left: 0;
@@ -338,82 +399,99 @@
             transform: translateY(-50%);
             font-size: 1.2em;
         }
+
         .experience h3::before {
             font-family: "Font Awesome 6 Free";
             content: '\f0b1';
             font-weight: 900;
             margin-right: 10px;
         }
-         .education h3::before {
+
+        .education h3::before {
             font-family: "Font Awesome 6 Free";
             content: '\f19d';
             font-weight: 900;
             margin-right: 10px;
         }
+
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
             }
+
             header {
                 flex-direction: column;
                 align-items: center;
                 padding: 10px;
             }
+
             header h1 {
                 margin-bottom: 10px;
             }
+
             .header-left {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
                 margin-bottom: 20px;
             }
+
             .header-left .image-container {
                 margin-right: 0;
                 margin-bottom: 10px;
             }
+
             .contact {
                 align-items: center;
                 position: static;
                 right: auto;
                 padding: 0;
             }
+
             .contact span {
                 text-align: center;
                 justify-content: center;
             }
-           .contact span::before {
+
+            .contact span::before {
                 display: none;
             }
-           header {
+
+            header {
                 padding: 10px;
                 font-size: 0.9em;
             }
+
             header h1 {
                 font-size: 1.5em;
                 margin-bottom: 5px;
             }
+
             .header-left .image-container {
                 width: 80px;
                 height: 80px;
             }
         }
+
         @media (max-width: 480px) {
             header h1 {
                 font-size: 1.2em;
             }
         }
+
         .data-agreement-table {
             width: 100%;
             margin-top: 10px;
             border-collapse: collapse;
         }
+
         .data-agreement-table td {
             font-size: 0.7em;
             text-align: justify;
             padding: 5px;
         }
-          .certificate-popup {
+
+        .certificate-popup {
             position: absolute;
             background: white;
             border: 1px solid #ccc;
@@ -424,105 +502,69 @@
             border-radius: 8px;
             transform: translateX(10px);
         }
-         .certificate-popup embed{
+
+        .certificate-popup embed {
             width: 300px;
             height: 200px;
             display: block;
         }
+
         .left-column ul li .certificate-trigger {
             cursor: pointer;
-             position: relative;
+            position: relative;
             z-index: 2;
         }
+
         .left-column ul li .certificate-trigger:hover .certificate-popup {
             display: block;
-             top: 100%;
+            top: 100%;
             left: 0;
         }
+
         .qr-container {
-          text-align: center;
-        }
-         .qr-container a {
-           display: inline-block;
-        }
-        .qr-container img {
-           width: 150px;
-           border: 2px solid #00796b;
-           border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-           transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-        .qr-container img:hover {
-           transform: translateY(-2px);
-           box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
 
-         /* Style for language switch icon */
-        .language-switch {
-            position: relative;
+        .qr-container a {
             display: inline-block;
-            width: 40px;
-            height: 24px;
         }
-        .language-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
+
+        .qr-container img {
+            width: 150px;
+            border: 2px solid #00796b;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
-        .slider {
-            position: absolute;
+
+        .qr-container img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Style for language table */
+        .language-table {
+            border-collapse: collapse;
+            margin-bottom: 5px;
+        }
+
+        .language-table td {
+            padding: 0;
+            margin: 0 2px;
             cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 16px;
-            width: 16px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-        input:checked + .slider {
-            background-color: #2196F3;
-        }
-        input:focus + .slider {
-            box-shadow: 0 0 1px #2196F3;
-        }
-        input:checked + .slider:before {
-            -webkit-transform: translateX(16px);
-            -ms-transform: translateX(16px);
-            transform: translateX(16px);
-        }
-        /* Rounded sliders */
-        .slider.round {
-            border-radius: 24px;
-        }
-        .slider.round:before {
-            border-radius: 50%;
         }
 
-        .language-switch-label {
-          position: relative;
-          display: inline-block;
-          margin-left: 5px;
-          font-size: 0.8em;
-          color: #ddd; /* Szary kolor dla tekstu */
-          transition: color 0.3s ease-in-out; /* Płynne przejście koloru */
+        .language-table img {
+            width: 25px;
+            height: auto;
+            border-radius: 3px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
-        .contact:hover .language-switch-label {
-          color: #fff; /* Biały kolor tekstu po najechaniu na .contact */
+        .language-table img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
-
     </style>
 </head>
 <body>
@@ -531,12 +573,16 @@
         <div class="image-container">
             <img src="twoje-zdjecie.jpg" alt="Twoje zdjęcie">
         </div>
-        <h1>Daniel Brzychczy</h1>
+        <h1 data-translate="name">Daniel Brzychczy</h1>
     </div>
     <div class="contact">
-
-        
-
+        <table class="language-table">
+            <tr>
+                <td><img src="img/flag-pl.png" alt="Polski" data-lang="pl"></td>
+                <td><img src="img/flag-gb.png" alt="Angielski" data-lang="en"></td>
+                <td><img src="img/flag-de.png" alt="Niemiecki" data-lang="de"></td>
+            </tr>
+        </table>
         <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
         <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
         <span><i class="fas fa-map-marker-alt"></i> os. Strusia 7/202, Kraków</span>
@@ -545,154 +591,144 @@
 <div class="container">
     <div class="left-column">
         <div class="about-me">
-            <h2> <i class="fas fa-user"></i> O mnie </h2>
-            <p>
+            <h2 data-translate="about-me"> <i class="fas fa-user"></i> O mnie </h2>
+            <p data-translate="about-me-text">
                 Jestem studentem Technologii Przemysłu 4.0 i pasjonuję się nowoczesnymi rozwiązaniami. Szczególnie interesuje mnie mechatronika i elektronika, w których stale się rozwijam – zarówno na studiach, jak i realizując własne projekty. Jestem otwarty na nowe umiejętności i szybko się uczę, co pozwala mi sprawnie adaptować się do nowych zadań. Nawet jeśli czegoś jeszcze nie znam, szybko nadrabiam zaległości, żeby w pełni zrozumieć i efektywnie wykonywać powierzone mi obowiązki. Poza studiami, uwielbiam podróżować i poznawać historię – uważam, że to pomaga lepiej rozumieć świat. W wolnym czasie relaksuję się jeżdżąc na rowerze i chodząc na siłownię.
             </p>
         </div>
-        <h2 style="border-bottom: 2px solid white;"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
+        <h2 style="border-bottom: 2px solid white;" data-translate="courses"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
         <ul>
-            <li><strong>Centrum Kształcenia Zawodowego:</strong>
+            <li><strong><span data-translate="ckz">Centrum Kształcenia Zawodowego:</span></strong>
                 <ul>
-                    <li> <i class="fas fa-code"></i> Programowanie urządzeń przemysłowych</li>
+                    <li> <i class="fas fa-code"></i> <span data-translate="industrial-programming">Programowanie urządzeń przemysłowych</span></li>
                 </ul>
             </li>
             <li><strong>ASTOR:</strong>
                 <ul>
-                    <li> <i class="fas fa-project-diagram"></i> Projektowanie i symulacja stanowisk w K-Rose</li>
+                    <li> <i class="fas fa-project-diagram"></i> <span data-translate="k-rose-design">Projektowanie i symulacja stanowisk w K-Rose</span></li>
                     <li> <i class="fas fa-desktop"></i> Wonderware InTouch 2014 R2</li>
-                    <li> <i class="fas fa-robot"></i> Obsługa robotów EPSON w RC+</li>
-                    <li> <i class="fas fa-cogs"></i> Diagnostyka serwonapędów ELAU - PacDrive M</li>
-                    <li> <i class="fas fa-microchip"></i> Sterowniki PLC Astraada One</li>
-                    <li> <i class="fas fa-industry"></i> Przemysł 4.0 - Foundation</li>
+                    <li> <i class="fas fa-robot"></i> <span data-translate="epson-robot">Obsługa robotów EPSON w RC+</span></li>
+                    <li> <i class="fas fa-cogs"></i> <span data-translate="elau-diagnostics">Diagnostyka serwonapędów ELAU - PacDrive M</span></li>
+                    <li> <i class="fas fa-microchip"></i> <span data-translate="astraada-plc">Sterowniki PLC Astraada One</span></li>
+                    <li> <i class="fas fa-industry"></i> <span data-translate="industry-40">Przemysł 4.0 - Foundation</span></li>
                 </ul>
             </li>
         </ul>
-        <h2 style="border-bottom: 2px solid white;"><i class="fas fa-wrench"></i> Umiejętności i atuty</h2>
+        <h2 style="border-bottom: 2px solid white;" data-translate="skills"><i class="fas fa-wrench"></i> Umiejętności i atuty</h2>
         <ul>
             <li>
-                <strong>Techniczne:</strong>
+                <strong><span data-translate="technical-skills">Techniczne:</span></strong>
                 <ul>
-                     <li><i class="fas fa-wrench"></i> Zdolności manualne</li>
-                    <li><i class="fas fa-tools"></i> Obsługa elektronarzędzi</li>
-                      <li> <i class="fas fa-file-alt"></i> Interpretacja rysunków technicznych</li>
-                    <li><i class="fas fa-bolt"></i> Znajomość zagadnień z elektrotechniki, automatyki oraz mechatroniki</li>
-                     <li><i class="fas fa-file-code"></i> Analiza schematów elektrycznych</li>
-                       <li><i class="fas fa-hammer"></i> Obróbka elementów metalowych</li>
-                   <li> <i class="fas fa-plug"></i> Montaż i lutowanie komponentów elektronicznych</li>
-                      <li> <i class="fas fa-tools"></i> Obsługa narzędzi warsztatowych</li>
-                     <li><i class="fas fa-microchip"></i> Umiejętność programowania mikrokontrolerów</li>
+                    <li><i class="fas fa-wrench"></i> <span data-translate="manual-skills">Zdolności manualne</span></li>
+                    <li><i class="fas fa-tools"></i> <span data-translate="power-tools">Obsługa elektronarzędzi</span></li>
+                    <li> <i class="fas fa-file-alt"></i> <span data-translate="technical-drawing">Interpretacja rysunków technicznych</span></li>
+                    <li><i class="fas fa-bolt"></i> <span data-translate="electrical-knowledge">Znajomość zagadnień z elektrotechniki, automatyki oraz mechatroniki</span></li>
+                    <li> <i class="fas fa-file-code"></i> <span data-translate="electrical-schematics">Analiza schematów elektrycznych</span></li>
+                    <li> <i class="fas fa-hammer"></i> <span data-translate="metal-processing">Obróbka elementów metalowych</span></li>
+                    <li> <i class="fas fa-plug"></i> <span data-translate="electronic-assembly">Montaż i lutowanie komponentów elektronicznych</span></li>
+                    <li> <i class="fas fa-tools"></i> <span data-translate="workshop-tools">Obsługa narzędzi warsztatowych</span></li>
+                    <li><i class="fas fa-microchip"></i> <span data-translate="microcontroller-programming">Umiejętność programowania mikrokontrolerów</span></li>
                 </ul>
             </li>
             <li>
-                <strong>Komputerowe:</strong>
+                <strong><span data-translate="computer-skills">Komputerowe:</span></strong>
                 <ul>
-                    <li><i class="fas fa-code"></i> Programowanie w języku Python</li>
-                    <li><i class="fas fa-chart-bar"></i> Analiza danych</li>
-                    <li><i class="fas fa-microchip"></i> Programowanie sterowników PLC</li>
-                    <li><i class="fas fa-robot"></i> Podstawowa obsługa Roboguide</li>
-                    <li><i class="fas fa-cube"></i> Podstawowa obsługa SolidWorks</li>
-                    <li><i class="fas fa-wave-square"></i> Programowanie LABVIEW</li>
+                    <li><i class="fas fa-code"></i> <span data-translate="python-programming">Programowanie w języku Python</span></li>
+                    <li><i class="fas fa-chart-bar"></i> <span data-translate="data-analysis">Analiza danych</span></li>
+                    <li><i class="fas fa-microchip"></i> <span data-translate="plc-programming">Programowanie sterowników PLC</span></li>
+                    <li><i class="fas fa-robot"></i> <span data-translate="roboguide-basics">Podstawowa obsługa Roboguide</span></li>
+                    <li><i class="fas fa-cube"></i> <span data-translate="solidworks-basics">Podstawowa obsługa SolidWorks</span></li>
+                    <li><i class="fas fa-wave-square"></i> <span data-translate="labview-programming">Programowanie LABVIEW</span></li>
                 </ul>
             </li>
         </ul>
 
-        <h2 style="border-bottom: 2px solid white;"><i class="fas fa-trophy"></i> Atuty</h2>
+        <h2 style="border-bottom: 2px solid white;" data-translate="achievements"><i class="fas fa-trophy"></i> Atuty</h2>
         <ul>
-            <li><i class="fas fa-trophy"></i> Laureat Małopolskiego konkursu prac własnych technicznych</li>
-            <li><i class="fas fa-car"></i> Prawo Jazdy kategoria B</li>
-            <li><i class="fas fa-user-check"></i> Badania sanitarno-epidemiologiczne</li>
-            <li><i class="fas fa-truck-loading"></i> Uprawnienia na wózek widłowy</li>
+            <li><i class="fas fa-trophy"></i> <span data-translate="technical-competition">Laureat Małopolskiego konkursu prac własnych technicznych</span></li>
+            <li><i class="fas fa-car"></i> <span data-translate="driving-license">Prawo Jazdy kategoria B</span></li>
+            <li><i class="fas fa-user-check"></i> <span data-translate="sanitary-tests">Badania sanitarno-epidemiologiczne</span></li>
+            <li><i class="fas fa-truck-loading"></i> <span data-translate="forklift-license">Uprawnienia na wózek widłowy</span></li>
         </ul>
-        <h2 style="border-bottom: 2px solid white;"><i class="fas fa-heart"></i> Zainteresowania</h2>
+        <h2 style="border-bottom: 2px solid white;" data-translate="interests"><i class="fas fa-heart"></i> Zainteresowania</h2>
         <ul>
-            <li><i class="fas fa-dumbbell"></i> Sporty siłowe</li>
-            <li><i class="fas fa-bicycle"></i> Podróże rowerowe</li>
-            <li><i class="fas fa-landmark"></i> Historia</li>
-            <li><i class="fas fa-book"></i> Książki fantasy</li>
-            <li><i class="fas fa-chess"></i> Gry strategiczne</li>
-            <li><i class="fas fa-plug"></i> Elektronika</li>
-             <li><i class="fas fa-utensils"></i> Gotowanie</li>
+            <li><i class="fas fa-dumbbell"></i> <span data-translate="strength-sports">Sporty siłowe</span></li>
+            <li><i class="fas fa-bicycle"></i> <span data-translate="bike-trips">Podróże rowerowe</span></li>
+            <li><i class="fas fa-landmark"></i> <span data-translate="history">Historia</span></li>
+            <li><i class="fas fa-book"></i> <span data-translate="fantasy-books">Książki fantasy</span></li>
+            <li><i class="fas fa-chess"></i> <span data-translate="strategy-games">Gry strategiczne</span></li>
+            <li><i class="fas fa-plug"></i> <span data-translate="electronics">Elektronika</span></li>
+            <li><i class="fas fa-utensils"></i> <span data-translate="cooking">Gotowanie</span></li>
         </ul>
     </div>
     <div class="right-column">
-        <h2><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
+        <h2 data-translate="work-experience"><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
         <div class="experience">
-            <h3>Revolmatic Kraków / FrothStop Poland</h3>
+            <h3 data-translate="revolmatic">Revolmatic Kraków / FrothStop Poland</h3>
             <span class="date">Lipiec 2022 – Listopad 2024</span>
-            <p>• Testowanie systemów mechatronicznych</p>
-            <p>• Uruchamianie systemów mechatronicznych</p>
-            <p>• Montowanie systemów mechatronicznych</p>
-            <p>• Wykonywanie prac serwisowych, obejmujących naprawy, wymiany komponentów i konserwację systemów mechatronicznych</p>
-            <p>• Wykonywanie precyzyjnych pomiarów elektrycznych w celu oceny i monitorowania parametrów</p>
-            <p>• Analiza wyników pomiarów w celu zapewnienia zgodności z wymaganiami technicznymi</p>
+            <p data-translate="revolmatic-task1">• Testowanie systemów mechatronicznych</p>
+            <p data-translate="revolmatic-task2">• Uruchamianie systemów mechatronicznych</p>
+            <p data-translate="revolmatic-task3">• Montowanie systemów mechatronicznych</p>
+            <p data-translate="revolmatic-task4">• Wykonywanie prac serwisowych, obejmujących naprawy, wymiany komponentów i konserwację systemów mechatronicznych</p>
+            <p data-translate="revolmatic-task5">• Wykonywanie precyzyjnych pomiarów elektrycznych w celu oceny i monitorowania parametrów</p>
+            <p data-translate="revolmatic-task6">• Analiza wyników pomiarów w celu zapewnienia zgodności z wymaganiami technicznymi</p>
         </div>
         <div class="experience">
-            <h3>Zbita Szybka Kraków</h3>
+            <h3 data-translate="zbita-szybka">Zbita Szybka Kraków</h3>
             <span class="date">Maj 2022 – Lipiec 2022</span>
-            <p>• Diagnozowanie i naprawa usterek elektroniki użytkowej firmy Apple, w tym wymiana uszkodzonych podzespołów, ekranów i baterii</p>
-            <p>• Przeprowadzanie testów wydajności i diagnostyki, aby zidentyfikować problemy z oprogramowaniem i sprzętem</p>
-            <p>• Kontakt z klientem w celu uzyskania informacji na temat usterek, omówienia diagnozy i przedstawienia kosztów naprawy</p>
+            <p data-translate="zbita-szybka-task1">• Diagnozowanie i naprawa usterek elektroniki użytkowej firmy Apple, w tym wymiana uszkodzonych podzespołów, ekranów i baterii</p>
+            <p data-translate="zbita-szybka-task2">• Przeprowadzanie testów wydajności i diagnostyki, aby zidentyfikować problemy z oprogramowaniem i sprzętem</p>
+            <p data-translate="zbita-szybka-task3">• Kontakt z klientem w celu uzyskania informacji na temat usterek, omówienia diagnozy i przedstawienia kosztów naprawy</p>
         </div>
         <div class="experience">
-            <h3>PILS Kraków</h3>
+            <h3 data-translate="pils">PILS Kraków</h3>
             <span class="date">Czerwiec 2021 – Wrzesień 2021</span>
-            <p>• Profesjonalne montowanie zautomatyzowanych bram i szlabanów zgodnie z wytycznymi technicznymi</p>
-            <p>• Przeprowadzanie kompleksowych testów funkcjonalności, w tym ocena zdolności do otwierania, zamykania i detekcji ruchu</p>
-            <p>• Wykonywanie regularnych prac serwisowych, obejmujących diagnostykę, naprawy i konserwację</p>
+            <p data-translate="pils-task1">• Profesjonalne montowanie zautomatyzowanych bram i szlabanów zgodnie z wytycznymi technicznymi</p>
+            <p data-translate="pils-task2">• Przeprowadzanie kompleksowych testów funkcjonalności, w tym ocena zdolności do otwierania, zamykania i detekcji ruchu</p>
+            <p data-translate="pils-task3">• Wykonywanie regularnych prac serwisowych, obejmujących diagnostykę, naprawy i konserwację</p>
         </div>
         <div class="experience">
-            <h3>BWS Stagehands</h3>
+            <h3 data-translate="bws">BWS Stagehands</h3>
             <span class="date">Lipiec 2020 – Wrzesień 2020</span>
-            <p>• Doświadczenie w precyzyjnym montażu i demontażu konstrukcji scenicznych zgodnie z planami projektowymi</p>
-            <p>• Wykonywanie prac porządkowych w celu utrzymania czystości i porządku na scenie przed, w trakcie i po wydarzeniach</p>
-            <p>• Aktywna pomoc w załadunku, rozładunku i przenoszeniu sprzętu scenicznego</p>
+            <p data-translate="bws-task1">• Doświadczenie w precyzyjnym montażu i demontażu konstrukcji scenicznych zgodnie z planami projektowymi</p>
+            <p data-translate="bws-task2">• Wykonywanie prac porządkowych w celu utrzymania czystości i porządku na scenie przed, w trakcie i po wydarzeniach</p>
+            <p data-translate="bws-task3">• Aktywna pomoc w załadunku, rozładunku i przenoszeniu sprzętu scenicznego</p>
         </div>
-        <h2><i class="fas fa-university"></i> Wykształcenie</h2>
+        <h2 data-translate="education"><i class="fas fa-university"></i> Wykształcenie</h2>
         <div class="education">
-            <h3>Technikum Komunikacyjne nr 25 w Krakowie</h3>
+            <h3 data-translate="tech-school">Technikum Komunikacyjne nr 25 w Krakowie</h3>
             <span class="date">2018-2022</span>
-            <p>Specjalizacja: <b>Technik mechatronik</b>.</p>
+            <p data-translate="tech-specialization">Specjalizacja: <b>Technik mechatronik</b>.</p>
         </div>
         <div class="education">
-            <h3>Akademia Górniczo-Hutnicza w Krakowie</h3>
+            <h3 data-translate="agh">Akademia Górniczo-Hutnicza w Krakowie</h3>
             <span class="date">2022 – nadal</span>
-            <p>Specjalizacja: <b>Inżynier Technologii Przemysłu 4.0</b>.</p>
+            <p data-translate="agh-specialization">Specjalizacja: <b>Inżynier Technologii Przemysłu 4.0</b>.</p>
         </div>
-        <h2 style="border-bottom: 2px solid #004d40; padding-bottom: 5px; margin-bottom: 20px; transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
+        <h2 style="border-bottom: 2px solid #004d40; padding-bottom: 5px; margin-bottom: 20px; transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;" data-translate="sylabus-title"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
         <div class="sylabus">
-           <div class="qr-container">
+            <div class="qr-container">
                 <a href="https://sylabusy.agh.edu.pl/pl/1/2/18/1/4/16/227" target="_blank">
                     <img src="qr1.jpg" alt="Kod QR">
                 </a>
             </div>
         </div>
-        <h2><i class="fas fa-language"></i> Języki</h2>
+        <h2 data-translate="languages-title"><i class="fas fa-language"></i> Języki</h2>
         <div class="languages">
             <div class="language-item">
-                <span class="flag-icon flag-icon-pl"></span> Polski – Ojczysty
+                <span class="flag-icon flag-icon-pl"></span> <span data-translate="polish">Polski</span> – <span data-translate="native">Ojczysty</span>
             </div>
             <div class="language-item">
-                <span class="flag-icon flag-icon-gb"></span> Angielski – B2
+                <span class="flag-icon flag-icon-gb"></span> <span data-translate="english">Angielski</span> – B2
             </div>
             <div class="language-item">
-                <span class="flag-icon flag-icon-de"></span> Niemiecki – A1
+                <span class="flag-icon flag-icon-de"></span> <span data-translate="german">Niemiecki</span> – A1
             </div>
-             <div class="language-item">
-                <span class="flag-icon flag-icon-it"></span> Włoski – A1
+            <div class="language-item">
+                <span class="flag-icon flag-icon-it"></span> <span data-translate="italian">Włoski</span> – A1
             </div>
         </div>
         <table class="data-agreement-table">
             <tr>
-                <td>
-                    Wyrażam zgodę na przetwarzanie danych osobowych niezbędnych do realizacji procesu rekrutacji zgodnie z:
-                    Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony
-                    osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich
-                    danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych).
-                </td>
-            </tr>
-        </table>
-    </div>
-</div>
-</body>
-</html>
+                <td data-translate="data-agreement">
+                    
