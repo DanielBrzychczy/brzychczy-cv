@@ -509,6 +509,20 @@
         .slider.round:before {
             border-radius: 50%;
         }
+
+        .language-switch-label {
+          position: relative;
+          display: inline-block;
+          margin-left: 5px;
+          font-size: 0.8em;
+          color: #ddd; /* Szary kolor dla tekstu */
+          transition: color 0.3s ease-in-out; /* Płynne przejście koloru */
+        }
+
+        .contact:hover .language-switch-label {
+          color: #fff; /* Biały kolor tekstu po najechaniu na .contact */
+        }
+
     </style>
 </head>
 <body>
@@ -525,6 +539,7 @@
             <input type="checkbox">
             <span class="slider round"></span>
         </label>
+        <span class="language-switch-label">EN</span>
 
         <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
         <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
@@ -580,6 +595,7 @@
                     <li><i class="fas fa-chart-bar"></i> Analiza danych</li>
                     <li><i class="fas fa-microchip"></i> Programowanie sterowników PLC</li>
                     <li><i class="fas fa-robot"></i> Podstawowa obsługa Roboguide</li>
+                    <li><i class="fas fa-cube"></i> Podstawy obsługi SolidWorks</li>
                     <li><i class="fas fa-wave-square"></i> Programowanie LABVIEW</li>
                 </ul>
             </li>
