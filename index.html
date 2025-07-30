@@ -131,14 +131,8 @@
             color: #fdd835;
         }
 
-        .contact span i, .contact a i {
+        .contact i {
             margin-right: 10px;
-        }
-
-        .contact span::before {
-            content: '';
-            display: inline-block;
-            width: 20px;
         }
 
         .left-column {
@@ -177,53 +171,65 @@
             padding-bottom: 5px;
         }
 
+        /* ----- NOWE, POPRAWIONE STYLE LIST ----- */
+        .left-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
         .left-column > ul > li {
+            position: relative;
+            padding-left: 20px; /* Miejsce na strzałkę i odstęp */
             margin-bottom: 15px;
             transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-            position: relative;
-            padding-left: 20px;
-            list-style: none;
-            z-index: 1;
+        }
+
+        .left-column > ul > li:hover {
+            transform: translateX(5px);
+            color: #b2dfdb;
         }
         
-        /* STYLE DLA STRZAŁEK I KROPEK */
+        /* Główny punktor - pełna strzałka */
         .left-column > ul > li::before {
             font-family: "Font Awesome 6 Free";
-            content: '\f061'; /* fas fa-arrow-right */
+            content: '\f04b'; /* Ikona 'play' - pełny trójkąt */
             font-weight: 900;
             color: white;
             position: absolute;
             left: 0;
+            top: 2px;
+        }
+        
+        /* Podpunkty (wcięcie i kropka) */
+        .left-column ul ul {
+            padding-left: 20px; /* Wcięcie dla podpunktów */
+            margin-top: 10px;
         }
 
+        .left-column ul ul li {
+            position: relative;
+            padding-left: 15px; /* Miejsce na kropkę i odstęp */
+            margin-bottom: 10px;
+        }
+        
+        /* Punktor dla podpunktów - kropka */
         .left-column ul ul li::before {
-            font-family: 'Arial', sans-serif;
             content: '\2022';
+            font-family: 'Arial', sans-serif;
             font-weight: bold;
             color: white;
             position: absolute;
-            left: 15px;
+            left: 0;
+            top: 0;
         }
         
-        .left-column ul li ul {
-            padding-left: 15px;
-            list-style: none;
-        }
-
-        .left-column ul li ul li {
-            margin-bottom: 10px;
-        }
-
-        .left-column ul > li > strong {
+        .left-column > ul > li > strong {
             font-size: 1.1em;
             margin-bottom: 8px;
             display: block;
         }
-
-        .left-column ul > li:hover {
-            transform: translateX(5px);
-            color: #b2dfdb;
-        }
+        /* ----- KONIEC STYLI LIST ----- */
+        
 
         .languages {
             background: #b2dfdb;
@@ -320,11 +326,6 @@
             color: #555;
         }
 
-        .left-column ul li i {
-            margin-right: 8px;
-            color: #b2dfdb;
-        }
-
         .right-column h2 i {
             margin-right: 8px;
             color: #00796b;
@@ -395,13 +396,9 @@
                 padding: 0;
             }
 
-            .contact span {
+            .contact span, .contact a {
                 text-align: center;
                 justify-content: center;
-            }
-
-            .contact span::before {
-                display: none;
             }
 
             header {
@@ -480,11 +477,12 @@
             <h1 data-translate="name">Daniel Brzychczy</h1>
         </div>
         <div class="contact">
-            <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
-            <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
-            <span><i class="fas fa-map-marker-alt"></i> os. Strusia 7/202, Kraków</span>
+            <!-- Dodano klasę fa-fw do ikon dla równego wyrównania -->
+            <span><i class="fas fa-fw fa-phone"></i> (+48) 664 859 633</span>
+            <span><i class="fas fa-fw fa-envelope"></i> danielb2710@wp.pl</span>
+            <span><i class="fas fa-fw fa-map-marker-alt"></i> os. Strusia 7/202, Kraków</span>
             <a href="https://www.linkedin.com/in/daniel-brzychczy-b840a3376/" target="_blank">
-                <i class="fab fa-linkedin"></i> Daniel Brzychczy
+                <i class="fab fa-fw fa-linkedin"></i> Daniel Brzychczy
             </a>
         </div>
     </header>
