@@ -213,39 +213,41 @@
             left: 0;
         }
 
-        /* POPRAWIONA SEKCJA JĘZYKÓW - DOPASOWANA DO CIEMNEGO TŁA */
         .languages {
-            background: transparent; /* Brak mocnego jasnego kontrastu */
-            padding: 0;
-            margin-top: 10px;
+            background: #b2dfdb;
+            padding: 15px;
             margin-bottom: 20px;
+            position: relative;
+            border: 2px solid #00796b;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
 
+        .languages:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+        }
+
         .languages .language-item {
             display: flex;
             align-items: center;
-            padding: 10px 15px;
-            border-radius: 8px;
-            /* Subtelne, półprzezroczyste tło, które wtapia się w zielony kolor kolumny */
-            background-color: rgba(255, 255, 255, 0.1); 
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 8px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
         }
 
         .languages .language-item span.flag-icon {
-            margin-right: 12px;
-            font-size: 1.1em;
+            margin-right: 10px;
         }
 
         .languages .language-item:hover {
-            transform: translateX(8px);
-            background-color: rgba(255, 255, 255, 0.2);
-            border-color: #b2dfdb;
+            transform: translateX(5px);
+            background-color: rgba(255, 255, 255, 1);
         }
 
         .experience,
@@ -268,15 +270,15 @@
         .experience p,
         .education p {
             margin: 5px 0 10px;
-            padding-left: 15px; 
+            padding-left: 15px;
             position: relative;
         }
 
         .experience p::before {
-            content: '\2022'; 
+            content: '\2022';
             position: absolute;
             left: 0;
-            top: 0; 
+            top: 0;
         }
 
         .education p {
@@ -319,6 +321,12 @@
             border: 2px solid #00796b;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .left-column .qr-container img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
 
         .experience h3,
@@ -342,12 +350,14 @@
             font-family: "Font Awesome 6 Free";
             content: '\f0b1';
             font-weight: 900;
+            margin-right: 10px;
         }
 
         .education h3::before {
             font-family: "Font Awesome 6 Free";
             content: '\f19d';
             font-weight: 900;
+            margin-right: 10px;
         }
 
         @media (max-width: 768px) {
@@ -362,12 +372,15 @@
             }
 
             header h1 {
+                margin-bottom: 10px;
                 font-size: 1.5em;
             }
 
             .header-left {
                 flex-direction: column;
                 align-items: center;
+                text-align: center;
+                margin-bottom: 20px;
             }
 
             .header-left .image-container {
@@ -382,6 +395,10 @@
                 position: static;
                 right: auto;
                 padding: 0;
+            }
+            
+            .contact span::before {
+                display: none;
             }
         }
 
@@ -450,8 +467,7 @@
              <div class="english-cv-button-container">
                 <a href="https://danielbrzychczy.github.io/brzychczy-eng-cv/" class="english-cv-button">View in English</a>
             </div>
-            
-            <h2 data-translate="courses"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
+            <h2 style="border-bottom: 2px solid white;" data-translate="courses"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
             <ul>
                 <li>
                     <strong>Centrum Kształcenia Zawodowego:</strong>
@@ -477,36 +493,22 @@
                     </ul>
                 </li>
             </ul>
-
-            <h2 data-translate="skills"><i class="fas fa-wrench"></i> Umiejętności i atuty</h2>
+            <h2 style="border-bottom: 2px solid white;" data-translate="skills"><i class="fas fa-wrench"></i> Umiejętności i atuty</h2>
             <ul>
                 <li>
                     <strong>Techniczne:</strong>
                     <ul>
-                        <li> Zdolności manualne</li>
-                        <li> Obsługa elektronarzędzi</li>
-                        <li> Interpretacja rysunków technicznych</li>
-                        <li> Znajomość zagadnień z elektrotechniki, automatyki oraz mechatroniki</li>
-                        <li> Analiza schematów elektrycznych</li>
-                        <li> Obróbka elementów metalowych</li>
-                        <li> Montaż i lutowanie komponentów elektronicznych</li>
-                        <li> Obsługa narzędzi warsztatowych</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Komputerowe:</strong>
-                    <ul>
-                        <li> Programowanie w języku Python</li>
-                        <li> Analiza danych</li>
-                        <li> Programowanie sterowników PLC</li>
-                        <li> Podstawowa obsługa Roboguide</li>
-                        <li> Podstawowa obsługa SolidWorks</li>
-                        <li> Programowanie LABVIEW</li>
+                        <li>Projektowanie 2D w AutoCAD</li>
+                        <li>Programowanie w języku Python</li>
+                        <li>Programowanie sterowników PLC</li>
+                        <li>Analiza danych</li>
+                        <li>Podstawy obsługi oprogramowania LABVIEW</li>
+                        <li>Podstawy obsługi oprogramowania Roboguide</li>
+                        <li>Podstawy obsługi oprogramowania SolidWorks</li>
                     </ul>
                 </li>
             </ul>
-
-            <h2 data-translate="achievements"><i class="fas fa-trophy"></i> Atuty</h2>
+            <h2 style="border-bottom: 2px solid white;" data-translate="achievements"><i class="fas fa-trophy"></i> Atuty</h2>
             <ul>
                 <li> Laureat Małopolskiego konkursu prac własnych technicznych</li>
                 <li> Laureat konkursu realizowanego przez Politechnikę Śląską - "Elektronika by żyło się łatwiej"</li>
@@ -514,25 +516,22 @@
                 <li> Badania sanitarno-epidemiologiczne</li>
                 <li> Uprawnienia na wózek widłowy</li>
             </ul>
-
-            <!-- DOPASOWANA SEKCJA JĘZYKI -->
-            <h2 data-translate="languages-title"><i class="fas fa-language"></i> Języki</h2>
+            <h2 style="border-bottom: 2px solid white;" data-translate="languages-title"><i class="fas fa-language"></i> Języki</h2>
             <div class="languages">
                 <div class="language-item">
-                    <span class="flag-icon flag-icon-pl"></span> Polski – Ojczysty
+                    <span class="flag-icon flag-icon-pl"></span>  Polski – Ojczysty
                 </div>
                 <div class="language-item">
-                    <span class="flag-icon flag-icon-gb"></span> Angielski – B2
+                    <span class="flag-icon flag-icon-gb"></span>  Angielski – B2
                 </div>
                 <div class="language-item">
-                    <span class="flag-icon flag-icon-de"></span> Niemiecki – A1
+                    <span class="flag-icon flag-icon-de"></span>  Niemiecki – A1
                 </div>
                 <div class="language-item">
-                    <span class="flag-icon flag-icon-it"></span> Włoski – A1
+                    <span class="flag-icon flag-icon-it"></span>  Włoski – A1
                 </div>
             </div>
         </div>
-
         <div class="right-column">
             <h2 data-translate="work-experience"><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
             <div class="experience">
@@ -545,15 +544,13 @@
                 <p data-translate="revolmatic-task5">Wykonywanie precyzyjnych pomiarów elektrycznych w celu oceny i monitorowania parametrów</p>
                 <p data-translate="revolmatic-task6">Analiza wyników pomiarów w celu zapewnienia zgodności z wymaganiami technicznymi</p>
             </div>
-            
             <div class="experience">
                 <h3 data-translate="zbita-szybka">Zbita Szybka Kraków</h3>
                 <span class="date">Maj 2022 – Lipiec 2022</span>
-                <p data-translate="zbita-szybka-task1">Realizacja kompleksowych napraw sprzętowych w ekosystemie Apple, ze szczególnym uwzględnieniem serwisu modułowego i odzyskiwania sprawności urządzeń po awariach</p>
+                <p data-translate="zbita-szybka-task1">Realizacja kompleksowych napraw sprzętowych v ekosystemie Apple, ze szczególnym uwzględnieniem serwisu modułowego i odzyskiwania sprawności urządzeń po awariach</p>
                 <p data-translate="zbita-szybka-task2"> Identyfikacja i analiza problemów technicznych poprzez szczegółowe testy diagnostyczne, co pozwalało na skrócenie czasu naprawy i zwiększenie jej skuteczności</p>
                 <p data-translate="zbita-szybka-task3">Pełnienie roli doradcy technicznego dla klientów, obejmujące klarowne komunikowanie przyczyn usterki oraz przedstawianie transparentnych kosztorysów i opcji naprawy</p>
             </div>
-
             <div class="experience">
                 <h3 data-translate="pils">PILS Kraków</h3>
                 <span class="date">Czerwiec 2021 – Wrzesień 2021</span>
@@ -561,7 +558,6 @@
                 <p data-translate="pils-task2">Weryfikacja poprawności działania i bezpieczeństwa systemów poprzez kompleksowe testy funkcjonalne, w tym kalibrację czujników ruchu i mechanizmów awaryjnych</p>
                 <p data-translate="pils-task3">Samodzielna diagnostyka i rozwiązywanie problemów technicznych</p>
             </div>
-
             <h2 data-translate="education"><i class="fas fa-university"></i> Wykształcenie</h2>
             <div class="education">
                 <h3 data-translate="tech-school">Technikum Komunikacyjne nr 25 w Krakowie</h3>
@@ -573,8 +569,7 @@
                 <span class="date">2022 – 2026</span>
                 <p data-translate="agh-specialization">Specjalizacja: <b>Inżynier Technologii Przemysłu 4.0</b>.</p>
             </div>
-
-            <h2 style="border-bottom: 2px solid #004d40; padding-bottom: 5px; margin-bottom: 20px;" data-translate="sylabus-title"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
+            <h2 style="border-bottom: 2px solid #004d40; padding-bottom: 5px; margin-bottom: 20px; transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;" data-translate="sylabus-title"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
             <div class="sylabus">
                 <div class="qr-container">
                     <a href="https://sylabusy.agh.edu.pl/pl/1/2/18/1/4/16/227" target="_blank">
@@ -582,7 +577,6 @@
                     </a>
                 </div>
             </div>
-
             <table class="data-agreement-table">
                 <tr>
                     <td data-translate="data-agreement">
