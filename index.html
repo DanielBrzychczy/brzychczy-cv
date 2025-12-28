@@ -224,6 +224,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            color: #000;
         }
 
         .languages:hover {
@@ -270,15 +271,15 @@
         .experience p,
         .education p {
             margin: 5px 0 10px;
-            padding-left: 15px; /* Dodane wcięcie dla punktorów */
+            padding-left: 15px; 
             position: relative;
         }
 
         .experience p::before {
-            content: '\2022'; /* Punktor: bullet point */
+            content: '\2022'; 
             position: absolute;
             left: 0;
-            top: 0; /* Wyrównaj punktor do góry tekstu */
+            top: 0; 
         }
 
         .education p {
@@ -362,8 +363,8 @@
         .left-column .qr-container {
             text-align: center;
             margin-bottom: 20px;
-            display: flex;          /* Dodane */
-            justify-content: center; /* Dodane */
+            display: flex;          
+            justify-content: center; 
             align-items: center;
         }
 
@@ -524,11 +525,11 @@
         }
 
         .qr-container {
-            text-align: center; /* Wyśrodkowanie poziome */
+            text-align: center; 
         }
 
         .qr-container img {
-            width: 150px; /* Zmniejszony rozmiar kodu QR */
+            width: 150px; 
             display: block;
             margin: 0 auto;
         }
@@ -547,9 +548,6 @@
             <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
             <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
             <span><i class="fas fa-map-marker-alt"></i> os. Strusia 7/202, Kraków</span>
-            <a href="https://www.linkedin.com/in/daniel-brzychczy-b840a3376/" target="_blank">
-                <span><i class="fab fa-linkedin"></i> Daniel Brzychczy</span>
-            </a>
         </div>
     </header>
     <div class="container">
@@ -618,14 +616,22 @@
                 <li> Badania sanitarno-epidemiologiczne</li>
                 <li> Uprawnienia na wózek widłowy</li>
             </ul>
-            <h2 style="border-bottom: 2px solid white;" data-translate="interests"><i class="fas fa-heart"></i> Zainteresowania</h2>
-            <ul>
-                <li> Podróże rowerowe</li>
-                <li> Historia</li>
-                <li> Książki fantasy</li>
-                <li> Gry strategiczne</li>
-                <li> Elektronika</li>
-            </ul>
+
+            <h2 data-translate="languages-title" style="border-bottom: 2px solid white;"><i class="fas fa-language"></i> Języki</h2>
+            <div class="languages">
+                <div class="language-item">
+                    <span class="flag-icon flag-icon-pl"></span>  Polski – Ojczysty
+                </div>
+                <div class="language-item">
+                    <span class="flag-icon flag-icon-gb"></span>  Angielski – B2
+                </div>
+                <div class="language-item">
+                    <span class="flag-icon flag-icon-de"></span>  Niemiecki – A1
+                </div>
+                <div class="language-item">
+                    <span class="flag-icon flag-icon-it"></span>  Włoski – A1
+                </div>
+            </div>
         </div>
         <div class="right-column">
             <h2 data-translate="work-experience"><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
@@ -637,7 +643,7 @@
                 <p data-translate="revolmatic-task3">Montowanie systemów mechatronicznych</p>
                 <p data-translate="revolmatic-task4">Wykonywanie prac serwisowych, obejmujących naprawy, wymiany komponentów i konserwację systemów mechatronicznych</p>
                 <p data-translate="revolmatic-task5">Wykonywanie precyzyjnych pomiarów elektrycznych w celu oceny i monitorowania parametrów</p>
-                <p data-translate="revolmatic-task6">Analiza wyników pomiarów w celu zapewnienia zgodności z wymaganiami technicznymi</p>
+                <p data-translate="revolmatic-task6">Analiza wyników pomiarów v celu zapewnienia zgodności z wymaganiami technicznymi</p>
             </div>
             <div class="experience">
                 <h3 data-translate="zbita-szybka">Zbita Szybka Kraków</h3>
@@ -661,7 +667,7 @@
             </div>
             <div class="education">
                 <h3 data-translate="agh">Akademia Górniczo-Hutnicza w Krakowie</h3>
-                <span class="date">2022 – nadal</span>
+                <span class="date">2022 – 2026</span>
                 <p data-translate="agh-specialization">Specjalizacja: <b>Inżynier Technologii Przemysłu 4.0</b>.</p>
             </div>
             <h2 style="border-bottom: 2px solid #004d40; padding-bottom: 5px; margin-bottom: 20px; transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;" data-translate="sylabus-title"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
@@ -670,21 +676,6 @@
                     <a href="https://sylabusy.agh.edu.pl/pl/1/2/18/1/4/16/227" target="_blank">
                         <img src="qr1.jpg" alt="Kod QR">
                     </a>
-                </div>
-            </div>
-            <h2 data-translate="languages-title"><i class="fas fa-language"></i> Języki</h2>
-            <div class="languages">
-                <div class="language-item">
-                    <span class="flag-icon flag-icon-pl"></span>  Polski – Ojczysty
-                </div>
-                <div class="language-item">
-                    <span class="flag-icon flag-icon-gb"></span>  Angielski – B2
-                </div>
-                <div class="language-item">
-                    <span class="flag-icon flag-icon-de"></span>  Niemiecki – A1
-                </div>
-                <div class="language-item">
-                    <span class="flag-icon flag-icon-it"></span>  Włoski – A1
                 </div>
             </div>
             <table class="data-agreement-table">
