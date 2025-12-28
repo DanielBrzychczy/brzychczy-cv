@@ -133,17 +133,6 @@
             margin-right: 10px;
         }
 
-        .contact span::before {
-            content: '';
-            display: inline-block;
-            width: 20px;
-        }
-        
-        .contact a {
-            color: white;
-            text-decoration: none;
-        }
-
         .left-column {
             padding: 25px;
             background: #00695c;
@@ -214,7 +203,7 @@
         }
 
         .languages {
-            background: #b2dfdb;
+            background: #b2dfdb; /* Przywrócony jasny turkusowy dla czytelności */
             padding: 15px;
             margin-bottom: 20px;
             position: relative;
@@ -224,6 +213,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            color: #004d40; /* Ciemny czytelny napis na jasnym tle */
         }
 
         .languages:hover {
@@ -281,10 +271,6 @@
             top: 0;
         }
 
-        .education p {
-            margin: 5px 0 10px;
-        }
-
         .sylabus {
             background: #b2dfdb;
             padding: 15px;
@@ -295,11 +281,6 @@
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
-        .sylabus:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
-        }
-
         .date {
             position: absolute;
             right: 10px;
@@ -308,25 +289,16 @@
             color: #555;
         }
 
-        .left-column .qr-container {
+        .qr-container {
             text-align: center;
-            margin-bottom: 20px;
-            display: flex;          
-            justify-content: center; 
-            align-items: center;
         }
 
-        .left-column .qr-container img {
+        .qr-container img {
             width: 150px;
-            border: 2px solid #00796b;
+            display: block;
+            margin: 0 auto;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-
-        .left-column .qr-container img:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            border: 2px solid #00796b;
         }
 
         .experience h3,
@@ -344,65 +316,14 @@
             top: 50%;
             transform: translateY(-50%);
             font-size: 1.2em;
-        }
-
-        .experience h3::before {
             font-family: "Font Awesome 6 Free";
-            content: '\f0b1';
             font-weight: 900;
-            margin-right: 10px;
         }
 
-        .education h3::before {
-            font-family: "Font Awesome 6 Free";
-            content: '\f19d';
-            font-weight: 900;
-            margin-right: 10px;
-        }
+        .experience h3::before { content: '\f0b1'; }
+        .education h3::before { content: '\f19d'; }
 
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-
-            header {
-                flex-direction: column;
-                align-items: center;
-                padding: 10px;
-            }
-
-            header h1 {
-                margin-bottom: 10px;
-                font-size: 1.5em;
-            }
-
-            .header-left {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                margin-bottom: 20px;
-            }
-
-            .header-left .image-container {
-                margin-right: 0;
-                margin-bottom: 10px;
-                width: 100px;
-                height: 100px;
-            }
-
-            .contact {
-                align-items: center;
-                position: static;
-                right: auto;
-                padding: 0;
-            }
-            
-            .contact span::before {
-                display: none;
-            }
-        }
-
-         .english-cv-button-container {
+        .english-cv-button-container {
             text-align: center;
             margin-bottom: 15px;
         }
@@ -411,18 +332,13 @@
             background-color: #008080;
             color: white;
             padding: 10px 15px;
-            border: none;
             border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
             text-decoration: none;
             display: inline-block;
+            transition: 0.3s;
         }
 
-        .english-cv-button:hover {
-            background-color: #00a693;
-            transform: translateY(-2px);
-        }
+        .english-cv-button:hover { background-color: #00a693; }
 
         .data-agreement-table {
             width: 100%;
@@ -436,16 +352,13 @@
             padding: 5px;
         }
 
-        .qr-container {
-            text-align: center; 
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+            header { flex-direction: column; align-items: center; }
+            .header-left { flex-direction: column; }
+            .header-left .image-container { margin-right: 0; margin-bottom: 10px; width: 100px; height: 100px; }
+            .contact { position: static; right: auto; align-items: center; padding: 0; }
         }
-
-        .qr-container img {
-            width: 150px; 
-            display: block;
-            margin: 0 auto;
-        }
-
     </style>
 </head>
 <body>
@@ -467,13 +380,12 @@
              <div class="english-cv-button-container">
                 <a href="https://danielbrzychczy.github.io/brzychczy-eng-cv/" class="english-cv-button">View in English</a>
             </div>
-            <h2 style="border-bottom: 2px solid white;" data-translate="courses"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
+            
+            <h2 data-translate="courses"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
             <ul>
                 <li>
                     <strong>Centrum Kształcenia Zawodowego:</strong>
-                    <ul>
-                        <li> Programowanie urządzeń przemysłowych</li>
-                    </ul>
+                    <ul><li> Programowanie urządzeń przemysłowych</li></ul>
                 </li>
                 <li>
                     <strong>ASTOR:</strong>
@@ -488,27 +400,40 @@
                 </li>
                 <li>
                     <strong>COPA-DATA:</strong>
-                    <ul>
-                        <li>zenon Basic Certificate | zenon 11</li>
-                    </ul>
+                    <ul><li>zenon Basic Certificate | zenon 11</li></ul>
                 </li>
             </ul>
-            <h2 style="border-bottom: 2px solid white;" data-translate="skills"><i class="fas fa-wrench"></i> Umiejętności i atuty</h2>
+
+            <h2 data-translate="skills"><i class="fas fa-wrench"></i> Umiejętności i atuty</h2>
             <ul>
                 <li>
                     <strong>Techniczne:</strong>
                     <ul>
-                        <li>Projektowanie 2D w AutoCAD</li>
-                        <li>Programowanie w języku Python</li>
-                        <li>Programowanie sterowników PLC</li>
-                        <li>Analiza danych</li>
-                        <li>Podstawy obsługi oprogramowania LABVIEW</li>
-                        <li>Podstawy obsługi oprogramowania Roboguide</li>
-                        <li>Podstawy obsługi oprogramowania SolidWorks</li>
+                        <li> Zdolności manualne</li>
+                        <li> Obsługa elektronarzędzi</li>
+                        <li> Interpretacja rysunków technicznych</li>
+                        <li> Znajomość zagadnień z elektrotechniki, automatyki oraz mechatroniki</li>
+                        <li> Analiza schematów elektrycznych</li>
+                        <li> Obróbka elementów metalowych</li>
+                        <li> Montaż i lutowanie komponentów elektronicznych</li>
+                        <li> Obsługa narzędzi warsztatowych</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Komputerowe:</strong>
+                    <ul>
+                        <li> Projektowanie 2D w AutoCAD</li>
+                        <li> Programowanie w języku Python</li>
+                        <li> Programowanie sterowników PLC</li>
+                        <li> Analiza danych</li>
+                        <li> Podstawy obsługi oprogramowania LABVIEW</li>
+                        <li> Podstawy obsługi oprogramowania Roboguide</li>
+                        <li> Podstawy obsługi oprogramowania SolidWorks</li>
                     </ul>
                 </li>
             </ul>
-            <h2 style="border-bottom: 2px solid white;" data-translate="achievements"><i class="fas fa-trophy"></i> Atuty</h2>
+
+            <h2 data-translate="achievements"><i class="fas fa-trophy"></i> Atuty</h2>
             <ul>
                 <li> Laureat Małopolskiego konkursu prac własnych technicznych</li>
                 <li> Laureat konkursu realizowanego przez Politechnikę Śląską - "Elektronika by żyło się łatwiej"</li>
@@ -516,22 +441,16 @@
                 <li> Badania sanitarno-epidemiologiczne</li>
                 <li> Uprawnienia na wózek widłowy</li>
             </ul>
-            <h2 style="border-bottom: 2px solid white;" data-translate="languages-title"><i class="fas fa-language"></i> Języki</h2>
+
+            <h2 data-translate="languages-title"><i class="fas fa-language"></i> Języki</h2>
             <div class="languages">
-                <div class="language-item">
-                    <span class="flag-icon flag-icon-pl"></span>  Polski – Ojczysty
-                </div>
-                <div class="language-item">
-                    <span class="flag-icon flag-icon-gb"></span>  Angielski – B2
-                </div>
-                <div class="language-item">
-                    <span class="flag-icon flag-icon-de"></span>  Niemiecki – A1
-                </div>
-                <div class="language-item">
-                    <span class="flag-icon flag-icon-it"></span>  Włoski – A1
-                </div>
+                <div class="language-item"><span class="flag-icon flag-icon-pl"></span> Polski – Ojczysty</div>
+                <div class="language-item"><span class="flag-icon flag-icon-gb"></span> Angielski – B2</div>
+                <div class="language-item"><span class="flag-icon flag-icon-de"></span> Niemiecki – A1</div>
+                <div class="language-item"><span class="flag-icon flag-icon-it"></span> Włoski – A1</div>
             </div>
         </div>
+
         <div class="right-column">
             <h2 data-translate="work-experience"><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
             <div class="experience">
@@ -547,7 +466,7 @@
             <div class="experience">
                 <h3 data-translate="zbita-szybka">Zbita Szybka Kraków</h3>
                 <span class="date">Maj 2022 – Lipiec 2022</span>
-                <p data-translate="zbita-szybka-task1">Realizacja kompleksowych napraw sprzętowych v ekosystemie Apple, ze szczególnym uwzględnieniem serwisu modułowego i odzyskiwania sprawności urządzeń po awariach</p>
+                <p data-translate="zbita-szybka-task1">Realizacja kompleksowych napraw sprzętowych w ekosystemie Apple, ze szczególnym uwzględnieniem serwisu modułowego i odzyskiwania sprawności urządzeń po awariach</p>
                 <p data-translate="zbita-szybka-task2"> Identyfikacja i analiza problemów technicznych poprzez szczegółowe testy diagnostyczne, co pozwalało na skrócenie czasu naprawy i zwiększenie jej skuteczności</p>
                 <p data-translate="zbita-szybka-task3">Pełnienie roli doradcy technicznego dla klientów, obejmujące klarowne komunikowanie przyczyn usterki oraz przedstawianie transparentnych kosztorysów i opcji naprawy</p>
             </div>
@@ -558,18 +477,20 @@
                 <p data-translate="pils-task2">Weryfikacja poprawności działania i bezpieczeństwa systemów poprzez kompleksowe testy funkcjonalne, w tym kalibrację czujników ruchu i mechanizmów awaryjnych</p>
                 <p data-translate="pils-task3">Samodzielna diagnostyka i rozwiązywanie problemów technicznych</p>
             </div>
+
             <h2 data-translate="education"><i class="fas fa-university"></i> Wykształcenie</h2>
             <div class="education">
-                <h3 data-translate="tech-school">Technikum Komunikacyjne nr 25 w Krakowie</h3>
+                <h3 data-translate="tech-school">Technikum Komunikacyjne nr 25 v Krakowie</h3>
                 <span class="date">2018-2022</span>
-                <p data-translate="tech-specialization">Specjalizacja: <b>Technik mechatronik</b>.</p>
+                <p>Specjalizacja: <b>Technik mechatronik</b>.</p>
             </div>
             <div class="education">
                 <h3 data-translate="agh">Akademia Górniczo-Hutnicza w Krakowie</h3>
                 <span class="date">2022 – 2026</span>
-                <p data-translate="agh-specialization">Specjalizacja: <b>Inżynier Technologii Przemysłu 4.0</b>.</p>
+                <p>Specjalizacja: <b>Inżynier Technologii Przemysłu 4.0</b>.</p>
             </div>
-            <h2 style="border-bottom: 2px solid #004d40; padding-bottom: 5px; margin-bottom: 20px; transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;" data-translate="sylabus-title"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
+
+            <h2 data-translate="sylabus-title"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
             <div class="sylabus">
                 <div class="qr-container">
                     <a href="https://sylabusy.agh.edu.pl/pl/1/2/18/1/4/16/227" target="_blank">
@@ -577,11 +498,11 @@
                     </a>
                 </div>
             </div>
+
             <table class="data-agreement-table">
                 <tr>
                     <td data-translate="data-agreement">
-                        Wyrażam zgodę na przetwarzanie danych osobowych niezbędnych do realizacji procesu rekrutacji zgodnie z:
-                        Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO).
+                        Wyrażam zgodę na przetwarzanie danych osobowych niezbędnych do realizacji procesu rekrutacji zgodnie z: Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO).
                     </td>
                 </tr>
             </table>
