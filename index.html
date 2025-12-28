@@ -202,7 +202,7 @@
             left: 0;
         }
 
-        /* MODYFIKACJA JĘZYKÓW DLA LEPSZEGO DOPASOWANIA */
+        /* STYL JĘZYKÓW - DOPASOWANY */
         .languages {
             background: transparent;
             padding: 0;
@@ -218,7 +218,7 @@
             align-items: center;
             padding: 10px 15px;
             border-radius: 8px;
-            background-color: #004d40; /* Ciemnozielone tło pasujące do boku */
+            background-color: #004d40; 
             border: 2px solid #008080;
             color: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -290,7 +290,7 @@
             right: 10px;
             top: 10px;
             font-size: 0.9em;
-            color: #333;
+            color: #222;
             font-weight: bold;
         }
 
@@ -312,6 +312,7 @@
             position: relative;
             padding-left: 25px;
             margin-bottom: 15px;
+            margin-right: 160px; /* Aby uniknąć nachodzenia na datę */
         }
 
         .experience h3::before,
@@ -364,6 +365,8 @@
             .header-left { flex-direction: column; text-align: center; }
             .header-left .image-container { margin-right: 0; margin-bottom: 10px; width: 100px; height: 100px; }
             .contact { align-items: center; position: static; right: auto; padding: 0; }
+            .date { position: static; display: block; margin-bottom: 10px; }
+            .experience h3 { margin-right: 0; }
         }
     </style>
 </head>
@@ -459,20 +462,31 @@
 
         <div class="right-column">
             <h2 data-translate="work-experience"><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
+            
             <div class="experience">
-                <h3 data-translate="revolmatic">Revolmatic Kraków / FrothStop Poland</h3>
+                <h3 data-translate="general-automatic">General Automatic</h3>
+                <span class="date">Wrzesień 2025 – nadal</span>
+                <p>Przygotowywanie dokumentacji projektowej i wykonawczej dla instalacji niskoprądowych</p>
+                <p>Rozmieszczanie elementów wykonawczych i pomiarowych w AutoCAD</p>
+                <p>Dobór okablowania oraz obliczanie tras i długości przewodów zgodnie z założeniami projektowymi</p>
+                <p>Dobór elementów wykonawczych i pomiarowych</p>
+                <p>Praca z dokumentacją techniczną i materiałową</p>
+            </div>
+
+            <div class="experience">
+                <h3 data-translate="revolmatic">Revolmatic / FrothStop Poland</h3>
                 <span class="date">Lipiec 2022 – Wrzesień 2025</span>
                 <p><strong>Pełnienie roli lidera działu modułów</strong></p>
-                <p data-translate="revolmatic-task1">Testowanie systemów mechatronicznych</p>
-                <p data-translate="revolmatic-task2">Uruchamianie systemów mechatronicznych</p>
-                <p data-translate="revolmatic-task3">Montowanie systemów mechatronicznych</p>
-                <p data-translate="revolmatic-task4">Wykonywanie prac serwisowych, obejmujących naprawy, wymiany komponentów i konserwację systemów mechatronicznych</p>
-                <p data-translate="revolmatic-task5">Wykonywanie precyzyjnych pomiarów elektrycznych w celu oceny i monitorowania parametrów</p>
-                <p data-translate="revolmatic-task6">Analiza wyników pomiarów w celu zapewnienia zgodności z wymaganiami technicznymi</p>
+                <p>Testowanie systemów mechatronicznych</p>
+                <p>Uruchamianie systemów mechatronicznych</p>
+                <p>Montowanie systemów mechatronicznych</p>
+                <p>Wykonywanie prac serwisowych, obejmujących naprawy, wymiany komponentów i konserwację systemów mechatronicznych</p>
+                <p>Wykonywanie precyzyjnych pomiarów elektrycznych w celu oceny i monitorowania parametrów</p>
+                <p>Analiza wyników pomiarów w celu zapewnienia zgodności z wymaganiami technicznymi</p>
             </div>
             
             <div class="experience">
-                <h3 data-translate="zbita-szybka">Zbita Szybka Kraków</h3>
+                <h3 data-translate="zbita-szybka">Zbita Szybka</h3>
                 <span class="date">Maj 2022 – Lipiec 2022</span>
                 <p>Naprawa sprzętu Apple, w tym wymiana uszkodzonych podzespołów oraz przywracanie pełnej sprawności urządzeń po awariach</p>
                 <p>Diagnozowanie usterek na podstawie testów sprzętowych i funkcjonalnych</p>
