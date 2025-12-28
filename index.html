@@ -202,42 +202,37 @@
             left: 0;
         }
 
+        /* MODYFIKACJA JĘZYKÓW DLA LEPSZEGO DOPASOWANIA */
         .languages {
-            background: #b2dfdb; /* Przywrócony jasny turkusowy dla czytelności */
-            padding: 15px;
+            background: transparent;
+            padding: 0;
             margin-bottom: 20px;
-            position: relative;
-            border: 2px solid #00796b;
-            border-radius: 8px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             display: flex;
             flex-direction: column;
             gap: 10px;
-            color: #004d40; /* Ciemny czytelny napis na jasnym tle */
-        }
-
-        .languages:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 15px;
         }
 
         .languages .language-item {
             display: flex;
             align-items: center;
-            padding: 8px;
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+            background-color: #004d40; /* Ciemnozielone tło pasujące do boku */
+            border: 2px solid #008080;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-        }
-
-        .languages .language-item span.flag-icon {
-            margin-right: 10px;
         }
 
         .languages .language-item:hover {
             transform: translateX(5px);
-            background-color: rgba(255, 255, 255, 1);
+            background-color: #006064;
+            border-color: #b2dfdb;
+        }
+
+        .languages .language-item span.flag-icon {
+            margin-right: 12px;
         }
 
         .experience,
@@ -271,6 +266,10 @@
             top: 0;
         }
 
+        .education p {
+            margin: 5px 0 10px;
+        }
+
         .sylabus {
             background: #b2dfdb;
             padding: 15px;
@@ -281,12 +280,18 @@
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
+        .sylabus:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+        }
+
         .date {
             position: absolute;
             right: 10px;
             top: 10px;
             font-size: 0.9em;
-            color: #555;
+            color: #333;
+            font-weight: bold;
         }
 
         .qr-container {
@@ -299,6 +304,7 @@
             margin: 0 auto;
             border-radius: 8px;
             border: 2px solid #00796b;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .experience h3,
@@ -335,7 +341,7 @@
             border-radius: 5px;
             text-decoration: none;
             display: inline-block;
-            transition: 0.3s;
+            transition: background-color 0.3s ease;
         }
 
         .english-cv-button:hover { background-color: #00a693; }
@@ -354,10 +360,10 @@
 
         @media (max-width: 768px) {
             .container { grid-template-columns: 1fr; }
-            header { flex-direction: column; align-items: center; }
-            .header-left { flex-direction: column; }
+            header { flex-direction: column; align-items: center; padding: 10px; }
+            .header-left { flex-direction: column; text-align: center; }
             .header-left .image-container { margin-right: 0; margin-bottom: 10px; width: 100px; height: 100px; }
-            .contact { position: static; right: auto; align-items: center; padding: 0; }
+            .contact { align-items: center; position: static; right: auto; padding: 0; }
         }
     </style>
 </head>
@@ -381,7 +387,7 @@
                 <a href="https://danielbrzychczy.github.io/brzychczy-eng-cv/" class="english-cv-button">View in English</a>
             </div>
             
-            <h2 data-translate="courses"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
+            <h2 style="border-bottom: 2px solid white;" data-translate="courses"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
             <ul>
                 <li>
                     <strong>Centrum Kształcenia Zawodowego:</strong>
@@ -404,7 +410,7 @@
                 </li>
             </ul>
 
-            <h2 data-translate="skills"><i class="fas fa-wrench"></i> Umiejętności i atuty</h2>
+            <h2 style="border-bottom: 2px solid white;" data-translate="skills"><i class="fas fa-wrench"></i> Umiejętności i atuty</h2>
             <ul>
                 <li>
                     <strong>Techniczne:</strong>
@@ -433,7 +439,7 @@
                 </li>
             </ul>
 
-            <h2 data-translate="achievements"><i class="fas fa-trophy"></i> Atuty</h2>
+            <h2 style="border-bottom: 2px solid white;" data-translate="achievements"><i class="fas fa-trophy"></i> Atuty</h2>
             <ul>
                 <li> Laureat Małopolskiego konkursu prac własnych technicznych</li>
                 <li> Laureat konkursu realizowanego przez Politechnikę Śląską - "Elektronika by żyło się łatwiej"</li>
@@ -442,7 +448,7 @@
                 <li> Uprawnienia na wózek widłowy</li>
             </ul>
 
-            <h2 data-translate="languages-title"><i class="fas fa-language"></i> Języki</h2>
+            <h2 style="border-bottom: 2px solid white;" data-translate="languages-title"><i class="fas fa-language"></i> Języki</h2>
             <div class="languages">
                 <div class="language-item"><span class="flag-icon flag-icon-pl"></span> Polski – Ojczysty</div>
                 <div class="language-item"><span class="flag-icon flag-icon-gb"></span> Angielski – B2</div>
@@ -455,7 +461,8 @@
             <h2 data-translate="work-experience"><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
             <div class="experience">
                 <h3 data-translate="revolmatic">Revolmatic Kraków / FrothStop Poland</h3>
-                <span class="date">Lipiec 2022 – nadal</span>
+                <span class="date">Lipiec 2022 – Wrzesień 2025</span>
+                <p><strong>Pełnienie roli lidera działu modułów</strong></p>
                 <p data-translate="revolmatic-task1">Testowanie systemów mechatronicznych</p>
                 <p data-translate="revolmatic-task2">Uruchamianie systemów mechatronicznych</p>
                 <p data-translate="revolmatic-task3">Montowanie systemów mechatronicznych</p>
@@ -463,34 +470,36 @@
                 <p data-translate="revolmatic-task5">Wykonywanie precyzyjnych pomiarów elektrycznych w celu oceny i monitorowania parametrów</p>
                 <p data-translate="revolmatic-task6">Analiza wyników pomiarów w celu zapewnienia zgodności z wymaganiami technicznymi</p>
             </div>
+            
             <div class="experience">
                 <h3 data-translate="zbita-szybka">Zbita Szybka Kraków</h3>
                 <span class="date">Maj 2022 – Lipiec 2022</span>
-                <p data-translate="zbita-szybka-task1">Realizacja kompleksowych napraw sprzętowych w ekosystemie Apple, ze szczególnym uwzględnieniem serwisu modułowego i odzyskiwania sprawności urządzeń po awariach</p>
-                <p data-translate="zbita-szybka-task2"> Identyfikacja i analiza problemów technicznych poprzez szczegółowe testy diagnostyczne, co pozwalało na skrócenie czasu naprawy i zwiększenie jej skuteczności</p>
-                <p data-translate="zbita-szybka-task3">Pełnienie roli doradcy technicznego dla klientów, obejmujące klarowne komunikowanie przyczyn usterki oraz przedstawianie transparentnych kosztorysów i opcji naprawy</p>
+                <p>Naprawa sprzętu Apple, w tym wymiana uszkodzonych podzespołów oraz przywracanie pełnej sprawności urządzeń po awariach</p>
+                <p>Diagnozowanie usterek na podstawie testów sprzętowych i funkcjonalnych</p>
+                <p>Doradztwo techniczne dla klientów</p>
             </div>
+
             <div class="experience">
                 <h3 data-translate="pils">PILS Kraków</h3>
                 <span class="date">Czerwiec 2021 – Wrzesień 2021</span>
-                <p data-translate="pils-task1">Profesjonalne montowanie zautomatyzowanych bram i szlabanów zgodnie z wytycznymi technicznymi</p>
-                <p data-translate="pils-task2">Weryfikacja poprawności działania i bezpieczeństwa systemów poprzez kompleksowe testy funkcjonalne, w tym kalibrację czujników ruchu i mechanizmów awaryjnych</p>
-                <p data-translate="pils-task3">Samodzielna diagnostyka i rozwiązywanie problemów technicznych</p>
+                <p>Pomoc przy montażu automatycznych bram i szlabanów</p>
+                <p>Testowanie poprawności działania i bezpieczeństwa systemów</p>
+                <p>Kalibracja czujników oraz systemów awaryjnych</p>
             </div>
 
             <h2 data-translate="education"><i class="fas fa-university"></i> Wykształcenie</h2>
             <div class="education">
-                <h3 data-translate="tech-school">Technikum Komunikacyjne nr 25 v Krakowie</h3>
+                <h3 data-translate="tech-school">Technikum Komunikacyjne nr 25 w Krakowie</h3>
                 <span class="date">2018-2022</span>
-                <p>Specjalizacja: <b>Technik mechatronik</b>.</p>
+                <p data-translate="tech-specialization">Specjalizacja: <b>Technik mechatronik</b>.</p>
             </div>
             <div class="education">
                 <h3 data-translate="agh">Akademia Górniczo-Hutnicza w Krakowie</h3>
                 <span class="date">2022 – 2026</span>
-                <p>Specjalizacja: <b>Inżynier Technologii Przemysłu 4.0</b>.</p>
+                <p data-translate="agh-specialization">Specjalizacja: <b>Inżynier Technologii Przemysłu 4.0</b>.</p>
             </div>
 
-            <h2 data-translate="sylabus-title"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
+            <h2 style="border-bottom: 2px solid #004d40; padding-bottom: 5px; margin-bottom: 20px;" data-translate="sylabus-title"><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
             <div class="sylabus">
                 <div class="qr-container">
                     <a href="https://sylabusy.agh.edu.pl/pl/1/2/18/1/4/16/227" target="_blank">
