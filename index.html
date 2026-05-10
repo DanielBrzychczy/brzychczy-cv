@@ -202,7 +202,6 @@
             left: 0;
         }
 
-        /* STYL JĘZYKÓW - DOPASOWANY */
         .languages {
             background: transparent;
             padding: 0;
@@ -266,10 +265,6 @@
             top: 0;
         }
 
-        .education p {
-            margin: 5px 0 10px;
-        }
-
         .sylabus {
             background: #b2dfdb;
             padding: 15px;
@@ -278,11 +273,6 @@
             border: 2px solid #00796b;
             border-radius: 8px;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-
-        .sylabus:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
         }
 
         .date {
@@ -312,7 +302,7 @@
             position: relative;
             padding-left: 25px;
             margin-bottom: 15px;
-            margin-right: 160px; /* Aby uniknąć nachodzenia na datę */
+            margin-right: 160px;
         }
 
         .experience h3::before,
@@ -329,23 +319,6 @@
 
         .experience h3::before { content: '\f0b1'; }
         .education h3::before { content: '\f19d'; }
-
-        .english-cv-button-container {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .english-cv-button {
-            background-color: #008080;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-
-        .english-cv-button:hover { background-color: #00a693; }
 
         .data-agreement-table {
             width: 100%;
@@ -371,6 +344,7 @@
     </style>
 </head>
 <body>
+
     <header>
         <div class="header-left">
             <div class="image-container">
@@ -384,11 +358,10 @@
             <span><i class="fas fa-map-marker-alt"></i> os. Strusia 7/202, Kraków</span>
         </div>
     </header>
+
     <div class="container">
+        <!-- LEWA KOLUMNA -->
         <div class="left-column">
-             <div class="english-cv-button-container">
-                <a href="https://danielbrzychczy.github.io/brzychczy-eng-cv/" class="english-cv-button">View in English</a>
-            </div>
             
             <h2 style="border-bottom: 2px solid white;" data-translate="courses"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
             <ul>
@@ -458,21 +431,22 @@
             </div>
         </div>
 
+        <!-- PRAWA KOLUMNA -->
         <div class="right-column">
             <h2 data-translate="work-experience"><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
             
             <div class="experience">
-                <h3 data-translate="general-automatic">General Automatic</h3>
-                <span class="date">Wrzesień 2025 – nadal</span>
-                <p>Przygotowywanie dokumentacji projektowej i wykonawczej dla instalacji niskoprądowych</p>
-                <p>Rozmieszczanie elementów wykonawczych i pomiarowych w AutoCAD</p>
-                <p>Dobór okablowania oraz obliczanie tras i długości przewodów zgodnie z założeniami projektowymi</p>
-                <p>Dobór elementów wykonawczych i pomiarowych</p>
-                <p>Praca z dokumentacją techniczną i materiałową</p>
+                <h3 data-translate="general-automatic">General Automatic | Młodszy projektant</h3>
+                <span class="date">Wrzesień 2024 – obecnie</span>
+                <p>Projektowanie w aplikacji AutoCAD: planowanie rozmieszczenia czujek, sensorów, elementów sterujących i tras kablowych</p>
+                <p>Udział w projektowaniu instalacji niskoprądowych: SSP, DSO, CCTV, SSWiN, LAN, AV, SKD, BMS</p>
+                <p>Precyzyjny dobór aparatury pomiarowej, elementów wykonawczych, sterujących oraz okablowania</p>
+                <p>Praca z dokumentacją techniczno-ruchową, schematami blokowymi oraz schematami automatyki budynkowej</p>
+                <p>Przygotowywanie dokumentacji projektowej oraz powykonawczej</p>
             </div>
 
             <div class="experience">
-                <h3 data-translate="revolmatic">Revolmatic / FrothStop Poland</h3>
+                <h3 data-translate="revolmatic">Revolmatic / FrothStop Poland | Mechatronik</h3>
                 <span class="date">Lipiec 2022 – Wrzesień 2025</span>
                 <p><strong>Pełnienie roli lidera działu modułów</strong></p>
                 <p>Testowanie systemów mechatronicznych</p>
@@ -492,7 +466,7 @@
             <h2 data-translate="education"><i class="fas fa-university"></i> Wykształcenie</h2>
             <div class="education">
                 <h3 data-translate="tech-school">Technikum Komunikacyjne nr 25 w Krakowie</h3>
-                <span class="date">2018-2022</span>
+                <span class="date">2018 - 2022</span>
                 <p data-translate="tech-specialization">Specjalizacja: <b>Technik mechatronik</b>.</p>
             </div>
             <div class="education">
@@ -525,8 +499,6 @@
             </table>
         </div>
     </div>
+
 </body>
 </html>
-
-
-
