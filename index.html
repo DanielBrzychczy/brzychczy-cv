@@ -7,123 +7,118 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
     <style>
+        /* ELIMINACJA PUSTEJ PRZESTRZENI PO BOKACH */
         body {
             background-color: #e0f7fa;
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
+            width: 100%;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            padding-top: 90px; /* Miejsce pod stały nagłówek */
         }
 
-        /* NAGŁÓWEK - GÓRNY PASEK */
+        /* NAGŁÓWEK NA CAŁĄ SZEROKOŚĆ */
         header {
             background: #008080;
             color: white;
+            padding: 15px 40px;
+            position: fixed;
             width: 100%;
-            padding: 30px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-
-        .header-content {
-            width: 95%;
-            max-width: 1400px;
+            top: 0;
+            left: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            box-sizing: border-box;
         }
 
-        .header-left {
+        header h1 {
+            font-size: 2.2em;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .contact-header {
+            display: flex;
+            gap: 30px;
+            font-size: 0.9em;
+        }
+
+        .contact-header span {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 8px;
         }
 
-        .image-container {
-            width: 150px;
-            height: 150px;
+        /* KONTENER ROZCIĄGNIĘTY NA 100% - BRAK BIAŁYCH BOKÓW */
+        .container {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            width: 100%;
+            min-height: calc(100vh - 90px);
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* LEWA KOLUMNA (SIDEBAR) */
+        .left-column {
+            padding: 30px;
+            background: #00695c;
+            color: white;
+            border-right: 1px solid #004d40;
+        }
+
+        /* ZDJĘCIE IDEALNIE DOPASOWANE W SIDEBARZE */
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            margin-top: 10px;
+        }
+
+        .profile-container .image-container {
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             overflow: hidden;
-            border: 4px solid rgba(255, 255, 255, 0.8);
+            border: 4px solid #b2dfdb;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        .image-container img {
+        .profile-container .image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .header-left h1 {
-            font-size: 3em;
-            margin: 0;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .contact-info {
-            text-align: right;
-            font-size: 1em;
-            line-height: 1.6;
-        }
-
-        .contact-info span {
-            display: block;
-        }
-
-        .contact-info i {
-            margin-right: 10px;
-            width: 20px;
-            text-align: center;
-        }
-
-        /* KONTENER GŁÓWNY */
-        .main-wrapper {
-            background: white;
-            width: 95%;
-            max-width: 1400px;
-            margin: 30px 0;
-            border-radius: 15px;
-            display: grid;
-            grid-template-columns: 420px 1fr;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            overflow: hidden; /* Aby zaokrąglenia działały na dzieciach */
-        }
-
-        /* LEWA KOLUMNA (Zielona) */
-        .left-column {
-            background: #00695c;
-            color: white;
-            padding: 40px 30px;
+            object-position: center top;
         }
 
         .left-column h2 {
-            border-bottom: 2px solid rgba(255,255,255,0.3);
-            padding-bottom: 10px;
-            font-size: 1.5em;
-            margin-top: 35px;
+            color: white;
+            border-bottom: 2px solid #b2dfdb;
+            padding-bottom: 5px;
+            font-size: 1.3em;
+            margin-top: 30px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .left-column h2:first-of-type { margin-top: 0; }
-
         .left-column ul {
-            list-style: none;
             padding: 0;
+            list-style: none;
         }
 
         .left-column ul li {
-            margin-bottom: 15px;
-            font-size: 1em;
-            position: relative;
+            margin-bottom: 18px;
             padding-left: 15px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.5;
         }
 
         .left-column ul li::before {
@@ -131,158 +126,151 @@
             position: absolute;
             left: 0;
             color: #b2dfdb;
+            font-weight: bold;
         }
 
         .left-column ul li strong {
             display: block;
             margin-bottom: 5px;
             color: #e0f2f1;
-        }
-
-        .left-column ul li ul {
-            margin-top: 5px;
+            font-size: 1.05em;
         }
 
         .left-column ul li ul li {
-            font-size: 0.9em;
-            color: rgba(255,255,255,0.85);
-            margin-bottom: 3px;
+            margin-bottom: 5px;
+            padding-left: 10px;
+            color: #b2dfdb;
+            font-size: 13px;
         }
 
-        /* JĘZYKI (Stylizowane przyciski z obrazka) */
-        .language-item {
-            background: #004d40;
+        .languages .language-item {
+            background-color: #004d40;
             border: 1px solid #008080;
-            padding: 12px;
-            margin-bottom: 10px;
-            border-radius: 8px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 14px;
         }
 
-        /* PRAWA KOLUMNA (Biała) */
+        /* PRAWA KOLUMNA */
         .right-column {
-            background: white;
             padding: 40px;
+            background: #ffffff;
         }
 
-        .right-column h2 {
+        h2 {
             color: #004d40;
             border-bottom: 2px solid #004d40;
-            padding-bottom: 10px;
-            margin-bottom: 25px;
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        /* KARTY DOŚWIADCZENIA / EDUKACJI (Turkusowe obramowanie) */
-        .card {
-            background: #e0f2f1; /* Bardzo jasny turkusowy */
-            border: 2px solid #008080;
-            border-radius: 10px;
+        .experience-card, .education-card {
+            background: #f1f8f9;
             padding: 20px;
             margin-bottom: 25px;
+            border-radius: 8px;
+            border: 2px solid #00796b;
             position: relative;
+            transition: transform 0.2s ease-in-out;
         }
 
-        .card h3 {
-            margin: 0 0 15px 0;
+        .experience-card:hover {
+            background: #e0f2f1;
+        }
+
+        .experience-card h3, .education-card h3 {
+            margin: 0;
             color: #004d40;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding-right: 180px; /* Miejsce na datę */
+            font-size: 1.1em;
+            padding-right: 180px;
         }
 
-        .card .date-badge {
+        .date {
             position: absolute;
-            top: 20px;
             right: 20px;
+            top: 22px;
             font-size: 0.85em;
             font-weight: bold;
-            color: #333;
+            color: #004d40;
         }
 
-        .card p {
-            margin: 8px 0;
+        .experience-card p, .education-card p {
+            margin: 10px 0 0 15px;
             position: relative;
-            padding-left: 20px;
+            font-size: 14px;
             line-height: 1.5;
         }
 
-        .card p::before {
-            content: '•';
+        .experience-card p::before {
+            content: '\2022';
             position: absolute;
-            left: 0;
-            color: #00796b;
-            font-weight: bold;
+            left: -15px;
+            color: #008080;
         }
 
-        /* SYLABUS QR */
-        .syllabus-container {
-            border: 2px solid #008080;
-            border-radius: 10px;
-            background: #e0f2f1;
-            padding: 30px;
+        /* QR CODE */
+        .qr-section {
+            background: #f1f8f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #00796b;
             text-align: center;
         }
 
-        .qr-wrapper {
+        .qr-section img {
+            width: 140px;
             background: white;
-            display: inline-block;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #00796b;
         }
 
-        .qr-wrapper img {
-            width: 200px;
-            display: block;
-        }
-
-        .agreement {
-            margin-top: 30px;
-            font-size: 0.7em;
+        .data-agreement {
+            font-size: 11px;
             color: #666;
+            margin-top: 40px;
             text-align: justify;
         }
 
-        /* Responsywność */
-        @media (max-width: 1000px) {
-            .main-wrapper { grid-template-columns: 1fr; }
-            .header-content { flex-direction: column; text-align: center; gap: 20px; }
-            .header-left { flex-direction: column; }
-            .contact-info { text-align: center; }
-            .card h3 { padding-right: 0; margin-bottom: 40px; }
-            .card .date-badge { position: static; display: block; margin-bottom: 10px; }
+        /* RESPONSIVE */
+        @media (max-width: 1100px) {
+            .container { grid-template-columns: 1fr; }
+            header { flex-direction: column; text-align: center; }
+            .contact-header { flex-direction: column; gap: 5px; margin-top: 10px; }
+            .date { position: static; display: block; margin-top: 10px; }
+            .experience-card h3 { padding-right: 0; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-content">
-            <div class="header-left">
-                <div class="image-container">
-                    <img src="twoje-zdjecie.jpg" alt="Daniel Brzychczy">
-                </div>
-                <h1 data-translate="name">Daniel Brzychczy</h1>
-            </div>
-            <div class="contact-info">
-                <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
-                <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
-                <span><i class="fas fa-map-marker-alt"></i> os. Strusia 7/202, Kraków</span>
-            </div>
+        <h1 data-translate="name">Daniel Brzychczy</h1>
+        <div class="contact-header">
+            <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
+            <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
+            <span><i class="fas fa-map-marker-alt"></i> Kraków</span>
         </div>
     </header>
 
-    <div class="main-wrapper">
-        
-        <!-- LEWA KOLUMNA: KURSY, SKILLS, ATUTY, JĘZYKI -->
+    <div class="container">
+        <!-- LEWA KOLUMNA (SIDEBAR) -->
         <div class="left-column">
             
+            <div class="profile-container">
+                <div class="image-container">
+                    <img src="twoje-zdjecie.jpg" alt="Daniel Brzychczy">
+                </div>
+            </div>
+
             <h2><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
             <ul>
                 <li>
@@ -306,18 +294,16 @@
                 </li>
             </ul>
 
-            <h2><i class="fas fa-wrench"></i> Umiejętności i atuty</h2>
+            <h2><i class="fas fa-wrench"></i> Umiejętności</h2>
             <ul>
                 <li>
                     <strong>Techniczne:</strong>
                     <ul>
-                        <li>Zdolności manualne</li>
-                        <li>Obsługa elektronarzędzi</li>
+                        <li>Zdolności manualne i obsługa elektronarzędzi</li>
                         <li>Interpretacja rysunków technicznych</li>
-                        <li>Znajomość zagadnień z elektrotechniki i mechatroniki</li>
+                        <li>Zagadnienia elektrotechniki, automatyki i mechatroniki</li>
                         <li>Analiza schematów elektrycznych</li>
-                        <li>Obróbka elementów metalowych</li>
-                        <li>Montaż i lutowanie komponentów</li>
+                        <li>Obróbka metalu, montaż i lutowanie komponentów</li>
                         <li>Obsługa narzędzi warsztatowych</li>
                     </ul>
                 </li>
@@ -325,20 +311,17 @@
                     <strong>Komputerowe:</strong>
                     <ul>
                         <li>Projektowanie 2D w AutoCAD</li>
-                        <li>Programowanie w języku Python</li>
-                        <li>Programowanie sterowników PLC</li>
+                        <li>Programowanie Python i PLC</li>
                         <li>Analiza danych</li>
-                        <li>Podstawy LABVIEW</li>
-                        <li>Podstawy Roboguide</li>
-                        <li>Podstawy SolidWorks</li>
+                        <li>Obsługa LABVIEW, Roboguide, SolidWorks</li>
                     </ul>
                 </li>
             </ul>
 
             <h2><i class="fas fa-trophy"></i> Atuty</h2>
             <ul>
-                <li>Laureat Małopolskiego konkursu prac własnych</li>
-                <li>Laureat konkursu Politechniki Śląskiej</li>
+                <li>Laureat Małopolskiego konkursu prac własnych technicznych</li>
+                <li>Laureat konkursu Politechniki Śląskiej - "Elektronika by żyło się łatwiej"</li>
                 <li>Prawo Jazdy kategoria B</li>
                 <li>Badania sanitarno-epidemiologiczne</li>
                 <li>Uprawnienia na wózek widłowy</li>
@@ -346,42 +329,36 @@
 
             <h2><i class="fas fa-language"></i> Języki</h2>
             <div class="languages">
-                <div class="language-item">
-                    <span class="flag-icon flag-icon-pl"></span> Polski – Ojczysty
-                </div>
-                <div class="language-item">
-                    <span class="flag-icon flag-icon-gb"></span> Angielski – B2
-                </div>
+                <div class="language-item"><span class="flag-icon flag-icon-pl"></span> Polski – Ojczysty</div>
+                <div class="language-item"><span class="flag-icon flag-icon-gb"></span> Angielski – B2</div>
             </div>
         </div>
 
-        <!-- PRAWA KOLUMNA: DOŚWIADCZENIE, EDUKACJA, SYLABUS -->
+        <!-- PRAWA KOLUMNA (DOŚWIADCZENIE I EDUKACJA) -->
         <div class="right-column">
-            
             <h2><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
             
-            <div class="card">
-                <span class="date-badge">Wrzesień 2025 – obecnie</span>
-                <h3><i class="fas fa-building"></i> General Automatic | Młodszy projektant</h3>
-                <p>Projektowanie w aplikacji AutoCAD: planowanie rozmieszczenia czujek, sensorów, elementów sterujących i tras kablowych</p>
-                <p>Udział w projektowaniu instalacji niskoprądowych: SSP, DSO, CCTV, SSWiN, LAN, AV, SKD, BMS</p>
-                <p>Precyzyjny dobór aparatury pomiarowej, elementów wykonawczych, sterujących oraz okablowania</p>
-                <p>Praca z dokumentacją techniczno-ruchową oraz schematami automatyki budynkowej</p>
+            <div class="experience-card">
+                <span class="date">Wrzesień 2025 – obecnie</span>
+                <h3>General Automatic | Młodszy projektant</h3>
+                <p>Projektowanie w AutoCAD: rozmieszczenie czujek, sensorów, tras kablowych</p>
+                <p>Udział w projektowaniu instalacji niskoprądowych: SSP, DSO, CCTV, BMS, LAN, AV</p>
+                <p>Dobór aparatury pomiarowej, okablowania i elementów wykonawczych</p>
+                <p>Praca z DTR i schematami automatyki budynkowej</p>
                 <p>Przygotowywanie dokumentacji projektowej oraz powykonawczej</p>
             </div>
 
-            <div class="card">
-                <span class="date-badge">Lipiec 2022 – Wrzesień 2025</span>
-                <h3><i class="fas fa-cogs"></i> Revolmatic / FrothStop Poland | Mechatronik</h3>
-                <p><strong>Pełnienie roli lidera działu modułów</strong></p>
-                <p>Testowanie i uruchamianie systemów mechatronicznych</p>
-                <p>Montowanie kompletnych układów automatyki</p>
-                <p>Prace serwisowe, naprawy, wymiana komponentów i konserwacja</p>
+            <div class="experience-card">
+                <span class="date">Lipiec 2022 – Wrzesień 2025</span>
+                <h3>Revolmatic / FrothStop Poland | Mechatronik</h3>
+                <p><b>Pełnienie roli lidera działu modułów</b></p>
+                <p>Testowanie, uruchamianie i montowanie systemów mechatronicznych</p>
+                <p>Wykonywanie prac serwisowych, naprawy, wymiana komponentów i konserwacja</p>
             </div>
 
-            <div class="card">
-                <span class="date-badge">Czerwiec 2021 – Wrzesień 2021</span>
-                <h3><i class="fas fa-tools"></i> PILS Kraków</h3>
+            <div class="experience-card">
+                <span class="date">Czerwiec 2021 – Wrzesień 2021</span>
+                <h3>PILS Kraków</h3>
                 <p>Pomoc przy montażu automatycznych bram i szlabanów</p>
                 <p>Testowanie poprawności działania i bezpieczeństwa systemów</p>
                 <p>Kalibracja czujników oraz systemów awaryjnych</p>
@@ -389,41 +366,36 @@
 
             <h2><i class="fas fa-university"></i> Wykształcenie</h2>
             
-            <div class="card">
-                <span class="date-badge">2026 – nadal</span>
+            <div class="education-card">
+                <span class="date">2026 – nadal</span>
                 <h3>Politechnika Krakowska</h3>
-                <p>Magister Automatyki i Robotyki</p>
-                <p>Specjalność: <b>Sterowanie i monitoring maszyn i urządzeń</b></p>
+                <p>Magister Automatyki i Robotyki | Sterowanie i monitoring maszyn</p>
             </div>
 
-            <div class="card">
-                <span class="date-badge">2022 – 2026</span>
+            <div class="education-card">
+                <span class="date">2022 – 2026</span>
                 <h3>Akademia Górniczo-Hutnicza w Krakowie</h3>
                 <p>Inżynier Technologii Przemysłu 4.0</p>
             </div>
 
-            <div class="card">
-                <span class="date-badge">2018 - 2022</span>
+            <div class="education-card">
+                <span class="date">2018 - 2022</span>
                 <h3>Technikum Komunikacyjne nr 25 w Krakowie</h3>
-                <p>Specjalizacja: <b>Technik mechatronik</b></p>
+                <p>Technik mechatronik</p>
             </div>
 
             <h2><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
-            <div class="syllabus-container">
-                <p>Program studiów na Akademii Górniczo-Hutniczej:</p>
-                <div class="qr-wrapper">
-                    <a href="https://sylabusy.agh.edu.pl/pl/1/2/18/1/4/16/227" target="_blank">
-                        <img src="qr1.jpg" alt="Kod QR">
-                    </a>
-                </div>
+            <div class="qr-section">
+                <p>Zeskanuj kod QR, aby pobrać sylabus AGH:</p>
+                <a href="https://sylabusy.agh.edu.pl/pl/1/2/18/1/4/16/227" target="_blank">
+                    <img src="qr1.jpg" alt="Kod QR">
+                </a>
             </div>
 
-            <div class="agreement">
+            <div class="data-agreement">
                 Wyrażam zgodę na przetwarzanie danych osobowych niezbędnych do realizacji procesu rekrutacji zgodnie z: Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO).
             </div>
-
         </div>
     </div>
-
 </body>
 </html>
