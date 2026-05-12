@@ -15,7 +15,7 @@
             font-family: 'Arial', sans-serif;
             overflow-x: hidden;
             transition: background-color 0.3s ease-in-out;
-            padding-top: 140px;
+            padding-top: 110px; /* ZMNIEJSZONE, by pasowało do węższego nagłówka */
             position: relative;
         }
 
@@ -28,7 +28,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 30px;
             max-width: 1400px;
-            margin-top: 120px;
+            margin-top: 20px; /* ZMNIEJSZONE dla lepszego spasowania */
             background: white;
             padding: 30px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
@@ -43,17 +43,27 @@
         header {
             background: #008080;
             color: white;
-            padding: 20px;
+            padding: 10px 0; /* WĘŻSZY NAGŁÓWEK (padding góra/dół) */
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center; /* Centrujemy zawartość nagłówka */
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        /* DODANO: Kontener wewnętrzny nagłówka, by trzymał linię 1400px */
+        .header-inner {
+            width: 100%;
+            max-width: 1400px;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
         }
 
         header:hover {
@@ -62,7 +72,8 @@
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-size: 2.2em; /* LEKKO ZMNIEJSZONE dla harmonii */
+            margin: 0;
             transition: color 0.3s ease-in-out;
         }
 
@@ -76,8 +87,8 @@
         }
 
         .header-left .image-container {
-            width: 150px;
-            height: 150px;
+            width: 120px; /* ZMNIEJSZONE ZDJĘCIE, by zwęzić nagłówek */
+            height: 120px;
             border-radius: 50%;
             overflow: hidden;
             margin-right: 20px;
@@ -104,11 +115,10 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin-top: 10px;
             transition: transform 0.3s ease-in-out;
             padding-right: 0;
             position: relative;
-            right: 40px;
+            /* Usunięto right: 40px, teraz wyrównuje się przez .header-inner */
         }
 
         .contact:hover {
@@ -118,14 +128,14 @@
         .contact span {
             display: flex;
             align-items: center;
-            margin: 5px 0;
+            margin: 3px 0;
             transition: transform 0.3s ease-in-out, color 0.3s;
             text-align: left;
-            transition: color 0.3s ease-in-out;
+            font-size: 0.95em;
         }
 
         .contact span:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             color: #fdd835;
         }
 
@@ -333,11 +343,11 @@
         }
 
         @media (max-width: 768px) {
-            .container { grid-template-columns: 1fr; }
-            header { flex-direction: column; align-items: center; padding: 10px; }
+            .container { grid-template-columns: 1fr; width: 95%; }
+            .header-inner { flex-direction: column; padding: 10px; }
             .header-left { flex-direction: column; text-align: center; }
             .header-left .image-container { margin-right: 0; margin-bottom: 10px; width: 100px; height: 100px; }
-            .contact { align-items: center; position: static; right: auto; padding: 0; }
+            .contact { align-items: center; position: static; padding: 0; margin-top: 10px; }
             .date { position: static; display: block; margin-bottom: 10px; }
             .experience h3 { margin-right: 0; }
         }
@@ -346,16 +356,18 @@
 <body>
 
     <header>
-        <div class="header-left">
-            <div class="image-container">
-                <img src="twoje-zdjecie.jpg" alt="Twoje zdjęcie">
+        <div class="header-inner">
+            <div class="header-left">
+                <div class="image-container">
+                    <img src="twoje-zdjecie.jpg" alt="Twoje zdjęcie">
+                </div>
+                <h1 data-translate="name">Daniel Brzychczy</h1>
             </div>
-            <h1 data-translate="name">Daniel Brzychczy</h1>
-        </div>
-        <div class="contact">
-            <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
-            <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
-            <span><i class="fas fa-map-marker-alt"></i> os. Strusia 7/202, Kraków</span>
+            <div class="contact">
+                <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
+                <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
+                <span><i class="fas fa-map-marker-alt"></i> os. Strusia 7/202, Kraków</span>
+            </div>
         </div>
     </header>
 
