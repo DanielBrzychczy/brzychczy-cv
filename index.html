@@ -7,34 +7,78 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
     <style>
-        /* Optymalizacja pod format A4 */
         body {
+            display: flex;
+            justify-content: center;
             background: #e0f7fa;
             margin: 0;
-            padding: 0;
             font-family: 'Arial', sans-serif;
-            font-size: 12px; /* Zmniejszona bazowa czcionka by wszystko pomieścić */
+            overflow-x: hidden;
+            transition: background-color 0.3s ease-in-out;
+            padding-top: 110px; /* ZMNIEJSZONE, by pasowało do węższego nagłówka */
+            position: relative;
         }
 
-        .page {
-            width: 210mm;
-            height: 296mm; /* Sztywny wymiar A4 */
-            margin: 0 auto;
+        body:hover {
+            background-color: #b2ebf2;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px; /* Lekko zmniejszone z 30px dla miejsca */
+            width: 100%;
+            max-width: 1150px; 
+            margin-top: 10px; 
             background: white;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden; /* Zapobiega wychodzeniu poza stronę */
+            padding: 25px; /* Lekko zmniejszone */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         header {
             background: #008080;
             color: white;
-            padding: 10px 20px;
+            padding: 10px 0; 
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .header-inner {
+            width: 100%;
+            max-width: 1150px;
+            padding: 0 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        header:hover {
+            background-color: #00a693;
+            transform: translateY(-2px);
+        }
+
+        header h1 {
+            font-size: 2.2em; 
+            margin: 0;
+            transition: color 0.3s ease-in-out;
+        }
+
+        header:hover h1 {
+            color: #f0f0f0;
         }
 
         .header-left {
@@ -43,162 +87,279 @@
         }
 
         .header-left .image-container {
-            width: 80px; 
-            height: 80px;
+            width: 110px; /* Minimalnie mniejsze by zyskać pion */
+            height: 110px;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: 15px;
-            border: 2px solid #b2dfdb;
+            margin-right: 20px;
+            border: 3px solid #b2dfdb;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-left .image-container:hover {
+            transform: scale(1.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .header-left .image-container img {
             width: 100%;
             height: auto;
-        }
-
-        header h1 {
-            font-size: 1.8em;
-            margin: 0;
+            object-fit: cover;
+            object-position: center top;
         }
 
         .contact {
-            text-align: right;
-            font-size: 0.9em;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: transform 0.3s ease-in-out;
+            padding-right: 0;
+            position: relative;
+        }
+
+        .contact:hover {
+            transform: translateY(-2px);
         }
 
         .contact span {
-            display: block;
-            margin: 1px 0;
+            display: flex;
+            align-items: center;
+            margin: 2px 0;
+            transition: transform 0.3s ease-in-out, color 0.3s;
+            text-align: left;
+            font-size: 0.95em;
         }
 
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 1.3fr;
-            gap: 15px;
-            padding: 15px;
-            flex-grow: 1;
+        .contact span:hover {
+            transform: scale(1.05);
+            color: #fdd835;
+        }
+
+        .contact span i {
+            margin-right: 10px;
         }
 
         .left-column {
-            padding: 12px;
+            padding: 20px; /* Zmniejszone z 25px */
             background: #00695c;
             color: white;
-            border-radius: 8px;
+            border: 3px solid #008080;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .left-column:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .right-column {
-            padding: 0 5px;
+            padding: 10px 20px;
         }
 
         h2 {
-            font-size: 1.1em;
             color: #004d40;
             border-bottom: 2px solid #004d40;
-            padding-bottom: 3px;
-            margin: 10px 0 5px 0;
+            padding-bottom: 5px;
+            transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+            margin-top: 15px;
+        }
+
+        h2:hover {
+            color: #00796b;
+            border-color: #00796b;
         }
 
         .left-column h2 {
             color: white;
             border-bottom: 2px solid white;
-        }
-
-        ul {
-            padding-left: 15px;
-            margin: 5px 0;
-        }
-
-        .left-column ul {
-            list-style: none;
-            padding-left: 0;
+            padding-bottom: 5px;
         }
 
         .left-column ul li {
-            margin-bottom: 8px;
-            font-size: 0.95em;
-        }
-
-        .left-column ul li strong {
-            display: block;
-            margin-bottom: 2px;
-        }
-
-        .left-column ul li ul {
-            padding-left: 12px;
-            list-style: disc;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+            position: relative;
+            padding-left: 15px;
+            list-style: none;
+            z-index: 1;
         }
 
         .left-column ul li ul li {
-            margin-bottom: 2px;
+            margin-bottom: 5px;
+            padding-left: 20px;
+        }
+
+        .left-column ul li strong {
+            font-size: 1.05em;
+            margin-bottom: 5px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .left-column ul li:hover {
+            transform: translateX(5px);
+            color: #b2dfdb;
+        }
+
+        .left-column ul li::before {
+            content: '\2022';
+            color: white;
+            position: absolute;
+            left: 0;
+        }
+
+        .languages {
+            background: transparent;
+            padding: 0;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .languages .language-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background-color: #004d40; 
+            border: 2px solid #008080;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        .languages .language-item:hover {
+            transform: translateX(5px);
+            background-color: #006064;
+            border-color: #b2dfdb;
+        }
+
+        .experience,
+        .education {
+            background: #b2dfdb;
+            padding: 12px;
+            margin-bottom: 15px;
+            position: relative;
+            border: 2px solid #00796b;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .experience:hover,
+        .education:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .experience p,
+        .education p {
+            margin: 4px 0 6px;
+            padding-left: 15px;
+            position: relative;
             font-size: 0.9em;
         }
 
-        .experience, .education {
-            background: #b2dfdb;
-            padding: 8px 10px;
-            margin-bottom: 8px;
-            border: 1px solid #00796b;
-            border-radius: 5px;
-            position: relative;
-        }
-
-        .experience h3, .education h3 {
-            margin: 0 0 5px 0;
-            font-size: 1em;
-            padding-right: 130px;
+        .experience p::before {
+            content: '\2022';
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
         .date {
             position: absolute;
             right: 10px;
-            top: 8px;
+            top: 10px;
             font-size: 0.85em;
+            color: #222;
             font-weight: bold;
         }
 
-        .experience p, .education p {
-            margin: 2px 0;
-            font-size: 0.9em;
-            line-height: 1.2;
+        .experience h3,
+        .education h3 {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            margin-right: 150px;
+            font-size: 1.1em;
         }
 
-        .languages {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            margin-top: 5px;
+        .experience h3::before,
+        .education h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1em;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
         }
 
-        .language-item {
-            padding: 5px 10px;
-            border-radius: 5px;
-            background-color: #004d40;
-            border: 1px solid #008080;
-            font-size: 0.9em;
-        }
+        .experience h3::before { content: '\f0b1'; }
+        .education h3::before { content: '\f19d'; }
 
         .data-agreement-table {
             width: 100%;
-            margin-top: auto;
+            margin-top: 10px;
+            border-collapse: collapse;
         }
 
         .data-agreement-table td {
-            font-size: 0.65em;
+            font-size: 0.65em; /* Zmniejszone dla miejsca na samym dole */
             text-align: justify;
-            color: #444;
-            padding-top: 5px;
+            padding: 5px;
+            color: #555;
         }
 
+        /* KLUCZOWE DLA WYDRUKU NA 1 STRONIE */
         @media print {
-            body { background: white; }
-            .page { margin: 0; box-shadow: none; }
+            @page { 
+                size: A4;
+                margin: 5mm; 
+            }
+            body { 
+                background: white !important; 
+                padding-top: 0 !important;
+                zoom: 0.82; /* Przeskalowanie wszystkiego o 18% w dół by weszło na 1 arkusz */
+            }
+            header { 
+                position: relative !important; 
+                width: 100% !important; 
+                box-shadow: none; 
+                background-color: #008080 !important;
+                -webkit-print-color-adjust: exact;
+            }
+            .container { 
+                max-width: 100% !important; 
+                width: 100% !important; 
+                margin: 0 !important; 
+                box-shadow: none !important; 
+                border-radius: 0 !important;
+                display: grid !important;
+                grid-template-columns: 1fr 1.1fr !important; /* Optymalizacja kolumn pod druk */
+            }
+            .left-column {
+                background-color: #00695c !important;
+                -webkit-print-color-adjust: exact;
+            }
+            .experience, .education {
+                background-color: #b2dfdb !important;
+                -webkit-print-color-adjust: exact;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="page">
-    <header>
+<header>
+    <div class="header-inner">
         <div class="header-left">
             <div class="image-container">
                 <img src="twoje-zdjecie.jpg" alt="Twoje zdjęcie">
@@ -208,131 +369,134 @@
         <div class="contact">
             <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
             <span><i class="fas fa-envelope"></i> danielb2710@wp.pl</span>
-            <span><i class="fas fa-map-marker-alt"></i> Kraków</span>
+            <span><i class="fas fa-map-marker-alt"></i>Kraków</span>
         </div>
-    </header>
+    </div>
+</header>
 
-    <div class="container">
-        <!-- LEWA KOLUMNA -->
-        <div class="left-column">
-            <h2 data-translate="courses"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
-            <ul>
-                <li>
-                    <strong>Centrum Kształcenia Zawodowego:</strong>
-                    <ul><li> Programowanie urządzeń przemysłowych</li></ul>
-                </li>
-                <li>
-                    <strong>ASTOR:</strong>
-                    <ul>
-                        <li> Projektowanie i symulacja stanowisk w K-Rose</li>
-                        <li> Wonderware InTouch 2014 R2</li>
-                        <li> Obsługa robotów EPSON w RC+</li>
-                        <li> Diagnostyka serwonapędów ELAU - PacDrive M</li>
-                        <li> Sterowniki PLC Astraada One</li>
-                        <li> Przemysł 4.0 - Foundation</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Pozostałe:</strong>
-                    <ul><li>Zenon basic certificate |COPY-DATA|</li></ul>
-                    <ul><li>Podstawy Dokumentacji Elektrycznych |Strefa Inżynierii Elektrycznej|</li></ul>
-                </li>
-            </ul>
+<div class="container">
+    <!-- LEWA KOLUMNA -->
+    <div class="left-column">
+        
+        <h2 style="border-bottom: 2px solid white;" data-translate="courses"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
+        <ul>
+            <li>
+                <strong>Centrum Kształcenia Zawodowego:</strong>
+                <ul><li> Programowanie urządzeń przemysłowych</li></ul>
+            </li>
+            <li>
+                <strong>ASTOR:</strong>
+                <ul>
+                    <li> Projektowanie i symulacja stanowisk w K-Rose</li>
+                    <li> Wonderware InTouch 2014 R2</li>
+                    <li> Obsługa robotów EPSON w RC+</li>
+                    <li> Diagnostyka serwonapędów ELAU - PacDrive M</li>
+                    <li> Sterowniki PLC Astraada One</li>
+                    <li> Przemysł 4.0 - Foundation</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Pozostałe:</strong>
+                <ul><li>Zenon basic certificate |COPY-DATA|</li></ul>
+                <ul><li>Podstawy Dokumentacji Elektrycznych |Strefa Inżynierii Elektrycznej|</li></ul>
+            </li>
+        </ul>
 
-            <h2 data-translate="skills"><i class="fas fa-wrench"></i> Umiejętności i atuty</h2>
-            <ul>
-                <li>
-                    <strong>Techniczne:</strong>
-                    <ul>
-                        <li> Zdolności manualne</li>
-                        <li> Obsługa elektronarzędzi</li>
-                        <li> Obsługa narzędzi warsztatowych</li>
-                        <li> Lutowanie komponentów elektronicznych</li>
-                        <li> Interpretacja rysunków technicznych</li>
-                        <li> Analiza schematów elektrycznych</li>
-                        <li> Znajomość zagadnień z zakresu automatyki oraz mechatroniki</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong> Oprogramowania:</strong>
-                    <ul>
-                        <li> Projektowanie w aplikacji AutoCAD</li>
-                        <li> Programowanie sterowników PLC</li>
-                        <li> Podstawy obsługi oprogramowania Roboguide</li>
-                    </ul>
-                </li>
-            </ul>
+        <h2 style="border-bottom: 2px solid white;" data-translate="skills"><i class="fas fa-wrench"></i> Umiejętności i atuty</h2>
+        <ul>
+            <li>
+                <strong>Techniczne:</strong>
+                <ul>
+                    <li> Zdolności manualne</li>
+                    <li> Obsługa elektronarzędzi</li>
+                    <li> Obsługa narzędzi warsztatowych</li>
+                    <li> Lutowanie komponentów elektronicznych</li>
+                    <li> Interpretacja rysunków technicznych</li>
+                    <li> Analiza schematów elektrycznych</li>
+                    <li> Znajomość zagadnień z zakresu automatyki oraz mechatroniki</li>
+                </ul>
+            </li>
+            <li>
+                <strong> Oprogramowania:</strong>
+                <ul>
+                    <li> Projektowanie w aplikacji AutoCAD</li>
+                    <li> Programowanie sterowników PLC</li>
+                    <li> Podstawy obsługi oprogramowania Roboguide</li>
+                </ul>
+            </li>
+        </ul>
 
-            <h2 data-translate="achievements"><i class="fas fa-trophy"></i> Atuty</h2>
-            <ul>
-                <li> Laureat konkursu realizowanego przez Politechnikę Śląską - "Elektronika by żyło się łatwiej"</li>
-                <li> Prawo Jazdy kategoria B</li>
-                <li> Badania sanitarno-epidemiologiczne</li>
-                <li> Uprawnienia na wózek widłowy</li>
-            </ul>
+        <h2 style="border-bottom: 2px solid white;" data-translate="achievements"><i class="fas fa-trophy"></i> Atuty</h2>
+        <ul>
+            <li> Laureat konkursu realizowanego przez Politechnikę Śląską - "Elektronika by żyło się łatwiej"</li>
+            <li> Prawo Jazdy kategoria B</li>
+            <li> Badania sanitarno-epidemiologiczne</li>
+            <li> Uprawnienia na wózek widłowy</li>
+        </ul>
 
-            <h2 data-translate="languages-title"><i class="fas fa-language"></i> Języki</h2>
-            <div class="languages">
-                <div class="language-item"><span class="flag-icon flag-icon-pl"></span> Polski – Ojczysty</div>
-                <div class="language-item"><span class="flag-icon flag-icon-gb"></span> Angielski – B2</div>
-            </div>
+        <h2 style="border-bottom: 2px solid white;" data-translate="languages-title"><i class="fas fa-language"></i> Języki</h2>
+        <div class="languages">
+            <div class="language-item"><span class="flag-icon flag-icon-pl"></span> Polski – Ojczysty</div>
+            <div class="language-item"><span class="flag-icon flag-icon-gb"></span> Angielski – B2</div>
+        </div>
+    </div>
+
+    <!-- PRAWA KOLUMNA -->
+    <div class="right-column">
+        <h2 data-translate="work-experience"><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
+        
+        <div class="experience">
+            <h3 data-translate="general-automatic" >General Automatic | Młodszy projektant</h3>
+            <span class="date">Sierpień 2025 – obecnie</span>
+            <p>Projektowanie w aplikacji AutoCAD: planowanie rozmieszczenia czujek, sensorów, elementów sterujących i tras kablowych</p>
+            <p>Udział w projektowaniu instalacji niskoprądowych: SSP, DSO, CCTV, SSWiN, LAN, AV, SKD, BMS</p>
+            <p>Dorór elementów wykonawczych, sterujących oraz okablowania w zakresie automatyki budynkowej</p>
+            <p>Praca z dokumentacją techniczno-ruchową, schematami automatyki budynkowej, rzutami architektury obiektu</p>
+            <p>Przygotowywanie dokumentacji projektowej oraz powykonawczej</p>
+            <p>Kontakt z firmami oferującymi produkty automatyki</p>
         </div>
 
-        <!-- PRAWA KOLUMNA -->
-        <div class="right-column">
-            <h2 data-translate="work-experience"><i class="fas fa-briefcase"></i> Doświadczenie zawodowe</h2>
-            
-            <div class="experience">
-                <h3 data-translate="general-automatic" >General Automatic | Młodszy projektant</h3>
-                <span class="date">Sierpień 2025 – obecnie</span>
-                <p>Projektowanie w aplikacji AutoCAD: planowanie rozmieszczenia czujek, sensorów, elementów sterujących i tras kablowych</p>
-                <p>Udział w projektowaniu instalacji niskoprądowych: SSP, DSO, CCTV, SSWiN, LAN, AV, SKD, BMS</p>
-                <p>Dorór elementów wykonawczych, sterujących oraz okablowania w zakresie automatyki budynkowej</p>
-                <p>Praca z dokumentacją techniczno-ruchową, schematami automatyki budynkowej, rzutami architektury obiektu</p>
-                <p>Przygotowywanie dokumentacji projektowej oraz powykonawczej</p>
-                <p>Kontakt z firmami oferującymi produkty automatyki</p>
-            </div>
-
-            <div class="experience">
-                <h3 data-translate="revolmatic" >Revolmatic / FrothStop Poland |Technik Mechatronik</h3>
-                <span class="date">Lipiec 2022 – Sierpień 2025</span>
-                <p><strong>Pełnienie roli lidera działu modułów</strong></p>
-                <p>Montaż systemów mechatronicznych, w tym prace warsztatowe (obsługa tokarki, piły taśmowej, wiertarki stołowej) oraz obróbka materiałów (wiercenie, szlifowanie, gwintowanie).</p>
-                <p>Konfekcjonowanie okablowania, lutowanie komponentów oraz montaż podzespołów elektronicznych zgodnie ze schematami.</p>
-                <p>Konfiguracja systemów oraz przeprowadzanie pełnych procedur uruchomieniowych.</p>
-                <p>Kalibracja maszyn oraz przeprowadzanie testów funkcjonalnych i wydajnościowych</p>
-                <p>Wykonywanie przeglądów okresowych, diagnostyka usterek oraz naprawy serwisowe</p>
-            </div>
-
-            <h2 data-translate="education"><i class="fas fa-university"></i> Wykształcenie</h2>
-
-            <div class="education">
-                <h3 data-translate="pk" >Politechnika Krakowska</h3>
-                <span class="date">2026 – obecnie</span>
-                <p data-translate="pk-specialization">Specjalizacja: <strong>Magister Automatyki i Robotyki</strong></p>
-                <p data-translate="pk-sub-specialization">Specjalność: <strong>Sterowanie i monitoring maszyn i urządzeń</strong></p>
-            </div>
-
-            <div class="education">
-                <h3 data-translate="agh" >Akademia Górniczo-Hutnicza w Krakowie</h3>
-                <span class="date">2022 – 2026</span>
-                <p data-translate="agh-specialization">Specjalizacja: <strong>Inżynier Technologii Przemysłu 4.0</strong></p>
-            </div>
-
-            <div class="education">
-                <h3 data-translate="tech-school" >Technikum Komunikacyjne nr 25 w Krakowie</h3>
-                <span class="date">2018 - 2022</span>
-                <p data-translate="tech-specialization">Specjalizacja: <strong>Technik mechatronik</strong></p>
-            </div>
-
-            <table class="data-agreement-table">
-                <tr>
-                    <td data-translate="data-agreement">
-                        Wyrażam zgodę na przetwarzanie danych osobowych niezbędnych do realizacji procesu rekrutacji zgodnie z: Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO).
-                    </td>
-                </tr>
-            </table>
+        <div class="experience">
+            <h3 data-translate="revolmatic" >Revolmatic / FrothStop Poland |Technik Mechatronik</h3>
+            <span class="date">Lipiec 2022 – Sierpień 2025</span>
+            <p><strong>Pełnienie roli lidera działu modułów</strong></p>
+            <p>Montaż systemów mechatronicznych, w tym prace warsztatowe (obsługa tokarki, piły taśmowej, wiertarki stołowej) oraz obróbka materiałów (wiercenie, szlifowanie, gwintowanie).</p>
+            <p>Konfekcjonowanie okablowania, lutowanie komponentów oraz montaż podzespołów elektronicznych zgodnie ze schematami.</p>
+            <p>Konfiguracja systemów oraz przeprowadzanie pełnych procedur uruchomieniowych.</p>
+            <p>Kalibracja maszyn oraz przeprowadzanie testów funkcjonalnych i wydajnościowych</p>
+            <p>Wykonywanie przeglądów okresowych, diagnostyka usterek oraz naprawy serwisowe</p>
         </div>
+
+        
+        <h2 data-translate="education"><i class="fas fa-university"></i> Wykształcenie</h2>
+
+         <div class="education">
+            <h3 data-translate="pk" >Politechnika Krakowska</h3>
+            <span class="date">2026 – obecnie</span>
+            <p data-translate="pk-specialization">Specjalizacja: <strong>Magister Automatyki i Robotyki</strong></p>
+            <p data-translate="pk-sub-specialization">Specjalność: <strong>Sterowanie i monitoring maszyn i urządzeń</strong></p>
+        </div>
+
+        <div class="education">
+            <h3 data-translate="agh" >Akademia Górniczo-Hutnicza w Krakowie</h3>
+            <span class="date">2022 – 2026</span>
+            <p data-translate="agh-specialization">Specjalizacja: <strong>Inżynier Technologii Przemysłu 4.0</strong></p>
+        </div>
+
+        
+        <div class="education">
+            <h3 data-translate="tech-school" >Technikum Komunikacyjne nr 25 w Krakowie</h3>
+            <span class="date">2018 - 2022</span>
+            <p data-translate="tech-specialization">Specjalizacja: <strong>Technik mechatronik</strong></p>
+        </div>
+
+        <table class="data-agreement-table">
+            <tr>
+                <td data-translate="data-agreement">
+                    Wyrażam zgodę na przetwarzanie danych osobowych niezbędnych do realizacji procesu rekrutacji zgodnie z: Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO).
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
 </body>
