@@ -26,12 +26,12 @@
         .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px; /* Lekko zmniejszone z 30px dla miejsca */
+            gap: 30px;
             width: 100%;
-            max-width: 1150px; 
-            margin-top: 10px; 
+            max-width: 1450px; /* ZMIENIONO z 1400 na 1150 - idealna skala pod A4 i druk */
+            margin-top: 20px; 
             background: white;
-            padding: 25px; /* Lekko zmniejszone */
+            padding: 30px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
             transition: box-shadow 0.3s ease-in-out;
@@ -58,7 +58,7 @@
 
         .header-inner {
             width: 100%;
-            max-width: 1150px;
+            max-width: 1150px; /* DOPASOWANO do nowej szerokości kontenera */
             padding: 0 30px;
             display: flex;
             justify-content: space-between;
@@ -87,8 +87,8 @@
         }
 
         .header-left .image-container {
-            width: 110px; /* Minimalnie mniejsze by zyskać pion */
-            height: 110px;
+            width: 120px; 
+            height: 120px;
             border-radius: 50%;
             overflow: hidden;
             margin-right: 20px;
@@ -127,7 +127,7 @@
         .contact span {
             display: flex;
             align-items: center;
-            margin: 2px 0;
+            margin: 3px 0;
             transition: transform 0.3s ease-in-out, color 0.3s;
             text-align: left;
             font-size: 0.95em;
@@ -143,7 +143,7 @@
         }
 
         .left-column {
-            padding: 20px; /* Zmniejszone z 25px */
+            padding: 25px;
             background: #00695c;
             color: white;
             border: 3px solid #008080;
@@ -157,7 +157,7 @@
         }
 
         .right-column {
-            padding: 10px 20px;
+            padding: 20px;
         }
 
         h2 {
@@ -165,7 +165,6 @@
             border-bottom: 2px solid #004d40;
             padding-bottom: 5px;
             transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-            margin-top: 15px;
         }
 
         h2:hover {
@@ -180,7 +179,7 @@
         }
 
         .left-column ul li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
             position: relative;
             padding-left: 15px;
@@ -189,15 +188,15 @@
         }
 
         .left-column ul li ul li {
-            margin-bottom: 5px;
-            padding-left: 20px;
+            margin-bottom: 15px;
+            padding-left: 30px;
         }
 
         .left-column ul li strong {
-            font-size: 1.05em;
-            margin-bottom: 5px;
+            font-size: 1.1em;
+            margin-bottom: 8px;
             display: block;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .left-column ul li:hover {
@@ -215,17 +214,17 @@
         .languages {
             background: transparent;
             padding: 0;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin-top: 10px;
+            gap: 10px;
+            margin-top: 15px;
         }
 
         .languages .language-item {
             display: flex;
             align-items: center;
-            padding: 8px 12px;
+            padding: 10px 15px;
             border-radius: 8px;
             background-color: #004d40; 
             border: 2px solid #008080;
@@ -240,11 +239,15 @@
             border-color: #b2dfdb;
         }
 
+        .languages .language-item span.flag-icon {
+            margin-right: 12px;
+        }
+
         .experience,
         .education {
             background: #b2dfdb;
-            padding: 12px;
-            margin-bottom: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
             position: relative;
             border: 2px solid #00796b;
             border-radius: 8px;
@@ -259,10 +262,9 @@
 
         .experience p,
         .education p {
-            margin: 4px 0 6px;
+            margin: 5px 0 10px;
             padding-left: 15px;
             position: relative;
-            font-size: 0.9em;
         }
 
         .experience p::before {
@@ -272,22 +274,44 @@
             top: 0;
         }
 
+        .sylabus {
+            background: #b2dfdb;
+            padding: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            border: 2px solid #00796b;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
         .date {
             position: absolute;
             right: 10px;
             top: 10px;
-            font-size: 0.85em;
+            font-size: 0.9em;
             color: #222;
             font-weight: bold;
+        }
+
+        .qr-container {
+            text-align: center;
+        }
+
+        .qr-container img {
+            width: 150px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            border: 2px solid #00796b;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .experience h3,
         .education h3 {
             position: relative;
             padding-left: 25px;
-            margin-bottom: 10px;
-            margin-right: 150px;
-            font-size: 1.1em;
+            margin-bottom: 15px;
+            margin-right: 160px;
         }
 
         .experience h3::before,
@@ -297,7 +321,7 @@
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1.1em;
+            font-size: 1.2em;
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
         }
@@ -312,22 +336,31 @@
         }
 
         .data-agreement-table td {
-            font-size: 0.65em; /* Zmniejszone dla miejsca na samym dole */
+            font-size: 0.7em;
             text-align: justify;
             padding: 5px;
-            color: #555;
         }
 
-        /* KLUCZOWE DLA WYDRUKU NA 1 STRONIE */
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; width: 95%; }
+            .header-inner { flex-direction: column; padding: 10px; }
+            .header-left { flex-direction: column; text-align: center; }
+            .header-left .image-container { margin-right: 0; margin-bottom: 10px; width: 100px; height: 100px; }
+            .contact { align-items: center; position: static; padding: 0; margin-top: 10px; }
+            .date { position: static; display: block; margin-bottom: 10px; }
+            .experience h3 { margin-right: 0; }
+        }
+
+        /* DODANO DLA USUNIĘCIA MARGINESÓW I DOPASOWANIA DO JEDNEJ STRONY A4 */
         @media print {
             @page { 
-                size: A4;
+                size: A4; 
                 margin: 5mm; 
             }
             body { 
                 background: white !important; 
-                padding-top: 0 !important;
-                zoom: 0.82; /* Przeskalowanie wszystkiego o 18% w dół by weszło na 1 arkusz */
+                padding-top: 0; 
+                zoom: 0.8; /* ZMNIEJSZENIE SKALI WYŁĄCZNIE PRZY WYDRUKU BY POMIEŚCIĆ CAŁOŚĆ */
             }
             header { 
                 position: relative !important; 
@@ -343,10 +376,10 @@
                 box-shadow: none !important; 
                 border-radius: 0 !important;
                 display: grid !important;
-                grid-template-columns: 1fr 1.1fr !important; /* Optymalizacja kolumn pod druk */
+                grid-template-columns: 1fr 1fr !important;
             }
-            .left-column {
-                background-color: #00695c !important;
+            .left-column { 
+                background-color: #00695c !important; 
                 -webkit-print-color-adjust: exact;
             }
             .experience, .education {
@@ -453,51 +486,3 @@
             <p>Dorór elementów wykonawczych, sterujących oraz okablowania w zakresie automatyki budynkowej</p>
             <p>Praca z dokumentacją techniczno-ruchową, schematami automatyki budynkowej, rzutami architektury obiektu</p>
             <p>Przygotowywanie dokumentacji projektowej oraz powykonawczej</p>
-            <p>Kontakt z firmami oferującymi produkty automatyki</p>
-        </div>
-
-        <div class="experience">
-            <h3 data-translate="revolmatic" >Revolmatic / FrothStop Poland |Technik Mechatronik</h3>
-            <span class="date">Lipiec 2022 – Sierpień 2025</span>
-            <p><strong>Pełnienie roli lidera działu modułów</strong></p>
-            <p>Montaż systemów mechatronicznych, w tym prace warsztatowe (obsługa tokarki, piły taśmowej, wiertarki stołowej) oraz obróbka materiałów (wiercenie, szlifowanie, gwintowanie).</p>
-            <p>Konfekcjonowanie okablowania, lutowanie komponentów oraz montaż podzespołów elektronicznych zgodnie ze schematami.</p>
-            <p>Konfiguracja systemów oraz przeprowadzanie pełnych procedur uruchomieniowych.</p>
-            <p>Kalibracja maszyn oraz przeprowadzanie testów funkcjonalnych i wydajnościowych</p>
-            <p>Wykonywanie przeglądów okresowych, diagnostyka usterek oraz naprawy serwisowe</p>
-        </div>
-
-        
-        <h2 data-translate="education"><i class="fas fa-university"></i> Wykształcenie</h2>
-
-         <div class="education">
-            <h3 data-translate="pk" >Politechnika Krakowska</h3>
-            <span class="date">2026 – obecnie</span>
-            <p data-translate="pk-specialization">Specjalizacja: <strong>Magister Automatyki i Robotyki</strong></p>
-            <p data-translate="pk-sub-specialization">Specjalność: <strong>Sterowanie i monitoring maszyn i urządzeń</strong></p>
-        </div>
-
-        <div class="education">
-            <h3 data-translate="agh" >Akademia Górniczo-Hutnicza w Krakowie</h3>
-            <span class="date">2022 – 2026</span>
-            <p data-translate="agh-specialization">Specjalizacja: <strong>Inżynier Technologii Przemysłu 4.0</strong></p>
-        </div>
-
-        
-        <div class="education">
-            <h3 data-translate="tech-school" >Technikum Komunikacyjne nr 25 w Krakowie</h3>
-            <span class="date">2018 - 2022</span>
-            <p data-translate="tech-specialization">Specjalizacja: <strong>Technik mechatronik</strong></p>
-        </div>
-
-        <table class="data-agreement-table">
-            <tr>
-                <td data-translate="data-agreement">
-                    Wyrażam zgodę na przetwarzanie danych osobowych niezbędnych do realizacji procesu rekrutacji zgodnie z: Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO).
-                </td>
-            </tr>
-        </table>
-    </div>
-</div>
-</body>
-</html>
