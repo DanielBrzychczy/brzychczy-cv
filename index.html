@@ -27,7 +27,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-            max-width: 1400px;
+            max-width: 98%; /* ZMIENIONO Z 1400px ABY ZREDUKOWAĆ MARGINESY */
             margin-top: 20px; /* ZMNIEJSZONE dla lepszego spasowania */
             background: white;
             padding: 30px;
@@ -55,10 +55,10 @@
             transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
 
-        /* DODANO: Kontener wewnętrzny nagłówka, by trzymał linię 1400px */
+        /* DODANO: Kontener wewnętrzny nagłówka, by trzymał linię */
         .header-inner {
             width: 100%;
-            max-width: 1400px;
+            max-width: 98%; /* ZMIENIONO Z 1400px ABY DOPASOWAĆ DO RESZTY STRONY */
             padding: 0 30px;
             display: flex;
             justify-content: space-between;
