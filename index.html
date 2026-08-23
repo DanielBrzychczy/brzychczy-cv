@@ -40,6 +40,20 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
+        /* POPRAWIONA SEKCJA O MNIE - ZAJMUJE 2 KOLUMNY */
+        .about-me {
+            grid-column: 1 / span 2;
+            background: #f4fbfb;
+            padding: 25px;
+            border-left: 6px solid #008080;
+            border-radius: 8px;
+            line-height: 1.6;
+            color: #333;
+            font-size: 1.05em;
+            margin-bottom: 10px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+
         header {
             background: #008080;
             color: white;
@@ -350,6 +364,7 @@
             .contact { align-items: center; position: static; padding: 0; margin-top: 10px; }
             .date { position: static; display: block; margin-bottom: 10px; }
             .experience h3 { margin-right: 0; }
+            .about-me { grid-column: 1; }
         }
     </style>
 </head>
@@ -359,19 +374,20 @@
         <div class="header-inner">
             <div class="header-left">
                 <div class="image-container">
-                    <img src="twoje-zdjecie.jpg" alt="Twoje zdjęcie">
+                    <img src="twoje-zdjecie.jpg" alt="Daniel Brzychczy">
                 </div>
                 <h1 data-translate="name">Daniel Brzychczy</h1>
             </div>
             <div class="contact">
                 <span><i class="fas fa-phone"></i> (+48) 664 859 633</span>
                 <span><i class="fas fa-envelope"></i> dbrzychczy@gmail.com</span>
-                <span><i class="fas fa-map-marker-alt"></i>Kraków</span>
+                <span><i class="fas fa-map-marker-alt"></i> Kraków</span>
             </div>
         </div>
     </header>
 
     <div class="container">
+        <!-- OPIS O MNIE -->
         <div class="about-me">
             Moja ścieżka zawodowa zaczęła się od dyplomu technika mechatronika, co dało mi solidne fundamenty. 
             Nie zatrzymałem się i postanowiłem poszerzać wiedzę techniczną, co poskutkowało uzyskaniem tytułu 
@@ -381,7 +397,9 @@
             techniczna oraz chęć zgłębiania skomplikowanych zagadnień; po poznaniu nowych informacji poświęcam 
             wolny czas na ich analizę, aż do momentu pełnego zrozumienia tematu. Moim atutem jest naturalna 
             ciekawość oraz umiejętność łączenia wiedzy ze studiów z pasją do konstruowania, programowania i projektowania.
-        </div><!-- LEWA KOLUMNA -->
+        </div>
+
+        <!-- LEWA KOLUMNA -->
         <div class="left-column">
 
             <h2 style="border-bottom: 2px solid white;" data-translate="courses"><i class="fas fa-graduation-cap"></i> Kursy i szkolenia</h2>
@@ -419,6 +437,7 @@
                         <li> Interpretacja rysunków technicznych</li>
                         <li> Znajomość zagadnień z zakresu automatyki oraz mechatroniki</li>
                         <li> Analiza schematów elektrycznych</li>
+                        <li> Obróbka elementów metalowych</li>
                     </ul>
                 </li>
                 <li>
@@ -456,8 +475,8 @@
                 <span class="date">Sierpień 2025 – obecnie</span>
                 <p>Projektowanie w aplikacji AutoCAD: planowanie rozmieszczenia czujek, sensorów, elementów sterujących i tras kablowych</p>
                 <p>Udział w projektowaniu instalacji niskoprądowych: SSP, DSO, CCTV, SSWiN, LAN, AV, SKD, BMS</p>
-                <p>Dobór elementów oraz okablowania w zakresie automatyki budynkowej</p>
-                <p>Praca z dokumentacją techniczno-ruchową, schematami automatyki, rzutami architektury obiektu</p>
+                <p>Dobór elementów wykonawczych, sterujących oraz okablowania w zakresie automatyki budynkowej</p>
+                <p>Praca z dokumentacją techniczno-ruchową, schematami automatyki budynkowej, rzutami architektury obiektu</p>
                 <p>Przygotowywanie dokumentacji projektowej oraz powykonawczej</p>
                 <p>Kontakt z firmami oferującymi produkty automatyki</p>
             </div>
@@ -465,11 +484,11 @@
             <div class="experience">
                 <h3 data-translate="revolmatic">Revolmatic / FrothStop Poland| Technik Mechatronik</h3>
                 <span class="date">Lipiec 2022 – Sierpień 2025</span>
-                <p>Montaż systemów mechatronicznych, w tym prace warsztatowe (obsługa tokarki, piły taśmowej, wiertarki stołowej) 
-                oraz obróbka materiałów (wiercenie, szlifowanie, gwintowanie).</p>
+                <p>Pełnienie roli lidera działu modułów</p>
+                <p>Montaż systemów mechatronicznych, w tym prace warsztatowe (obsługa tokarki, piły taśmowej, wiertarki stołowej) oraz obróbka materiałów (wiercenie, szlifowanie, gwintowanie).</p>
                 <p>Konfekcjonowanie okablowania, lutowanie komponentów oraz montaż podzespołów elektronicznych zgodnie ze schematami.</p>
-                <p>Konfiguracja systemów oraz przeprowadzanie procedur uruchomieniowych.</p>
-                <p>Kalibracja maszyn oraz przeprowadzanie testów funkcjonalnych i wydajnościowych<p>
+                <p>Konfiguracja systemów oraz przeprowadzanie pełnych procedur uruchomieniowych.</p>
+                <p>Kalibracja maszyn oraz przeprowadzanie testów funkcjonalnych i wydajnościowych</p>
                 <p>Wykonywanie przeglądów okresowych, diagnostyka usterek oraz naprawy serwisowe</p>
             </div>
 
@@ -483,16 +502,23 @@
             </div>
 
             <div class="education">
-                <h3 data-translate="agh">Akademia Górniczo-Hutnicza w Krakowie</h3>
+                <h3>Akademia Górniczo-Hutnicza w Krakowie</h3>
                 <span class="date">2022 – 2026</span>
-                <p data-translate="agh-specialization">Specjalizacja: <strong>Inżynier Technologii Przemysłu 4.0</strong></p>
+                <p>Specjalizacja: <strong>Inżynier Technologii Przemysłu 4.0</strong></p>
             </div>
 
             <div class="education">
-                <h3 data-translate="pk">Politechnika Krakowska</h3>
+                <h3>Politechnika Krakowska</h3>
                 <span class="date">2026 – obecnie</span>
-                <p data-translate="pk-specialization">Specjalizacja: <strong>Magister Automatyki i Robotyki</strong></p>
-                <p data-translate="pk-sub-specialization">Specjalność: <strong>Sterowanie i monitoring maszyn i urządzeń</strong></p>
+                <p>Specjalizacja: <strong>Magister Automatyki i Robotyki</strong></p>
+                <p>Specjalność: <strong>Sterowanie i monitoring maszyn i urządzeń</strong></p>
+            </div>
+
+            <h2><i class="fas fa-file-alt"></i> Sylabus nauczania</h2>
+            <div class="sylabus">
+                <div class="qr-container">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=TWOJ_LINK" alt="QR Code">
+                </div>
             </div>
 
             <table class="data-agreement-table">
